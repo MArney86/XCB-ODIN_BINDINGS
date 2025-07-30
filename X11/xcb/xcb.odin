@@ -1,6 +1,7 @@
 package xcb
 
 import _c "core:c"
+import X11 "vendor:x11/xlib"
 
 /* Macros */
 
