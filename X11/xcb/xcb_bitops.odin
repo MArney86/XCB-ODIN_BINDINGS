@@ -52,7 +52,7 @@ popcount :: proc(x: u32) -> u32 {
  * @ingroup xcb__bitops
  */
 roundup_2 :: proc(base: u32, pad: u32) -> u32 {
-    return (base + pad - 1) & -pad;
+    return (base + pad - 1) & -pad
 }
 
 /**
@@ -83,6 +83,7 @@ rounddown_2 :: proc(base: u32, pad: u32) -> u32 {
  * @ingroup xcb__bitops
  */
 roundup :: proc(base: u32, pad: u32) -> u32 {
+    if pad == 0 do return base  // Safety check
     b: u32 = base + pad - 1
     /* faster if pad is a power of two */
     if ((pad - 1) & pad) == 0 {
@@ -104,11 +105,12 @@ roundup :: proc(base: u32, pad: u32) -> u32 {
  * @ingroup xcb__bitops
  */
 rounddown :: proc(base: u32, pad: u32) -> u32 {
+    if pad == 0 do return base  // Safety check
     /* faster if pad is a power of two */
     if ((pad - 1) & pad) == 0 {
-        return base & -pad;
+        return base & -pad
     }
-    return base - base % pad;
+    return base - base % pad
 }
 
 /**
@@ -121,18 +123,21 @@ rounddown :: proc(base: u32, pad: u32) -> u32 {
  * @ingroup xcb__bitops
  */
 bit_reverse :: proc(x: u32, n: u8) -> u32 {
-    m1: u32 = 0x00ff00ff;
-    m2: u32 = 0x0f0f0f0f;
-    m3: u32 = 0x33333333;
-    m4: u32 = 0x55555555;
+    if n > 32 do return 0  // Safety check
+    if n == 0 do return 0
+    
+    m1: u32 = 0x00ff00ff
+    m2: u32 = 0x0f0f0f0f
+    m3: u32 = 0x33333333
+    m4: u32 = 0x55555555
     x := x
-    x = ((x << 16) | (x >> 16));
-    x = ((x & m1) << 8) | ((x >> 8) & m1);
-    x = ((x & m2) << 4) | ((x >> 4) & m2);
-    x = ((x & m3) << 2) | ((x >> 2) & m3);
-    x = ((x & m4) << 1) | ((x >> 1) & m4);
-    x >>= 32 - n;
-    return x;
+    x = ((x << 16) | (x >> 16))
+    x = ((x & m1) << 8) | ((x >> 8) & m1)
+    x = ((x & m2) << 4) | ((x >> 4) & m2)
+    x = ((x & m3) << 2) | ((x >> 2) & m3)
+    x = ((x & m4) << 1) | ((x >> 1) & m4)
+    x >>= 32 - n
+    return x
 }
 
 /**
