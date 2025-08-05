@@ -3,8 +3,6 @@ package xcb
 import _c "core:c"
 import "core:mem"
 
-foreign import libc "system:c"
-
 /**
  * @defgroup _ewmh_t XCB EWMH Functions
  *
@@ -267,7 +265,7 @@ ewmh_moveresize_window_opt_flags_t :: enum {
   /** The window width */
   XCB_EWMH_MOVERESIZE_WINDOW_WIDTH = (1 << 10),
   /** The window height */
-  XCB_EWMH_MOVERESIZE_WINDOW_HEIGHT = (1 << 11)
+  XCB_EWMH_MOVERESIZE_WINDOW_HEIGHT = (1 << 11),
 }
 
 /**
@@ -423,7 +421,7 @@ ewmh_connection_wipe :: proc(ewmh: ^ewmh_connection_t) {
  * @param r GetProperty _NET_SUPPORTED reply
  */
 ewmh_get_supported_from_reply :: proc(supported: ^ewmh_get_atoms_reply_t, r: ^get_property_reply_t) -> u8 {
-  return ewmh_get_atoms_from_reply(supported, r);
+  return ewmh_get_atoms_from_reply(supported, r)
 }
 
 /**
@@ -441,7 +439,7 @@ ewmh_get_supported_from_reply :: proc(supported: ^ewmh_get_atoms_reply_t, r: ^ge
  */
 
 ewmh_get_supported_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, supported: ^ewmh_get_atoms_reply_t, e: ^^generic_error_t) -> u8 {
-  return ewmh_get_atoms_reply(ewmh, cookie, supported, e);
+  return ewmh_get_atoms_reply(ewmh, cookie, supported, e)
 }
 
 /**
@@ -452,7 +450,7 @@ ewmh_get_supported_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_
  * @param r GetProperty _NET_CLIENT_LIST reply
  */
 ewmh_get_client_list_from_reply :: proc(clients: ^ewmh_get_windows_reply_t, r: ^get_property_reply_t) -> u8 {
-  return ewmh_get_windows_from_reply(clients, r);
+  return ewmh_get_windows_from_reply(clients, r)
 }
 
 /**
@@ -469,7 +467,7 @@ ewmh_get_client_list_from_reply :: proc(clients: ^ewmh_get_windows_reply_t, r: ^
  * @return Return 1 on success, 0 otherwise
  */
 ewmh_get_client_list_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, clients: ^ewmh_get_windows_reply_t, e: ^^generic_error_t) -> u8 {
-  return ewmh_get_windows_reply(ewmh, cookie, clients, e);
+  return ewmh_get_windows_reply(ewmh, cookie, clients, e)
 }
 /**
  * @brief  Get   the  list  of  client  windows   from  a  GetProperty
@@ -479,7 +477,7 @@ ewmh_get_client_list_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_propert
  * @param r GetProperty _NET_CLIENT_LIST_STACKING reply
  */
 ewmh_get_client_list_stacking_from_reply :: proc(clients: ^ewmh_get_windows_reply_t, r: ^get_property_reply_t) -> u8 {
-  return ewmh_get_windows_from_reply(clients, r);
+  return ewmh_get_windows_from_reply(clients, r)
 }
 
 /**
@@ -497,7 +495,7 @@ ewmh_get_client_list_stacking_from_reply :: proc(clients: ^ewmh_get_windows_repl
  * @return Return 1 on success, 0 otherwise
  */
 ewmh_get_client_list_stacking_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, clients: ^ewmh_get_windows_reply_t, e: ^^generic_error_t) -> u8 {
-  return ewmh_get_windows_reply(ewmh, cookie, clients, e);
+  return ewmh_get_windows_reply(ewmh, cookie, clients, e)
 }
 /**
  * @brief  Get   the  list  of  client  windows   from  a  GetProperty
@@ -508,7 +506,7 @@ ewmh_get_client_list_stacking_reply :: proc(ewmh: ^ewmh_connection_t, cookie: ge
  * @return Return 1 on success, 0 otherwise
  */
 ewmh_get_number_of_desktops_from_reply :: proc(number_of_desktops: ^u32, r: ^get_property_reply_t) -> u8 {
-  return ewmh_get_cardinal_from_reply(number_of_desktops, r);
+  return ewmh_get_cardinal_from_reply(number_of_desktops, r)
 }
 
 /**
@@ -525,7 +523,7 @@ ewmh_get_number_of_desktops_from_reply :: proc(number_of_desktops: ^u32, r: ^get
  * @return Return 1 on success, 0 otherwise
  */
 ewmh_get_number_of_desktops_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, number_of_desktops: ^u32, e: ^^generic_error_t) -> u8 {
-  return ewmh_get_cardinal_reply(ewmh, cookie, number_of_desktops, e);
+  return ewmh_get_cardinal_reply(ewmh, cookie, number_of_desktops, e)
 }
 
 ewmh_request_change_number_of_desktops :: proc(ewmh: ^ewmh_connection_t, screen_nbr: int, new_number_of_desktops: u32) -> void_cookie_t {
@@ -577,7 +575,7 @@ ewmh_get_current_desktop_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_pro
  * @return Return 1 on success, 0 otherwise
  */
 ewmh_get_desktop_names_from_reply :: proc(ewmh: ^ewmh_connection_t, names: ^ewmh_get_utf8_strings_reply_t, r: ^get_property_reply_t) -> u8 {
-  return ewmh_get_utf8_strings_from_reply(ewmh, names, r);
+  return ewmh_get_utf8_strings_from_reply(ewmh, names, r)
 }
 
 /**
@@ -594,7 +592,7 @@ ewmh_get_desktop_names_from_reply :: proc(ewmh: ^ewmh_connection_t, names: ^ewmh
  * @return Return 1 on success, 0 otherwise
  */
 ewmh_get_desktop_names_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, names: ^ewmh_get_utf8_strings_reply_t, e: ^^generic_error_t) -> u8 {
-  return ewmh_get_utf8_strings_reply(ewmh, cookie, names, e);
+  return ewmh_get_utf8_strings_reply(ewmh, cookie, names, e)
 }
 /**
  * @brief  Get   the  list  of  client  windows   from  a  GetProperty
@@ -605,7 +603,7 @@ ewmh_get_desktop_names_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_prope
  * @return Return 1 on success, 0 otherwise
  */
 ewmh_get_active_window_from_reply :: proc(active_window: ^window_t, r: ^get_property_reply_t) -> u8 {
-  return ewmh_get_window_from_reply(active_window, r);
+  return ewmh_get_window_from_reply(active_window, r)
 }
 
 /**
@@ -622,7 +620,7 @@ ewmh_get_active_window_from_reply :: proc(active_window: ^window_t, r: ^get_prop
  * @return Return 1 on success, 0 otherwise.
  */
 ewmh_get_active_window_reply:: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, active_window: ^window_t, e: ^^generic_error_t) -> u8 {
-  return ewmh_get_window_reply(ewmh, cookie, active_window, e);
+  return ewmh_get_window_reply(ewmh, cookie, active_window, e)
 }
 /**
  * @brief  Get   the  list  of  client  windows   from  a  GetProperty
@@ -633,7 +631,7 @@ ewmh_get_active_window_reply:: proc(ewmh: ^ewmh_connection_t, cookie: get_proper
  * @return Return 1 on success, 0 otherwise
  */
 ewmh_get_supporting_wm_check_from_reply :: proc(window: ^window_t, r: ^get_property_reply_t) -> u8 {
-  return ewmh_get_window_from_reply(window, r);
+  return ewmh_get_window_from_reply(window, r)
 }
 
 /**
@@ -651,7 +649,7 @@ ewmh_get_supporting_wm_check_from_reply :: proc(window: ^window_t, r: ^get_prope
  * @return Return 1 on success, 0 otherwise
  */
 ewmh_get_supporting_wm_check_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, window: ^window_t, e: ^^generic_error_t) -> u8 {
-  return ewmh_get_window_reply(ewmh, cookie, window, e);
+  return ewmh_get_window_reply(ewmh, cookie, window, e)
 }
 /**
  * @brief Get  the desktop  geometry from a  GetProperty _NET_WORKAREA
@@ -662,7 +660,7 @@ ewmh_get_supporting_wm_check_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get
  * @return Return 1 on success, 0 otherwise
  */
 ewmh_get_virtual_roots_from_reply :: proc(virtual_roots: ^ewmh_get_windows_reply_t, r: ^get_property_reply_t) -> u8 {
-  return ewmh_get_windows_from_reply(virtual_roots, r);
+  return ewmh_get_windows_from_reply(virtual_roots, r)
 }
 
 /**
@@ -679,15 +677,15 @@ ewmh_get_virtual_roots_from_reply :: proc(virtual_roots: ^ewmh_get_windows_reply
  * @return Return 1 on success, 0 otherwise
  */
 ewmh_get_virtual_roots_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, virtual_roots: ^ewmh_get_windows_reply_t, e: ^^generic_error_t) -> u8 {
-  return ewmh_get_windows_reply(ewmh, cookie, virtual_roots, e);
+  return ewmh_get_windows_reply(ewmh, cookie, virtual_roots, e)
 }
 
 ewmh_get_showing_desktop_from_reply :: proc(desktop: ^u32, r: ^get_property_reply_t) -> u8 {
-  return ewmh_get_cardinal_from_reply(desktop, r);
+  return ewmh_get_cardinal_from_reply(desktop, r)
 }
 
 ewmh_get_showing_desktop_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, desktop: ^u32, e: ^^generic_error_t) -> u8 {
-  return ewmh_get_cardinal_reply(ewmh, cookie, desktop, e);
+  return ewmh_get_cardinal_reply(ewmh, cookie, desktop, e)
 }
 
 ewmh_request_change_showing_desktop :: proc(ewmh: ^ewmh_connection_t, screen_nbr: int, enter: u32) -> void_cookie_t {
@@ -696,55 +694,54 @@ ewmh_request_change_showing_desktop :: proc(ewmh: ^ewmh_connection_t, screen_nbr
     return ewmh_send_client_message(ewmh.connection, NONE,
                                       screens[screen_nbr].root,
                                       ewmh._NET_SHOWING_DESKTOP,
-                                      size_of(type_of(enter)), &enter_data);
+                                      size_of(type_of(enter)), &enter_data)
 }
 
 ewmh_request_frame_extents :: proc (ewmh: ^ewmh_connection_t, screen_nbr: _c.int, client_window: window_t) -> void_cookie_t {
     screens := mem.slice_ptr(ewmh.screens, int(ewmh.nb_screens))
     return ewmh_send_client_message(ewmh.connection, client_window,
                                       screens[screen_nbr].root,
-                                      ewmh._NET_REQUEST_FRAME_EXTENTS, 0, nil);
+                                      ewmh._NET_REQUEST_FRAME_EXTENTS, 0, nil)
 }
 
 ewmh_get_wm_name_from_reply :: proc(ewmh: ^ewmh_connection_t, data: ^ewmh_get_utf8_strings_reply_t, r: ^get_property_reply_t) -> u8 {
-  return ewmh_get_utf8_strings_from_reply(ewmh, data, r);
+  return ewmh_get_utf8_strings_from_reply(ewmh, data, r)
 }
 
-ewmh_get_wm_name_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, data: ^ewmh_get_utf8_strings_reply_t, e: ^^generic_error_t) -> u8
-{
-  return ewmh_get_utf8_strings_reply(ewmh, cookie, data, e);
+ewmh_get_wm_name_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, data: ^ewmh_get_utf8_strings_reply_t, e: ^^generic_error_t) -> u8 {
+  return ewmh_get_utf8_strings_reply(ewmh, cookie, data, e)
 }
 
 ewmh_get_wm_visible_name_from_reply :: proc(ewmh: ^ewmh_connection_t, data: ^ewmh_get_utf8_strings_reply_t, r: ^get_property_reply_t) -> u8 {
-  return ewmh_get_utf8_strings_from_reply(ewmh, data, r);
+  return ewmh_get_utf8_strings_from_reply(ewmh, data, r)
 }
 
 ewmh_get_wm_visible_name_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, data: ^ewmh_get_utf8_strings_reply_t, e: ^^generic_error_t) -> u8 {
-  return ewmh_get_utf8_strings_reply(ewmh, cookie, data, e);
+  return ewmh_get_utf8_strings_reply(ewmh, cookie, data, e)
 }
 
 ewmh_get_wm_icon_name_from_reply :: proc(ewmh: ^ewmh_connection_t, data: ^ewmh_get_utf8_strings_reply_t, r: ^get_property_reply_t) -> u8 {
-  return ewmh_get_utf8_strings_from_reply(ewmh, data, r);
+  return ewmh_get_utf8_strings_from_reply(ewmh, data, r)
 }
 
 ewmh_get_wm_icon_name_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, data: ^ewmh_get_utf8_strings_reply_t, e: ^^generic_error_t) -> u8 {
-  return ewmh_get_utf8_strings_reply(ewmh, cookie, data, e);
+  return ewmh_get_utf8_strings_reply(ewmh, cookie, data, e)
 }
 
 ewmh_get_wm_visible_icon_name_from_reply :: proc(ewmh: ^ewmh_connection_t, data: ^ewmh_get_utf8_strings_reply_t, r: ^get_property_reply_t) -> u8 {
-  return ewmh_get_utf8_strings_from_reply(ewmh, data, r);
+  return ewmh_get_utf8_strings_from_reply(ewmh, data, r)
 }
 
 ewmh_get_wm_visible_icon_name_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, data: ^ewmh_get_utf8_strings_reply_t, e: ^^generic_error_t) -> u8 {
-  return ewmh_get_utf8_strings_reply(ewmh, cookie, data, e);
+  return ewmh_get_utf8_strings_reply(ewmh, cookie, data, e)
 }
 
 ewmh_get_wm_desktop_from_reply :: proc(desktop: ^u32, r: ^get_property_reply_t) -> u8 {
-  return ewmh_get_cardinal_from_reply(desktop, r);
+  return ewmh_get_cardinal_from_reply(desktop, r)
 }
 
 ewmh_get_wm_desktop_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, desktop: ^u32, e: ^^generic_error_t) -> u8 {
-  return ewmh_get_cardinal_reply(ewmh, cookie, desktop, e);
+  return ewmh_get_cardinal_reply(ewmh, cookie, desktop, e)
 }
 
 /**
@@ -765,49 +762,47 @@ ewmh_get_wm_desktop_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property
  * @param data_len Length of the data
  * @param data The data
  */
-ewmh_set_wm_icon_checked :: proc(ewmh: ^ewmh_connection_t, mode: u8, window: window_t, data_len: u32, data: ^u32) -> void_cookie_t
-{
-  return change_property_checked(ewmh.connection, mode, window, ewmh._NET_WM_ICON, u32(atom_enum_t.ATOM_CARDINAL), 32, data_len, data);
+ewmh_set_wm_icon_checked :: proc(ewmh: ^ewmh_connection_t, mode: u8, window: window_t, data_len: u32, data: ^u32) -> void_cookie_t {
+  return change_property_checked(ewmh.connection, mode, window, ewmh._NET_WM_ICON, u32(atom_enum_t.ATOM_CARDINAL), 32, data_len, data)
 }
 
 /**
  * @see ewmh_set_wm_icon_checked
  */
-ewmh_set_wm_icon :: proc(ewmh: ^ewmh_connection_t, mode: u8, window: window_t, data_len: u32, data: ^u32) -> void_cookie_t
-{
-  return change_property(ewmh.connection, mode, window, ewmh._NET_WM_ICON, u32(atom_enum_t.ATOM_CARDINAL), 32, data_len, data);
+ewmh_set_wm_icon :: proc(ewmh: ^ewmh_connection_t, mode: u8, window: window_t, data_len: u32, data: ^u32) -> void_cookie_t {
+  return change_property(ewmh.connection, mode, window, ewmh._NET_WM_ICON, u32(atom_enum_t.ATOM_CARDINAL), 32, data_len, data)
 }
 
 ewmh_get_wm_pid_from_reply :: proc(pid: ^u32, r: ^get_property_reply_t) -> u8 {
-  return ewmh_get_cardinal_from_reply(pid, r);
+  return ewmh_get_cardinal_from_reply(pid, r)
 }
 
 ewmh_get_wm_pid_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, pid: ^u32, e: ^^generic_error_t) -> u8 {
-  return ewmh_get_cardinal_reply(ewmh, cookie, pid, e);
+  return ewmh_get_cardinal_reply(ewmh, cookie, pid, e)
 }
 
 ewmh_get_wm_handled_icons_from_reply :: proc(handled_icons: ^u32, r: ^get_property_reply_t) -> u8 {
-  return ewmh_get_cardinal_from_reply(handled_icons, r);
+  return ewmh_get_cardinal_from_reply(handled_icons, r)
 }
 
 ewmh_get_wm_handled_icons_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, handled_icons: ^u32, e: ^^generic_error_t) -> u8 {
-  return ewmh_get_cardinal_reply(ewmh, cookie, handled_icons, e);
+  return ewmh_get_cardinal_reply(ewmh, cookie, handled_icons, e)
 }
 
 ewmh_get_wm_user_time_from_reply :: proc(xtime: ^u32, r: ^get_property_reply_t) -> u8 {
-  return ewmh_get_cardinal_from_reply(xtime, r);
+  return ewmh_get_cardinal_from_reply(xtime, r)
 }
 
 ewmh_get_wm_user_time_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, xtime: ^u32, e: ^^generic_error_t) -> u8 {
-  return ewmh_get_cardinal_reply(ewmh, cookie, xtime, e);
+  return ewmh_get_cardinal_reply(ewmh, cookie, xtime, e)
 }
 
 ewmh_get_wm_user_time_window_from_reply :: proc(xtime: ^u32, r: ^get_property_reply_t) -> u8 {
-  return ewmh_get_cardinal_from_reply(xtime, r);
+  return ewmh_get_cardinal_from_reply(xtime, r)
 }
 
 ewmh_get_wm_user_time_window_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, xtime: ^u32, e: ^^generic_error_t) -> u8 {
-  return ewmh_get_cardinal_reply(ewmh, cookie, xtime, e);
+  return ewmh_get_cardinal_reply(ewmh, cookie, xtime, e)
 }
 
 foreign import libxcb_ewmh "system:libxcb-ewmh.so"
@@ -822,7 +817,7 @@ foreign libxcb_ewmh {
  * @param ewmh The information relative to EWMH
  * @return The cookies corresponding to EWMH atoms
  */
-ewmh_init_atoms :: proc(c: ^connection_t, ewmh: ^ewmh_connection_t) -> ^intern_atom_cookie_t ---;
+ewmh_init_atoms :: proc(c: ^connection_t, ewmh: ^ewmh_connection_t) -> ^intern_atom_cookie_t ---
 /**
  * @brief Process  the replies  to the screen  initialisation requests
  * previously sent
@@ -832,7 +827,7 @@ ewmh_init_atoms :: proc(c: ^connection_t, ewmh: ^ewmh_connection_t) -> ^intern_a
  * @param e Error if any
  * @return Return 1 on success, 0 otherwise
  */
-ewmh_init_atoms_replies :: proc(ewmh: ^ewmh_connection_t, ewmh_cookies: ^intern_atom_cookie_t, e: ^^generic_error_t) -> u8 ---;
+ewmh_init_atoms_replies :: proc(ewmh: ^ewmh_connection_t, ewmh_cookies: ^intern_atom_cookie_t, e: ^^generic_error_t) -> u8 ---
 /**
  * @brief Send a SendEvent request containing a ClientMessage event
  *
@@ -847,11 +842,11 @@ ewmh_init_atoms_replies :: proc(ewmh: ^ewmh_connection_t, ewmh_cookies: ^intern_
  * @param data The data to be sent
  * @return The cookie associated with the SendEvent request
  */
-ewmh_send_client_message :: proc(c: ^connection_t, window: window_t, dest: window_t, atom: atom_t, data_len: u32, data: ^u32) -> void_cookie_t ---;
-ewmh_get_window_from_reply :: proc(window: ^window_t, r: ^get_property_reply_t) -> u8 ---;
-ewmh_get_window_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, window: ^window_t, e: ^^generic_error_t) -> u8 ---;
-ewmh_get_cardinal_from_reply :: proc(cardinal: ^u32, r: ^get_property_reply_t) -> u8 ---;
-ewmh_get_cardinal_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, cardinal: ^u32, e: ^^generic_error_t) -> u8 ---;
+ewmh_send_client_message :: proc(c: ^connection_t, window: window_t, dest: window_t, atom: atom_t, data_len: u32, data: ^u32) -> void_cookie_t ---
+ewmh_get_window_from_reply :: proc(window: ^window_t, r: ^get_property_reply_t) -> u8 ---
+ewmh_get_window_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, window: ^window_t, e: ^^generic_error_t) -> u8 ---
+ewmh_get_cardinal_from_reply :: proc(cardinal: ^u32, r: ^get_property_reply_t) -> u8 ---
+ewmh_get_cardinal_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, cardinal: ^u32, e: ^^generic_error_t) -> u8 ---
 /**
  * @brief Get  a list  of atoms from  a given GetProperty  reply whose
  * type is ATOM
@@ -865,7 +860,7 @@ ewmh_get_cardinal_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_c
  * @param r The reply to get the atoms list from
  * @return Return 1 on success, 0 otherwise
  */
-ewmh_get_atoms_from_reply :: proc(atoms: ^ewmh_get_atoms_reply_t, r: ^get_property_reply_t) -> u8 ---;
+ewmh_get_atoms_from_reply :: proc(atoms: ^ewmh_get_atoms_reply_t, r: ^get_property_reply_t) -> u8 ---
 /**
  * @brief Get a list of atoms  from the reply of a GetProperty request
  * whose type is ATOM
@@ -881,7 +876,7 @@ ewmh_get_atoms_from_reply :: proc(atoms: ^ewmh_get_atoms_reply_t, r: ^get_proper
  * @param e The error if any
  * @return Return 1 on success, 0 otherwise
  */
-ewmh_get_atoms_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, atoms: ^ewmh_get_atoms_reply_t, e: ^^generic_error_t) -> u8 ---;
+ewmh_get_atoms_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, atoms: ^ewmh_get_atoms_reply_t, e: ^^generic_error_t) -> u8 ---
 /**
  * @brief Wipe the Atoms list reply
  *
@@ -890,7 +885,7 @@ ewmh_get_atoms_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cook
  *
  * @param data The X reply to be freed
  */
-ewmh_get_atoms_reply_wipe :: proc(data: ^ewmh_get_atoms_reply_t) ---;
+ewmh_get_atoms_reply_wipe :: proc(data: ^ewmh_get_atoms_reply_t) ---
 /**
  * @brief Get  a list  of atoms from  a given GetProperty  reply whose
  * type is WINDOW
@@ -904,9 +899,9 @@ ewmh_get_atoms_reply_wipe :: proc(data: ^ewmh_get_atoms_reply_t) ---;
  * @param r The reply to get the atoms list from
  * @return Return 1 on success, 0 otherwise
  */
-ewmh_get_windows_from_reply :: proc(atoms: ^ewmh_get_windows_reply_t, r: ^get_property_reply_t) -> u8 ---;
-ewmh_get_utf8_strings_from_reply :: proc(ewmh: ^ewmh_connection_t, data: ^ewmh_get_utf8_strings_reply_t, r: ^get_property_reply_t) -> u8 ---;
-ewmh_get_utf8_strings_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, data: ^ewmh_get_utf8_strings_reply_t, e: ^^generic_error_t) -> u8 ---;
+ewmh_get_windows_from_reply :: proc(atoms: ^ewmh_get_windows_reply_t, r: ^get_property_reply_t) -> u8 ---
+ewmh_get_utf8_strings_from_reply :: proc(ewmh: ^ewmh_connection_t, data: ^ewmh_get_utf8_strings_reply_t, r: ^get_property_reply_t) -> u8 ---
+ewmh_get_utf8_strings_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, data: ^ewmh_get_utf8_strings_reply_t, e: ^^generic_error_t) -> u8 ---
 /**
  * @brief Get a list of atoms  from the reply of a GetProperty request
  * whose type is WINDOW
@@ -922,7 +917,7 @@ ewmh_get_utf8_strings_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_proper
  * @param e The error if any
  * @return Return 1 on success, 0 otherwise
  */
-ewmh_get_windows_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, atoms: ^ewmh_get_windows_reply_t, e: ^^generic_error_t) -> u8 ---;
+ewmh_get_windows_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, atoms: ^ewmh_get_windows_reply_t, e: ^^generic_error_t) -> u8 ---
 /**
  * @brief Wipe the windows list reply
  *
@@ -931,7 +926,7 @@ ewmh_get_windows_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_co
  *
  * @param data The X reply to be freed
  */
-ewmh_get_windows_reply_wipe :: proc(data: ^ewmh_get_windows_reply_t) ---;
+ewmh_get_windows_reply_wipe :: proc(data: ^ewmh_get_windows_reply_t) ---
 /**
  * @brief Wipe the UTF-8 strings list reply
  *
@@ -940,7 +935,7 @@ ewmh_get_windows_reply_wipe :: proc(data: ^ewmh_get_windows_reply_t) ---;
  *
  * @param data The X reply to be freed
  */
-ewmh_get_utf8_strings_reply_wipe :: proc(data: ^ewmh_get_utf8_strings_reply_t) ---;
+ewmh_get_utf8_strings_reply_wipe :: proc(data: ^ewmh_get_utf8_strings_reply_t) ---
 /**
  * @brief Send a ChangeProperty request for _NET_SUPPORTED
  *
@@ -952,11 +947,11 @@ ewmh_get_utf8_strings_reply_wipe :: proc(data: ^ewmh_get_utf8_strings_reply_t) -
  * @param list The Atoms supported by the WM
  * @return Cookie associated with the ChangeProperty _NET_SUPPORTED request
  */
-ewmh_set_supported :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, list_len: u32, list: ^atom_t) -> void_cookie_t ---;
+ewmh_set_supported :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, list_len: u32, list: ^atom_t) -> void_cookie_t ---
 /**
  * @see ewmh_set_supported
  */
-ewmh_set_supported_checked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, list_len: u32, list: ^atom_t) -> void_cookie_t ---;
+ewmh_set_supported_checked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, list_len: u32, list: ^atom_t) -> void_cookie_t ---
 /**
  * @brief Send  GetProperty request to get  _NET_SUPPORTED root window
  *        property
@@ -977,11 +972,11 @@ ewmh_set_supported_checked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int,
  * @param screen_nbr The screen number
  * @return The _NET_SUPPORTED cookie of the GetProperty request
  */
-ewmh_get_supported_unchecked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---;
+ewmh_get_supported_unchecked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---
 /**
  * @see ewmh_get_supported_unchecked
  */
-ewmh_get_supported :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---;
+ewmh_get_supported :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---
 /**
  * @brief Send a ChangeProperty request for _NET_SUPPORTED
  *
@@ -993,11 +988,11 @@ ewmh_get_supported :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_
  * @param list The Atoms supported by the WM
  * @return Cookie associated with the ChangeProperty _NET_SUPPORTED request
  */
-ewmh_set_client_list :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, list_len: u32, list: ^window_t) -> void_cookie_t ---;
+ewmh_set_client_list :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, list_len: u32, list: ^window_t) -> void_cookie_t ---
 /**
  * @see ewmh_set_client_list
  */
-ewmh_set_client_list_checked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, list_len: u32, list: ^window_t) -> void_cookie_t ---;
+ewmh_set_client_list_checked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, list_len: u32, list: ^window_t) -> void_cookie_t ---
 /**
  * @brief Send GetProperty request to get _NET_CLIENT_LIST root window
  *        property
@@ -1010,7 +1005,7 @@ ewmh_set_client_list_checked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.in
  * @param ewmh The information relative to EWMH.
  * @return The _NET_CLIENT_LIST cookie of the GetProperty request.
  */
-ewmh_get_client_list_unchecked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---;
+ewmh_get_client_list_unchecked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---
 /**
  * @brief Send GetProperty request to get _NET_CLIENT_LIST root window
  *        property
@@ -1019,7 +1014,7 @@ ewmh_get_client_list_unchecked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.
  * @param ewmh The information relative to EWMH.
  * @return The _NET_CLIENT_LIST cookie of the GetProperty request.
  */
-ewmh_get_client_list :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---;
+ewmh_get_client_list :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---
 /**
  * @brief Send a ChangeProperty request for _NET_CLIENT_LIST_STACKING
  *
@@ -1031,11 +1026,11 @@ ewmh_get_client_list :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> ge
  * @param list The Atoms supported by the WM
  * @return Cookie associated with the ChangeProperty _NET_CLIENT_LIST_STACKING request
  */
-ewmh_set_client_list_stacking :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, list_len: u32, list: ^window_t) -> void_cookie_t ---;
+ewmh_set_client_list_stacking :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, list_len: u32, list: ^window_t) -> void_cookie_t ---
 /**
  * @see ewmh_set_client_list_stacking
  */
-ewmh_set_client_list_stacking_checked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, list_len: u32, list: ^window_t) -> void_cookie_t ---;
+ewmh_set_client_list_stacking_checked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, list_len: u32, list: ^window_t) -> void_cookie_t ---
 /**
  * @brief  Send GetProperty  request to  get _NET_CLIENT_LIST_STACKING
  *        root window property
@@ -1048,11 +1043,11 @@ ewmh_set_client_list_stacking_checked :: proc(ewmh: ^ewmh_connection_t, screen_n
  * @param ewmh The information relative to EWMH
  * @return The _NET_CLIENT_LIST_STACKING cookie of the GetProperty request
  */
-ewmh_get_client_list_stacking_unchecked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---;
+ewmh_get_client_list_stacking_unchecked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---
 /**
  * @see ewmh_get_client_list_unchecked
  */
-ewmh_get_client_list_stacking :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---;
+ewmh_get_client_list_stacking :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---
 /**
  * @brief Send a ChangeProperty request for _NET_NUMBER_OF_DESKTOPS
  *
@@ -1063,11 +1058,11 @@ ewmh_get_client_list_stacking :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.i
  * @param number_of_desktops The number of desktops
  * @return Cookie associated with the ChangeProperty _NET_NUMBER_OF_DESKTOPS request
  */
-ewmh_set_number_of_desktops :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, number_of_desktops: u32) -> void_cookie_t ---;
+ewmh_set_number_of_desktops :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, number_of_desktops: u32) -> void_cookie_t ---
 /**
  * @see ewmh_set_number_of_desktops
  */
-ewmh_set_number_of_desktops_checked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, number_of_desktops: u32) -> void_cookie_t ---;
+ewmh_set_number_of_desktops_checked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, number_of_desktops: u32) -> void_cookie_t ---
 /**
  * @brief Send GetProperty request to get _NET_NUMBER_OF_DESKTOPS root
  *        window property
@@ -1076,12 +1071,12 @@ ewmh_set_number_of_desktops_checked :: proc(ewmh: ^ewmh_connection_t, screen_nbr
  * @param screen_nbr The screen number
  * @return The _NET_NUMBER_OF_DESKTOPS cookie of the GetProperty request.
  */
-ewmh_get_number_of_desktops_unchecked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---;
+ewmh_get_number_of_desktops_unchecked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---
 
 /**
  * @see ewmh_get_number_of_desktops_unchecked
  */
-ewmh_get_number_of_desktops :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---;
+ewmh_get_number_of_desktops :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---
 
 /**
  * @brief Send a ChangeProperty request for _NET_DESKTOP_GEOMETRY
@@ -1094,11 +1089,11 @@ ewmh_get_number_of_desktops :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int
  * @param new_height The new desktop height
  * @return Cookie associated with the ChangeProperty _NET_DESKTOP_GEOMETRY request
  */
-ewmh_set_desktop_geometry :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, new_width: u32, new_height: u32) -> void_cookie_t ---;
+ewmh_set_desktop_geometry :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, new_width: u32, new_height: u32) -> void_cookie_t ---
 /**
  * @see ewmh_set_desktop_geometry
  */
-ewmh_set_desktop_geometry_checked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, new_width: u32, new_height: u32) -> void_cookie_t ---;
+ewmh_set_desktop_geometry_checked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, new_width: u32, new_height: u32) -> void_cookie_t ---
 /**
  * @brief Send  GetProperty request to  get _NET_DESKTOP_GEOMETRY root
  *        window property
@@ -1107,11 +1102,11 @@ ewmh_set_desktop_geometry_checked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: 
  * @param screen_nbr The screen number
  * @return The _NET_DESKTOP_GEOMETRY cookie of the GetProperty request
  */
-ewmh_get_desktop_geometry_unchecked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---;
+ewmh_get_desktop_geometry_unchecked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---
 /**
  * @see ewmh_get_desktop_geometry_unchecked
  */
-ewmh_get_desktop_geometry :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---;
+ewmh_get_desktop_geometry :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---
 /**
  * @brief Send ClientMessage requesting to change the _NET_DESKTOP_GEOMETRY
  *
@@ -1121,7 +1116,7 @@ ewmh_get_desktop_geometry :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) 
  * @param new_height The new desktop height
  * @return The SendEvent cookie
  */
-ewmh_request_change_desktop_geometry :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, new_width: u32, new_height: u32) -> void_cookie_t ---;
+ewmh_request_change_desktop_geometry :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, new_width: u32, new_height: u32) -> void_cookie_t ---
 /**
  * @brief    Get   the   desktop    geometry   from    a   GetProperty
  * _NET_DESKTOP_GEOMETRY reply
@@ -1131,7 +1126,7 @@ ewmh_request_change_desktop_geometry :: proc(ewmh: ^ewmh_connection_t, screen_nb
  * @param r GetProperty _NET_DESKTOP_GEOMETRY reply
  * @return Return 1 on success, 0 otherwise
  */
-ewmh_get_desktop_geometry_from_reply :: proc(width: ^u32, height: ^u32, r: ^get_property_reply_t) -> u8 ---;
+ewmh_get_desktop_geometry_from_reply :: proc(width: ^u32, height: ^u32, r: ^get_property_reply_t) -> u8 ---
 /**
  * @brief Get reply from the GetProperty _NET_DESKTOP_GEOMETRY cookie
  *
@@ -1146,7 +1141,7 @@ ewmh_get_desktop_geometry_from_reply :: proc(width: ^u32, height: ^u32, r: ^get_
  * @param The generic_error_t supplied
  * @return Return 1 on success, 0 otherwise
  */
-ewmh_get_desktop_geometry_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, width: ^u32, height: ^u32, e: ^^generic_error_t) -> u8 ---;
+ewmh_get_desktop_geometry_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, width: ^u32, height: ^u32, e: ^^generic_error_t) -> u8 ---
 /**
  * @brief Send a ChangeProperty request for _NET_DESKTOP_VIEWPORT
  *
@@ -1158,11 +1153,11 @@ ewmh_get_desktop_geometry_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_pr
  * @param list The desktop viewports
  * @return Cookie associated with the ChangeProperty _NET_DESKTOP_VIEWPORT request
  */
-ewmh_set_desktop_viewport :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, list_len: u32, list: ^ewmh_coordinates_t) -> void_cookie_t ---;
+ewmh_set_desktop_viewport :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, list_len: u32, list: ^ewmh_coordinates_t) -> void_cookie_t ---
 /**
  * @see ewmh_set_desktop_viewport
  */
-ewmh_set_desktop_viewport_checked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, list_len: u32, list: ^ewmh_coordinates_t) -> void_cookie_t ---;
+ewmh_set_desktop_viewport_checked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, list_len: u32, list: ^ewmh_coordinates_t) -> void_cookie_t ---
 /**
  * @brief Send  GetProperty request to  get _NET_DESKTOP_VIEWPORT root
  *        window property
@@ -1171,11 +1166,11 @@ ewmh_set_desktop_viewport_checked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: 
  * @param screen_nbr The screen number
  * @return The _NET_DESKTOP_VIEWPORT cookie of the GetProperty request
  */
-ewmh_get_desktop_viewport_unchecked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---;
+ewmh_get_desktop_viewport_unchecked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---
 /**
  * @see ewmh_get_desktop_viewport_unchecked
  */
-ewmh_get_desktop_viewport :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---;
+ewmh_get_desktop_viewport :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---
 /**
  * @brief Send ClientMessage requesting to change the _NET_DESKTOP_VIEWPORT
  *
@@ -1185,7 +1180,7 @@ ewmh_get_desktop_viewport :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) 
  * @param new_y The new y coordinate
  * @return The SendEvent cookie
  */
-ewmh_request_change_desktop_viewport :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, x: u32, y: u32) -> void_cookie_t ---;
+ewmh_request_change_desktop_viewport :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, x: u32, y: u32) -> void_cookie_t ---
 /**
  * @brief    Get   the   desktop    geometry   from    a   GetProperty
  * _NET_DESKTOP_VIEWPORT reply
@@ -1194,7 +1189,7 @@ ewmh_request_change_desktop_viewport :: proc(ewmh: ^ewmh_connection_t, screen_nb
  * @param r GetProperty _NET_DESKTOP_VIEWPORT reply
  * @return Return 1 on success, 0 otherwise
  */
-ewmh_get_desktop_viewport_from_reply :: proc(vp: ^ewmh_get_desktop_viewport_reply_t, r: ^get_property_reply_t) -> u8 ---;
+ewmh_get_desktop_viewport_from_reply :: proc(vp: ^ewmh_get_desktop_viewport_reply_t, r: ^get_property_reply_t) -> u8 ---
 /**
  * @brief Get reply from the GetProperty _NET_DESKTOP_VIEWPORT cookie
  *
@@ -1208,7 +1203,7 @@ ewmh_get_desktop_viewport_from_reply :: proc(vp: ^ewmh_get_desktop_viewport_repl
  * @param The generic_error_t supplied
  * @return Return 1 on success, 0 otherwise
  */
-ewmh_get_desktop_viewport_reply :: proc (ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, vp: ^ewmh_get_desktop_viewport_reply_t, e: ^^generic_error_t) -> u8 ---;
+ewmh_get_desktop_viewport_reply :: proc (ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, vp: ^ewmh_get_desktop_viewport_reply_t, e: ^^generic_error_t) -> u8 ---
 /**
  * @brief Wipe the desktop viewports list reply
  *
@@ -1218,7 +1213,7 @@ ewmh_get_desktop_viewport_reply :: proc (ewmh: ^ewmh_connection_t, cookie: get_p
  *
  * @param r The X reply to be freed
  */
-ewmh_get_desktop_viewport_reply_wipe :: proc (r: ^ewmh_get_desktop_viewport_reply_t) ---;
+ewmh_get_desktop_viewport_reply_wipe :: proc (r: ^ewmh_get_desktop_viewport_reply_t) ---
 /**
  * @brief Send a ChangeProperty request for _NET_CURRENT_DESKTOP
  *
@@ -1229,11 +1224,11 @@ ewmh_get_desktop_viewport_reply_wipe :: proc (r: ^ewmh_get_desktop_viewport_repl
  * @param new_current_desktop The new current desktop
  * @return Cookie associated with the ChangeProperty _NET_CURRENT_DESKTOP request
  */
-ewmh_set_current_desktop :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, new_current_desktop: u32) -> void_cookie_t ---;
+ewmh_set_current_desktop :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, new_current_desktop: u32) -> void_cookie_t ---
 /**
  * @see ewmh_set_current_desktop
  */
-ewmh_set_current_desktop_checked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, new_current_desktop: u32) -> void_cookie_t ---;
+ewmh_set_current_desktop_checked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, new_current_desktop: u32) -> void_cookie_t ---
 /**
  * @brief  Send GetProperty request  to get  _NET_CURRENT_DESKTOP root
  *        window property
@@ -1242,11 +1237,11 @@ ewmh_set_current_desktop_checked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _
  * @param screen_nbr The screen number
  * @return The _NET_CURRENT_DESKTOP cookie of the GetProperty request
  */
-ewmh_get_current_desktop_unchecked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---;
+ewmh_get_current_desktop_unchecked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---
 /**
  * @see ewmh_get_current_desktop_unchecked
  */
-ewmh_get_current_desktop :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---;
+ewmh_get_current_desktop :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---
 /**
  * @brief Send ClientMessage requesting to change the _NET_CURRENT_DESKTOP
  *
@@ -1256,7 +1251,7 @@ ewmh_get_current_desktop :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -
  * @param timestamp The request timestamp
  * @return The SendEvent cookie
  */
-ewmh_request_change_current_desktop :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, new_desktop: u32, timestamp: timestamp_t) -> void_cookie_t ---;
+ewmh_request_change_current_desktop :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, new_desktop: u32, timestamp: timestamp_t) -> void_cookie_t ---
 /**
  * @brief Send a ChangeProperty request for _NET_DESKTOP_NAMES
  *
@@ -1268,11 +1263,11 @@ ewmh_request_change_current_desktop :: proc(ewmh: ^ewmh_connection_t, screen_nbr
  * @param strings The desktop names
  * @return Cookie associated with the ChangeProperty _NET_DESKTOP_NAMES request
  */
-ewmh_set_desktop_names :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, strings_len: u32, strings: cstring) -> void_cookie_t ---;
+ewmh_set_desktop_names :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, strings_len: u32, strings: cstring) -> void_cookie_t ---
 /**
  * @see ewmh_set_desktop_names
  */
-ewmh_set_desktop_names_checked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, strings_len: u32, strings: cstring) -> void_cookie_t ---;
+ewmh_set_desktop_names_checked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, strings_len: u32, strings: cstring) -> void_cookie_t ---
 /**
  * @brief  Send  GetProperty request  to  get _NET_DESKTOP_NAMES  root
  *        window property
@@ -1280,11 +1275,11 @@ ewmh_set_desktop_names_checked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.
  * @param ewmh The information relative to EWMH
  * @return The _NET_DESKTOP_NAMES cookie of the GetProperty request
  */
-ewmh_get_desktop_names_unchecked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---;
+ewmh_get_desktop_names_unchecked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---
 /**
  * @see ewmh_get_desktop_names_unchecked
  */
-ewmh_get_desktop_names :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---;
+ewmh_get_desktop_names :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---
 
 /**
  * @brief Send a ChangeProperty request for _NET_ACTIVE_WINDOW
@@ -1296,12 +1291,12 @@ ewmh_get_desktop_names :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> 
  * @param new_active_window The window to make active
  * @return Cookie associated with the ChangeProperty _NET_ACTIVE_WINDOW request
  */
-ewmh_set_active_window :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, new_active_window: window_t) -> void_cookie_t ---;
+ewmh_set_active_window :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, new_active_window: window_t) -> void_cookie_t ---
 
 /**
  * @see ewmh_set_active_window
  */
-ewmh_set_active_window_checked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, new_active_window: window_t) -> void_cookie_t ---;
+ewmh_set_active_window_checked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, new_active_window: window_t) -> void_cookie_t ---
 
 /**
  * @brief Send ClientMessage requesting to change the _NET_ACTIVE_WINDOW
@@ -1324,7 +1319,7 @@ ewmh_set_active_window_checked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.
  * @param timestamp The client's last user activity timestamp
  * @param current_active_window The currently active window or None
  */
-ewmh_request_change_active_window :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, window_to_activate: window_t, source_indication: ewmh_client_source_type_t, timestamp: timestamp_t, current_active_window: window_t) -> void_cookie_t ---;
+ewmh_request_change_active_window :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, window_to_activate: window_t, source_indication: ewmh_client_source_type_t, timestamp: timestamp_t, current_active_window: window_t) -> void_cookie_t ---
 
 /**
  * @brief  Send  GetProperty request  to  get _NET_ACTIVE_WINDOW  root
@@ -1342,7 +1337,7 @@ ewmh_request_change_active_window :: proc(ewmh: ^ewmh_connection_t, screen_nbr: 
  * @param screen_nbr The screen number
  * @return The _NET_ACTIVE_WINDOW cookie of the GetProperty request
  */
-ewmh_get_active_window_unchecked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---;
+ewmh_get_active_window_unchecked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---
 
 /**
  * @brief  Send  GetProperty request  to  get _NET_ACTIVE_WINDOW  root
@@ -1353,7 +1348,7 @@ ewmh_get_active_window_unchecked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _
  * @param screen_nbr The screen number
  * @return The _NET_ACTIVE_WINDOW cookie of the GetProperty request
  */
-ewmh_get_active_window :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---;
+ewmh_get_active_window :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---
 
 
 /**
@@ -1367,12 +1362,12 @@ ewmh_get_active_window :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> 
  * @param list The desktops workareas
  * @return Cookie associated with the ChangeProperty _NET_WORKAREA request
  */
-ewmh_set_workarea :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, list_len: _c.uint32_t, list: ^ewmh_geometry_t) -> void_cookie_t ---;
+ewmh_set_workarea :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, list_len: _c.uint32_t, list: ^ewmh_geometry_t) -> void_cookie_t ---
 
 /**
  * @see ewmh_set_workarea
  */
-ewmh_set_workarea_checked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, list_len: _c.uint32_t, list: ^ewmh_geometry_t) -> void_cookie_t ---;
+ewmh_set_workarea_checked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, list_len: _c.uint32_t, list: ^ewmh_geometry_t) -> void_cookie_t ---
 
 /**
  * @brief  Send  GetProperty request  to  get _NET_WORKAREA  root
@@ -1382,12 +1377,12 @@ ewmh_set_workarea_checked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, 
  * @param screen_nbr The screen number
  * @return The _NET_WORKAREA cookie of the GetProperty request
  */
-ewmh_get_workarea_unchecked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---;
+ewmh_get_workarea_unchecked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---
 
 /**
  * @see ewmh_get_virtual_roots_unchecked
  */
-ewmh_get_workarea :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---;
+ewmh_get_workarea :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---
 
 /**
  * @brief Get  the desktop  geometry from a  GetProperty _NET_WORKAREA
@@ -1397,7 +1392,7 @@ ewmh_get_workarea :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_p
  * @param r GetProperty _NET_WORKAREA reply
  * @return Return 1 on success, 0 otherwise
  */
-ewmh_get_workarea_from_reply :: proc(wa: ^ewmh_get_workarea_reply_t, r: ^get_property_reply_t) -> u8 ---;
+ewmh_get_workarea_from_reply :: proc(wa: ^ewmh_get_workarea_reply_t, r: ^get_property_reply_t) -> u8 ---
 
 /**
  * @brief Get reply from the GetProperty _NET_WORKAREA cookie
@@ -1412,7 +1407,7 @@ ewmh_get_workarea_from_reply :: proc(wa: ^ewmh_get_workarea_reply_t, r: ^get_pro
  * @param The generic_error_t supplied
  * @return Return 1 on success, 0 otherwise
  */
-ewmh_get_workarea_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, wa: ewmh_get_workarea_reply_t, e: ^^generic_error_t) -> u8 ---;
+ewmh_get_workarea_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, wa: ewmh_get_workarea_reply_t, e: ^^generic_error_t) -> u8 ---
 
 /**
  * @brief Wipe the workarea list reply
@@ -1423,7 +1418,7 @@ ewmh_get_workarea_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_c
  *
  * @param r The X reply to be freed
  */
-ewmh_get_workarea_reply_wipe :: proc(r: ^ewmh_get_workarea_reply_t) ---;
+ewmh_get_workarea_reply_wipe :: proc(r: ^ewmh_get_workarea_reply_t) ---
 
 /**
  * @brief Send a ChangeProperty request for _NET_SUPPORTING_WM_CHECK
@@ -1435,12 +1430,12 @@ ewmh_get_workarea_reply_wipe :: proc(r: ^ewmh_get_workarea_reply_t) ---;
  * @param child_window The child window created by the WM
  * @return Cookie associated with the ChangeProperty _NET_SUPPORTING_WM_CHECK request
  */
-ewmh_set_supporting_wm_check :: proc(ewmh: ^ewmh_connection_t, parent_window: window_t, child_window: window_t) -> void_cookie_t ---;
+ewmh_set_supporting_wm_check :: proc(ewmh: ^ewmh_connection_t, parent_window: window_t, child_window: window_t) -> void_cookie_t ---
 
 /**
  * @see ewmh_set_supporting_wm_check
  */
-ewmh_set_supporting_wm_check_checked :: proc(ewmh: ^ewmh_connection_t, parent_window: window_t, child_window: window_t) -> void_cookie_t ---;
+ewmh_set_supporting_wm_check_checked :: proc(ewmh: ^ewmh_connection_t, parent_window: window_t, child_window: window_t) -> void_cookie_t ---
 
 /**
  * @brief  Send GetProperty  request  to get  _NET_SUPPORTING_WM_CHECK
@@ -1450,12 +1445,12 @@ ewmh_set_supporting_wm_check_checked :: proc(ewmh: ^ewmh_connection_t, parent_wi
  * @param screen_nbr The screen number
  * @return The _NET_SUPPORTING_WM_CHECK cookie of the GetProperty request
  */
-ewmh_get_supporting_wm_check_unchecked :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---;
+ewmh_get_supporting_wm_check_unchecked :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---
 
 /**
  * @see ewmh_get_supporting_wm_check_unchecked
  */
-ewmh_get_supporting_wm_check :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---;
+ewmh_get_supporting_wm_check :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---
 
 
 /**
@@ -1469,12 +1464,12 @@ ewmh_get_supporting_wm_check :: proc(ewmh: ^ewmh_connection_t, window: window_t)
  * @param list The virtual root windows
  * @return Cookie associated with the ChangeProperty _NET_VIRTUAL_ROOTS request
  */
-ewmh_set_virtual_roots :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, list_len: u32, list: ^window_t) -> void_cookie_t ---;
+ewmh_set_virtual_roots :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, list_len: u32, list: ^window_t) -> void_cookie_t ---
 
 /**
  * @see ewmh_set_virtual_roots
  */
-ewmh_set_virtual_roots_checked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, list_len: u32, list: ^window_t) -> void_cookie_t ---;
+ewmh_set_virtual_roots_checked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, list_len: u32, list: ^window_t) -> void_cookie_t ---
 
 /**
  * @brief  Send  GetProperty  request  to  get  _NET_VIRTUAL_ROOTS  root
@@ -1486,7 +1481,7 @@ ewmh_set_virtual_roots_checked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.
  * @param list The virtual root windows
  * @return Cookie associated with the GetProperty _NET_VIRTUAL_ROOTS request
  */
-ewmh_get_virtual_roots :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, list_len: u32, list: ^window_t) -> get_property_cookie_t ---;
+ewmh_get_virtual_roots :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, list_len: u32, list: ^window_t) -> get_property_cookie_t ---
 
 /**
  * @brief  Send  GetProperty request  to  get _NET_VIRTUAL_ROOTS  root
@@ -1496,11 +1491,11 @@ ewmh_get_virtual_roots :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, lis
  * @param screen_nbr The screen number
  * @return The _NET_VIRTUAL_ROOTS cookie of the GetProperty request
  */
-ewmh_get_virtual_roots_unchecked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---;
+ewmh_get_virtual_roots_unchecked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---
 
-ewmh_set_desktop_layout :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, orientation: ewmh_desktop_layout_orientation_t, columns: u32, rows: u32, starting_corner: ewmh_desktop_layout_starting_corner_t) -> void_cookie_t ---;
+ewmh_set_desktop_layout :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, orientation: ewmh_desktop_layout_orientation_t, columns: u32, rows: u32, starting_corner: ewmh_desktop_layout_starting_corner_t) -> void_cookie_t ---
 
-ewmh_set_desktop_layout_checked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, orientation: ewmh_desktop_layout_orientation_t, columns: u32, rows: u32, starting_corner: ewmh_desktop_layout_starting_corner_t) -> void_cookie_t ---;
+ewmh_set_desktop_layout_checked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, orientation: ewmh_desktop_layout_orientation_t, columns: u32, rows: u32, starting_corner: ewmh_desktop_layout_starting_corner_t) -> void_cookie_t ---
 
 /**
  * @brief  Send GetProperty  request to  get  _NET_DESKTOP_LAYOUT root
@@ -1510,244 +1505,244 @@ ewmh_set_desktop_layout_checked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c
  * @param screen_nbr The screen number
  * @return The _NET_DESKTOP_LAYOUT cookie of the GetProperty request
  */
-ewmh_get_desktop_layout_unchecked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---;
+ewmh_get_desktop_layout_unchecked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---
 
 /**
  * @see ewmh_get_desktop_layout_unchecked
  */
-ewmh_get_desktop_layout :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---;
+ewmh_get_desktop_layout :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---
 
-ewmh_get_desktop_layout_from_reply :: proc(desktop_layouts: ^ewmh_get_desktop_layout_reply_t, r: ^get_property_reply_t) -> u8 ---;
+ewmh_get_desktop_layout_from_reply :: proc(desktop_layouts: ^ewmh_get_desktop_layout_reply_t, r: ^get_property_reply_t) -> u8 ---
 
-ewmh_get_desktop_layout_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, desktop_layouts: ^ewmh_get_desktop_layout_reply_t, e: ^^generic_error_t) -> u8 ---;
+ewmh_get_desktop_layout_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, desktop_layouts: ^ewmh_get_desktop_layout_reply_t, e: ^^generic_error_t) -> u8 ---
 
-ewmh_set_showing_desktop :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, desktop: u32) -> void_cookie_t ---;
+ewmh_set_showing_desktop :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, desktop: u32) -> void_cookie_t ---
 
-ewmh_set_showing_desktop_checked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, desktop: u32) -> void_cookie_t ---;
+ewmh_set_showing_desktop_checked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, desktop: u32) -> void_cookie_t ---
 
-ewmh_get_showing_desktop_unchecked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---;
+ewmh_get_showing_desktop_unchecked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---
 
-ewmh_get_showing_desktop :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---;
+ewmh_get_showing_desktop :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_property_cookie_t ---
 
 
-ewmh_request_close_window :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, window_to_close: window_t, timestamp: timestamp_t, source_indication: ewmh_client_source_type_t) -> void_cookie_t ---;
+ewmh_request_close_window :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, window_to_close: window_t, timestamp: timestamp_t, source_indication: ewmh_client_source_type_t) -> void_cookie_t ---
 
-ewmh_request_moveresize_window :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, moveresize_window: window_t, gravity: gravity_t, source_indication: ewmh_client_source_type_t, flags: ewmh_moveresize_window_opt_flags_t, x, y, width, height: u32) -> void_cookie_t ---;
+ewmh_request_moveresize_window :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, moveresize_window: window_t, gravity: gravity_t, source_indication: ewmh_client_source_type_t, flags: ewmh_moveresize_window_opt_flags_t, x, y, width, height: u32) -> void_cookie_t ---
 
-ewmh_request_wm_moveresize :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, moveresize_window: window_t, x_root: u32, y_root: u32, direction: ewmh_moveresize_direction_t, button: button_index_t, source_indication: ewmh_client_source_type_t) -> void_cookie_t ---;
+ewmh_request_wm_moveresize :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, moveresize_window: window_t, x_root: u32, y_root: u32, direction: ewmh_moveresize_direction_t, button: button_index_t, source_indication: ewmh_client_source_type_t) -> void_cookie_t ---
 
-ewmh_request_restack_window :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, window_to_restack: window_t, sibling_window: window_t, detail: stack_mode_t) -> void_cookie_t ---;
+ewmh_request_restack_window :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, window_to_restack: window_t, sibling_window: window_t, detail: stack_mode_t) -> void_cookie_t ---
 
-ewmh_set_wm_name :: proc(ewmh: ^ewmh_connection_t, window: window_t, strings_len: u32, strings: cstring) -> void_cookie_t ---;
+ewmh_set_wm_name :: proc(ewmh: ^ewmh_connection_t, window: window_t, strings_len: u32, strings: cstring) -> void_cookie_t ---
 
-ewmh_set_wm_name_checked :: proc(ewmh: ^ewmh_connection_t, window: window_t, strings_len: u32, strings: cstring) -> void_cookie_t ---;
+ewmh_set_wm_name_checked :: proc(ewmh: ^ewmh_connection_t, window: window_t, strings_len: u32, strings: cstring) -> void_cookie_t ---
 
-ewmh_get_wm_name_unchecked :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---;
+ewmh_get_wm_name_unchecked :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---
 
-ewmh_get_wm_name :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---;
+ewmh_get_wm_name :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---
 
-ewmh_set_wm_visible_name :: proc(ewmh: ^ewmh_connection_t, window: window_t, strings_len: u32, strings: cstring) -> void_cookie_t ---;
+ewmh_set_wm_visible_name :: proc(ewmh: ^ewmh_connection_t, window: window_t, strings_len: u32, strings: cstring) -> void_cookie_t ---
 
-ewmh_set_wm_visible_name_checked :: proc(ewmh: ^ewmh_connection_t, window: window_t, strings_len: u32, strings: cstring) -> void_cookie_t ---;
+ewmh_set_wm_visible_name_checked :: proc(ewmh: ^ewmh_connection_t, window: window_t, strings_len: u32, strings: cstring) -> void_cookie_t ---
 
-ewmh_get_wm_visible_name_unchecked :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---;
+ewmh_get_wm_visible_name_unchecked :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---
 
-ewmh_get_wm_visible_name :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---;
+ewmh_get_wm_visible_name :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---
 
-ewmh_set_wm_icon_name :: proc(ewmh: ^ewmh_connection_t, window: window_t, strings_len: u32, strings: cstring) -> void_cookie_t ---;
+ewmh_set_wm_icon_name :: proc(ewmh: ^ewmh_connection_t, window: window_t, strings_len: u32, strings: cstring) -> void_cookie_t ---
 
-ewmh_set_wm_icon_name_checked :: proc(ewmh: ^ewmh_connection_t, window: window_t, strings_len: u32, strings: cstring) -> void_cookie_t ---;
+ewmh_set_wm_icon_name_checked :: proc(ewmh: ^ewmh_connection_t, window: window_t, strings_len: u32, strings: cstring) -> void_cookie_t ---
 
-ewmh_get_wm_icon_name_unchecked :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---;
+ewmh_get_wm_icon_name_unchecked :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---
 
-ewmh_get_wm_icon_name :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---;
+ewmh_get_wm_icon_name :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---
 
-ewmh_set_wm_visible_icon_name :: proc(ewmh: ^ewmh_connection_t, window: window_t, strings_len: u32, strings: cstring) -> void_cookie_t ---;
+ewmh_set_wm_visible_icon_name :: proc(ewmh: ^ewmh_connection_t, window: window_t, strings_len: u32, strings: cstring) -> void_cookie_t ---
 
-ewmh_set_wm_visible_icon_name_checked :: proc(ewmh: ^ewmh_connection_t, window: window_t, strings_len: u32, strings: cstring) -> void_cookie_t ---;
+ewmh_set_wm_visible_icon_name_checked :: proc(ewmh: ^ewmh_connection_t, window: window_t, strings_len: u32, strings: cstring) -> void_cookie_t ---
 
-ewmh_get_wm_visible_icon_name_unchecked :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---;
+ewmh_get_wm_visible_icon_name_unchecked :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---
 
-ewmh_get_wm_visible_icon_name :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---;
+ewmh_get_wm_visible_icon_name :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---
 
-ewmh_set_wm_desktop :: proc(ewmh: ^ewmh_connection_t, window: window_t, desktop: u32) -> void_cookie_t ---;
+ewmh_set_wm_desktop :: proc(ewmh: ^ewmh_connection_t, window: window_t, desktop: u32) -> void_cookie_t ---
 
-ewmh_set_wm_desktop_checked :: proc(ewmh: ^ewmh_connection_t, window: window_t, desktop: u32) -> void_cookie_t ---;
+ewmh_set_wm_desktop_checked :: proc(ewmh: ^ewmh_connection_t, window: window_t, desktop: u32) -> void_cookie_t ---
 
-ewmh_get_wm_desktop_unchecked :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---;
+ewmh_get_wm_desktop_unchecked :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---
 
-ewmh_get_wm_desktop :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---;
+ewmh_get_wm_desktop :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---
 
-ewmh_request_change_wm_desktop :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, client_window: window_t, new_desktop: u32, source_indication: ewmh_client_source_type_t) -> void_cookie_t ---;
+ewmh_request_change_wm_desktop :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, client_window: window_t, new_desktop: u32, source_indication: ewmh_client_source_type_t) -> void_cookie_t ---
 
-ewmh_set_wm_window_type :: proc(ewmh: ^ewmh_connection_t, window: window_t, list_len: u32, list: ^atom_t) -> void_cookie_t ---;
+ewmh_set_wm_window_type :: proc(ewmh: ^ewmh_connection_t, window: window_t, list_len: u32, list: ^atom_t) -> void_cookie_t ---
 
-ewmh_set_wm_window_type_checked :: proc(ewmh: ^ewmh_connection_t, window: window_t, list_len: u32, list: ^atom_t) -> void_cookie_t ---;
+ewmh_set_wm_window_type_checked :: proc(ewmh: ^ewmh_connection_t, window: window_t, list_len: u32, list: ^atom_t) -> void_cookie_t ---
 
-ewmh_get_wm_window_type_unchecked :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---;
+ewmh_get_wm_window_type_unchecked :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---
 
-ewmh_get_wm_window_type :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---;
+ewmh_get_wm_window_type :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---
 
-ewmh_get_wm_window_type_from_reply :: proc(wtypes: ^ewmh_get_atoms_reply_t, r: ^get_property_reply_t) -> u8 ---;
+ewmh_get_wm_window_type_from_reply :: proc(wtypes: ^ewmh_get_atoms_reply_t, r: ^get_property_reply_t) -> u8 ---
 
-ewmh_get_wm_window_type_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, name: ^ewmh_get_atoms_reply_t, e: ^^generic_error_t) -> u8 ---;
+ewmh_get_wm_window_type_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, name: ^ewmh_get_atoms_reply_t, e: ^^generic_error_t) -> u8 ---
 
-ewmh_set_wm_state :: proc(ewmh: ^ewmh_connection_t, window: window_t, list_len: u32, list: ^atom_t) -> void_cookie_t ---;
+ewmh_set_wm_state :: proc(ewmh: ^ewmh_connection_t, window: window_t, list_len: u32, list: ^atom_t) -> void_cookie_t ---
 
-ewmh_set_wm_state_checked :: proc(ewmh: ^ewmh_connection_t, window: window_t, list_len: u32, list: ^atom_t) -> void_cookie_t ---;
+ewmh_set_wm_state_checked :: proc(ewmh: ^ewmh_connection_t, window: window_t, list_len: u32, list: ^atom_t) -> void_cookie_t ---
 
-ewmh_get_wm_state_unchecked :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---;
+ewmh_get_wm_state_unchecked :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---
 
-ewmh_get_wm_state :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---;
+ewmh_get_wm_state :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---
 
-ewmh_get_wm_state_from_reply :: proc(wtypes: ^ewmh_get_atoms_reply_t, r: ^get_property_reply_t) -> u8 ---;
+ewmh_get_wm_state_from_reply :: proc(wtypes: ^ewmh_get_atoms_reply_t, r: ^get_property_reply_t) -> u8 ---
 
-ewmh_get_wm_state_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, name: ^ewmh_get_atoms_reply_t, e: ^^generic_error_t) -> u8 ---;
+ewmh_get_wm_state_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, name: ^ewmh_get_atoms_reply_t, e: ^^generic_error_t) -> u8 ---
 
-ewmh_request_change_wm_state :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, client_window: window_t, action: ewmh_wm_state_action_t, first_property: atom_t, second_property: atom_t, source_indication: ewmh_client_source_type_t) -> void_cookie_t ---;
+ewmh_request_change_wm_state :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, client_window: window_t, action: ewmh_wm_state_action_t, first_property: atom_t, second_property: atom_t, source_indication: ewmh_client_source_type_t) -> void_cookie_t ---
 
-ewmh_set_wm_allowed_actions :: proc(ewmh: ^ewmh_connection_t, window: window_t, list_len: u32, list: ^atom_t) -> void_cookie_t ---;
+ewmh_set_wm_allowed_actions :: proc(ewmh: ^ewmh_connection_t, window: window_t, list_len: u32, list: ^atom_t) -> void_cookie_t ---
 
-ewmh_set_wm_allowed_actions_checked :: proc(ewmh: ^ewmh_connection_t, window: window_t, list_len: u32, list: ^atom_t) -> void_cookie_t ---;
+ewmh_set_wm_allowed_actions_checked :: proc(ewmh: ^ewmh_connection_t, window: window_t, list_len: u32, list: ^atom_t) -> void_cookie_t ---
 
-ewmh_get_wm_allowed_actions_unchecked :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---;
+ewmh_get_wm_allowed_actions_unchecked :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---
 
-ewmh_get_wm_allowed_actions :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---;
+ewmh_get_wm_allowed_actions :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---
 
-ewmh_get_wm_allowed_actions_from_reply :: proc(wtypes: ^ewmh_get_atoms_reply_t, r: ^get_property_reply_t) -> u8 ---;
+ewmh_get_wm_allowed_actions_from_reply :: proc(wtypes: ^ewmh_get_atoms_reply_t, r: ^get_property_reply_t) -> u8 ---
 
-ewmh_get_wm_allowed_actions_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, name: ^ewmh_get_atoms_reply_t, e: ^^generic_error_t) -> u8 ---;
+ewmh_get_wm_allowed_actions_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, name: ^ewmh_get_atoms_reply_t, e: ^^generic_error_t) -> u8 ---
 
-ewmh_set_wm_strut :: proc(ewmh: ^ewmh_connection_t, window: window_t, left: u32, right: u32, top: u32, bottom: u32) -> void_cookie_t ---;
+ewmh_set_wm_strut :: proc(ewmh: ^ewmh_connection_t, window: window_t, left: u32, right: u32, top: u32, bottom: u32) -> void_cookie_t ---
 
-ewmh_set_wm_strut_checked :: proc(ewmh: ^ewmh_connection_t, window: window_t, left: u32, right: u32, top: u32, bottom: u32) -> void_cookie_t ---;
+ewmh_set_wm_strut_checked :: proc(ewmh: ^ewmh_connection_t, window: window_t, left: u32, right: u32, top: u32, bottom: u32) -> void_cookie_t ---
 
-ewmh_get_wm_strut_unchecked :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---;
+ewmh_get_wm_strut_unchecked :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---
 
-ewmh_get_wm_strut :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---;
+ewmh_get_wm_strut :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---
 
-ewmh_get_wm_strut_from_reply :: proc(struts: ^ewmh_get_extents_reply_t, r: ^get_property_reply_t) -> u8 ---;
+ewmh_get_wm_strut_from_reply :: proc(struts: ^ewmh_get_extents_reply_t, r: ^get_property_reply_t) -> u8 ---
 
-ewmh_get_wm_strut_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, struts: ^ewmh_get_extents_reply_t, e: ^^generic_error_t) -> u8 ---;
+ewmh_get_wm_strut_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, struts: ^ewmh_get_extents_reply_t, e: ^^generic_error_t) -> u8 ---
 
-ewmh_set_wm_strut_partial :: proc(ewmh: ^ewmh_connection_t, window: window_t, wm_strut: ewmh_wm_strut_partial_t) -> void_cookie_t ---;
+ewmh_set_wm_strut_partial :: proc(ewmh: ^ewmh_connection_t, window: window_t, wm_strut: ewmh_wm_strut_partial_t) -> void_cookie_t ---
 
-ewmh_set_wm_strut_partial_checked :: proc(ewmh: ^ewmh_connection_t, window: window_t, wm_strut: ewmh_wm_strut_partial_t) -> void_cookie_t ---;
+ewmh_set_wm_strut_partial_checked :: proc(ewmh: ^ewmh_connection_t, window: window_t, wm_strut: ewmh_wm_strut_partial_t) -> void_cookie_t ---
 
-ewmh_get_wm_strut_partial_unchecked :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---;
+ewmh_get_wm_strut_partial_unchecked :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---
 
-ewmh_get_wm_strut_partial :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---;
+ewmh_get_wm_strut_partial :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---
 
-ewmh_get_wm_strut_partial_from_reply :: proc(struts: ^ewmh_wm_strut_partial_t, r: ^get_property_reply_t) -> u8 ---;
+ewmh_get_wm_strut_partial_from_reply :: proc(struts: ^ewmh_wm_strut_partial_t, r: ^get_property_reply_t) -> u8 ---
 
-ewmh_get_wm_strut_partial_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, struts: ^ewmh_wm_strut_partial_t, e: ^^generic_error_t) -> u8 ---;
+ewmh_get_wm_strut_partial_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, struts: ^ewmh_wm_strut_partial_t, e: ^^generic_error_t) -> u8 ---
 
-ewmh_set_wm_icon_geometry :: proc(ewmh: ^ewmh_connection_t, window: window_t, left: u32, right: u32, top: u32, bottom: u32) -> void_cookie_t ---;
+ewmh_set_wm_icon_geometry :: proc(ewmh: ^ewmh_connection_t, window: window_t, left: u32, right: u32, top: u32, bottom: u32) -> void_cookie_t ---
 
-ewmh_set_wm_icon_geometry_checked :: proc(ewmh: ^ewmh_connection_t, window: window_t, left: u32, right: u32, top: u32, bottom: u32) -> void_cookie_t ---;
+ewmh_set_wm_icon_geometry_checked :: proc(ewmh: ^ewmh_connection_t, window: window_t, left: u32, right: u32, top: u32, bottom: u32) -> void_cookie_t ---
 
-ewmh_get_wm_icon_geometry_unchecked :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---;
+ewmh_get_wm_icon_geometry_unchecked :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---
 
-ewmh_get_wm_icon_geometry :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---;
+ewmh_get_wm_icon_geometry :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---
 
-ewmh_get_wm_icon_geometry_from_reply :: proc(icons: ^ewmh_geometry_t, r: ^get_property_reply_t) -> u8 ---;
+ewmh_get_wm_icon_geometry_from_reply :: proc(icons: ^ewmh_geometry_t, r: ^get_property_reply_t) -> u8 ---
 
-ewmh_get_wm_icon_geometry_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, icons: ^ewmh_geometry_t, e: ^^generic_error_t) -> u8 ---;
+ewmh_get_wm_icon_geometry_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, icons: ^ewmh_geometry_t, e: ^^generic_error_t) -> u8 ---
 
-ewmh_append_wm_icon_checked :: proc(ewmh: ^ewmh_connection_t, window: window_t, width: u32, height: u32, img_len: u32, img: ^u32) -> void_cookie_t ---;
+ewmh_append_wm_icon_checked :: proc(ewmh: ^ewmh_connection_t, window: window_t, width: u32, height: u32, img_len: u32, img: ^u32) -> void_cookie_t ---
 
-ewmh_append_wm_icon :: proc(ewmh: ^ewmh_connection_t, window: window_t, width: u32, height: u32, img_len: u32, img: ^u32) -> void_cookie_t ---;
+ewmh_append_wm_icon :: proc(ewmh: ^ewmh_connection_t, window: window_t, width: u32, height: u32, img_len: u32, img: ^u32) -> void_cookie_t ---
 
-ewmh_get_wm_icon_unchecked :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---;
+ewmh_get_wm_icon_unchecked :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---
 
-ewmh_get_wm_icon :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---;
+ewmh_get_wm_icon :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---
 
-ewmh_get_wm_icon_from_reply :: proc(wm_icon: ^ewmh_get_wm_icon_reply_t, r: ^get_property_reply_t) -> u8 ---;
+ewmh_get_wm_icon_from_reply :: proc(wm_icon: ^ewmh_get_wm_icon_reply_t, r: ^get_property_reply_t) -> u8 ---
 
-ewmh_get_wm_icon_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, wm_icon: ^ewmh_get_wm_icon_reply_t, e: ^^generic_error_t) -> u8 ---;
+ewmh_get_wm_icon_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, wm_icon: ^ewmh_get_wm_icon_reply_t, e: ^^generic_error_t) -> u8 ---
 
-ewmh_get_wm_icon_iterator :: proc(wm_icon: ^ewmh_get_wm_icon_reply_t) -> ewmh_wm_icon_iterator_t ---;
+ewmh_get_wm_icon_iterator :: proc(wm_icon: ^ewmh_get_wm_icon_reply_t) -> ewmh_wm_icon_iterator_t ---
 
-ewmh_get_wm_icon_length :: proc(wm_icon: ^ewmh_get_wm_icon_reply_t) -> _c.uint ---;
+ewmh_get_wm_icon_length :: proc(wm_icon: ^ewmh_get_wm_icon_reply_t) -> _c.uint ---
 
-ewmh_get_wm_icon_next :: proc(iterator: ^ewmh_wm_icon_iterator_t) ---;
+ewmh_get_wm_icon_next :: proc(iterator: ^ewmh_wm_icon_iterator_t) ---
 
-ewmh_get_wm_icon_reply_wipe :: proc(wm_icon: ^ewmh_get_wm_icon_reply_t) ---;
+ewmh_get_wm_icon_reply_wipe :: proc(wm_icon: ^ewmh_get_wm_icon_reply_t) ---
 
-ewmh_set_wm_pid :: proc(ewmh: ^ewmh_connection_t, window: window_t, pid: u32) -> void_cookie_t ---;
+ewmh_set_wm_pid :: proc(ewmh: ^ewmh_connection_t, window: window_t, pid: u32) -> void_cookie_t ---
 
-ewmh_set_wm_pid_checked :: proc(ewmh: ^ewmh_connection_t, window: window_t, pid: u32) -> void_cookie_t ---;
+ewmh_set_wm_pid_checked :: proc(ewmh: ^ewmh_connection_t, window: window_t, pid: u32) -> void_cookie_t ---
 
-ewmh_get_wm_pid_unchecked :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---;
+ewmh_get_wm_pid_unchecked :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---
 
-ewmh_get_wm_pid :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---;
+ewmh_get_wm_pid :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---
 
-ewmh_set_wm_handled_icons :: proc(ewmh: ^ewmh_connection_t, window: window_t, handled_icons: u32) -> void_cookie_t ---;
+ewmh_set_wm_handled_icons :: proc(ewmh: ^ewmh_connection_t, window: window_t, handled_icons: u32) -> void_cookie_t ---
 
-ewmh_set_wm_handled_icons_checked :: proc(ewmh: ^ewmh_connection_t, window: window_t, handled_icons: u32) -> void_cookie_t ---;
+ewmh_set_wm_handled_icons_checked :: proc(ewmh: ^ewmh_connection_t, window: window_t, handled_icons: u32) -> void_cookie_t ---
 
-ewmh_get_wm_handled_icons_unchecked :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---;
+ewmh_get_wm_handled_icons_unchecked :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---
 
-ewmh_get_wm_handled_icons :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---;
+ewmh_get_wm_handled_icons :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---
 
-ewmh_set_wm_user_time :: proc(ewmh: ^ewmh_connection_t, window: window_t, xtime: u32) -> void_cookie_t ---;
+ewmh_set_wm_user_time :: proc(ewmh: ^ewmh_connection_t, window: window_t, xtime: u32) -> void_cookie_t ---
 
-ewmh_set_wm_user_time_checked :: proc(ewmh: ^ewmh_connection_t, window: window_t, xtime: u32) -> void_cookie_t ---;
+ewmh_set_wm_user_time_checked :: proc(ewmh: ^ewmh_connection_t, window: window_t, xtime: u32) -> void_cookie_t ---
 
-ewmh_get_wm_user_time_unchecked :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---;
+ewmh_get_wm_user_time_unchecked :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---
 
-ewmh_get_wm_user_time :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---;
+ewmh_get_wm_user_time :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---
 
-ewmh_set_wm_user_time_window :: proc(ewmh: ^ewmh_connection_t, window: window_t, xtime: u32) -> void_cookie_t ---;
+ewmh_set_wm_user_time_window :: proc(ewmh: ^ewmh_connection_t, window: window_t, xtime: u32) -> void_cookie_t ---
 
-ewmh_set_wm_user_time_window_checked :: proc(ewmh: ^ewmh_connection_t, window: window_t, pid: u32) -> void_cookie_t ---;
+ewmh_set_wm_user_time_window_checked :: proc(ewmh: ^ewmh_connection_t, window: window_t, pid: u32) -> void_cookie_t ---
 
-ewmh_get_wm_user_time_window_unchecked :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---;
+ewmh_get_wm_user_time_window_unchecked :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---
 
-ewmh_get_wm_user_time_window :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---;
+ewmh_get_wm_user_time_window :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---
 
-ewmh_set_frame_extents :: proc(ewmh: ^ewmh_connection_t, window: window_t, left, right, top, bottom: u32) -> void_cookie_t ---;
+ewmh_set_frame_extents :: proc(ewmh: ^ewmh_connection_t, window: window_t, left, right, top, bottom: u32) -> void_cookie_t ---
 
-ewmh_set_frame_extents_checked :: proc(ewmh: ^ewmh_connection_t, window: window_t, left, right, top, bottom: u32) -> void_cookie_t ---;
+ewmh_set_frame_extents_checked :: proc(ewmh: ^ewmh_connection_t, window: window_t, left, right, top, bottom: u32) -> void_cookie_t ---
 
-ewmh_get_frame_extents_unchecked :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---;
+ewmh_get_frame_extents_unchecked :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---
 
-ewmh_get_frame_extents :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---;
+ewmh_get_frame_extents :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---
 
-ewmh_get_frame_extents_from_reply :: proc(frame_extents: ^ewmh_get_extents_reply_t, r: ^get_property_reply_t) -> u8 ---;
+ewmh_get_frame_extents_from_reply :: proc(frame_extents: ^ewmh_get_extents_reply_t, r: ^get_property_reply_t) -> u8 ---
 
-ewmh_get_frame_extents_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, frame_extents: ^ewmh_get_extents_reply_t, e: ^^generic_error_t) -> u8 ---;
+ewmh_get_frame_extents_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, frame_extents: ^ewmh_get_extents_reply_t, e: ^^generic_error_t) -> u8 ---
 
-ewmh_send_wm_ping :: proc(ewmh: ^ewmh_connection_t, window: window_t, timestamp: timestamp_t) -> void_cookie_t ---;
+ewmh_send_wm_ping :: proc(ewmh: ^ewmh_connection_t, window: window_t, timestamp: timestamp_t) -> void_cookie_t ---
 
-ewmh_set_wm_sync_request_counter :: proc(ewmh: ^ewmh_connection_t, window: window_t, wm_sync_request_counter_atom: atom_t, low, high: u32) -> void_cookie_t ---;
+ewmh_set_wm_sync_request_counter :: proc(ewmh: ^ewmh_connection_t, window: window_t, wm_sync_request_counter_atom: atom_t, low, high: u32) -> void_cookie_t ---
 
-ewmh_set_wm_sync_request_counter_checked :: proc(ewmh: ^ewmh_connection_t, window: window_t, wm_sync_request_counter_atom: atom_t, low, high: u32) -> void_cookie_t ---;
+ewmh_set_wm_sync_request_counter_checked :: proc(ewmh: ^ewmh_connection_t, window: window_t, wm_sync_request_counter_atom: atom_t, low, high: u32) -> void_cookie_t ---
 
-ewmh_get_wm_sync_request_counter_unchecked :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---;
+ewmh_get_wm_sync_request_counter_unchecked :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---
 
-ewmh_get_wm_sync_request_counter :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---;
+ewmh_get_wm_sync_request_counter :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---
 
-ewmh_get_wm_sync_request_counter_from_reply :: proc(counter: ^u64, r: ^get_property_reply_t) -> u8 ---;
+ewmh_get_wm_sync_request_counter_from_reply :: proc(counter: ^u64, r: ^get_property_reply_t) -> u8 ---
 
-ewmh_get_wm_sync_request_counter_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, counter: ^u64, e: ^^generic_error_t) -> u8 ---;
+ewmh_get_wm_sync_request_counter_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, counter: ^u64, e: ^^generic_error_t) -> u8 ---
 
-ewmh_send_wm_sync_request :: proc(ewmh: ^ewmh_connection_t, window: window_t, wm_protocols_atom, wm_sync_request_atom: atom_t, timestamp: timestamp_t, counter: u64) -> void_cookie_t ---;
+ewmh_send_wm_sync_request :: proc(ewmh: ^ewmh_connection_t, window: window_t, wm_protocols_atom, wm_sync_request_atom: atom_t, timestamp: timestamp_t, counter: u64) -> void_cookie_t ---
 
-ewmh_set_wm_fullscreen_monitors :: proc(ewmh: ^ewmh_connection_t, window: window_t, top, bottom, left, right: u32) -> void_cookie_t ---;
+ewmh_set_wm_fullscreen_monitors :: proc(ewmh: ^ewmh_connection_t, window: window_t, top, bottom, left, right: u32) -> void_cookie_t ---
 
-ewmh_set_wm_fullscreen_monitors_checked :: proc(ewmh: ^ewmh_connection_t, window: window_t, top, bottom, left, right: u32) -> void_cookie_t ---;
+ewmh_set_wm_fullscreen_monitors_checked :: proc(ewmh: ^ewmh_connection_t, window: window_t, top, bottom, left, right: u32) -> void_cookie_t ---
 
-ewmh_get_wm_fullscreen_monitors_unchecked :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---;
+ewmh_get_wm_fullscreen_monitors_unchecked :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---
 
-ewmh_get_wm_fullscreen_monitors :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---;
+ewmh_get_wm_fullscreen_monitors :: proc(ewmh: ^ewmh_connection_t, window: window_t) -> get_property_cookie_t ---
 
-ewmh_get_wm_fullscreen_monitors_from_reply :: proc(monitors: ^ewmh_get_wm_fullscreen_monitors_reply_t, r: ^get_property_reply_t) -> u8 ---;
+ewmh_get_wm_fullscreen_monitors_from_reply :: proc(monitors: ^ewmh_get_wm_fullscreen_monitors_reply_t, r: ^get_property_reply_t) -> u8 ---
 
-ewmh_get_wm_fullscreen_monitors_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, monitors: ^ewmh_get_wm_fullscreen_monitors_reply_t, e: ^^generic_error_t) -> u8 ---;
+ewmh_get_wm_fullscreen_monitors_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_property_cookie_t, monitors: ^ewmh_get_wm_fullscreen_monitors_reply_t, e: ^^generic_error_t) -> u8 ---
 
 
-ewmh_request_change_wm_fullscreen_monitors :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, window: window_t, top, bottom, left, right: u32, source_indication: ewmh_client_source_type_t) -> void_cookie_t ---;
+ewmh_request_change_wm_fullscreen_monitors :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, window: window_t, top, bottom, left, right: u32, source_indication: ewmh_client_source_type_t) -> void_cookie_t ---
 
 /**
  * @brief Set _NET_WM_CM_Sn ownership to the given window
@@ -1763,12 +1758,12 @@ ewmh_request_change_wm_fullscreen_monitors :: proc(ewmh: ^ewmh_connection_t, scr
  * @param selection_data1 Optional data described by ICCCM
  * @param selection_data2 Optional data described by ICCCM
  */
-ewmh_set_wm_cm_owner :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, owner: window_t, timestamp: timestamp_t, selection_data1, selection_data2: u32) -> void_cookie_t ---;
+ewmh_set_wm_cm_owner :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, owner: window_t, timestamp: timestamp_t, selection_data1, selection_data2: u32) -> void_cookie_t ---
 
 /**
  * @see ewmh_set_wm_cm_owner
  */
-ewmh_set_wm_cm_owner_checked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, owner: window_t, timestamp: timestamp_t, selection_data1, selection_data2: u32) -> void_cookie_t ---;
+ewmh_set_wm_cm_owner_checked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int, owner: window_t, timestamp: timestamp_t, selection_data1, selection_data2: u32) -> void_cookie_t ---
 
 /**
  * @brief   Send  GetSelectOwner   request   to  get   the  owner   of
@@ -1778,14 +1773,14 @@ ewmh_set_wm_cm_owner_checked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.in
  * @param screen_nbr The screen number
  * @return The _NET_WM_CM_Sn cookie of the GetSelectionOwner request
  */
-ewmh_get_wm_cm_owner_unchecked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_selection_owner_cookie_t ---;
+ewmh_get_wm_cm_owner_unchecked :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_selection_owner_cookie_t ---
 
 /**
  * @see ewmh_get_wm_cm_owner_unchecked
  */
-ewmh_get_wm_cm_owner :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_selection_owner_cookie_t ---;
+ewmh_get_wm_cm_owner :: proc(ewmh: ^ewmh_connection_t, screen_nbr: _c.int) -> get_selection_owner_cookie_t ---
 
-ewmh_get_wm_cm_owner_from_reply :: proc(owner: ^window_t, r: ^get_selection_owner_reply_t) -> u8 ---;
+ewmh_get_wm_cm_owner_from_reply :: proc(owner: ^window_t, r: ^get_selection_owner_reply_t) -> u8 ---
 
 /**
  * @brief Get reply from the GetProperty _NET_CLIENT_LIST cookie
@@ -1800,6 +1795,6 @@ ewmh_get_wm_cm_owner_from_reply :: proc(owner: ^window_t, r: ^get_selection_owne
  * @param The generic_error_t supplied.
  * @return Return 1 on success, 0 otherwise.
  */
-ewmh_get_wm_cm_owner_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_selection_owner_cookie_t, owner: ^window_t, e: ^^generic_error_t) -> u8 ---;
+ewmh_get_wm_cm_owner_reply :: proc(ewmh: ^ewmh_connection_t, cookie: get_selection_owner_cookie_t, owner: ^window_t, e: ^^generic_error_t) -> u8 ---
 
 }

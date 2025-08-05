@@ -1,24 +1,23 @@
 package xcb
 
 import _c "core:c"
-import X11 "vendor:x11/xlib"
 
 /* Macros */
 
-X_PROTOCOL :: 11;
-X_PROTOCOL_REVISION :: 0;
-X_TCP_PORT :: 6000;
-CONN_ERROR :: 1;
-CONN_CLOSED_EXT_NOTSUPPORTED :: 2;
-CONN_CLOSED_MEM_INSUFFICIENT :: 3;
-CONN_CLOSED_REQ_LEN_EXCEED :: 4;
-CONN_CLOSED_PARSE_ERR :: 5;
-CONN_CLOSED_INVALID_SCREEN :: 6;
-CONN_CLOSED_FDPASSING_FAILED :: 7;
-NONE :: 0;
-COPY_FROM_PARENT :: 0;
-CURRENT_TIME :: 0;
-NO_SYMBOL :: 0;
+X_PROTOCOL :: 11
+X_PROTOCOL_REVISION :: 0
+X_TCP_PORT :: 6000
+CONN_ERROR :: 1
+CONN_CLOSED_EXT_NOTSUPPORTED :: 2
+CONN_CLOSED_MEM_INSUFFICIENT :: 3
+CONN_CLOSED_REQ_LEN_EXCEED :: 4
+CONN_CLOSED_PARSE_ERR :: 5
+CONN_CLOSED_INVALID_SCREEN :: 6
+CONN_CLOSED_FDPASSING_FAILED :: 7
+NONE :: 0
+COPY_FROM_PARENT :: 0
+CURRENT_TIME :: 0
+NO_SYMBOL :: 0
 
 TYPE_PAD :: proc($T: typeid, I: int) -> int {
     when size_of(T) > 4 {
@@ -28,21 +27,21 @@ TYPE_PAD :: proc($T: typeid, I: int) -> int {
     }
 }
 
-connection_t :: struct {};
+connection_t :: struct {}
 
 
 generic_iterator_t :: struct {
      data : rawptr,
       rem : _c.int,
     index : _c.int,
-};
+}
 
 generic_reply_t :: struct {
     response_type : u8,
     pad0 : u8,
     sequence : u16,
     length : u32,
-};
+}
 
 generic_event_t :: struct {
     response_type : u8,
@@ -50,7 +49,7 @@ generic_event_t :: struct {
          sequence : u16,
               pad : [7]u32,
     full_sequence : u32,
-};
+}
 
 raw_generic_event_t :: struct {
     response_type : u8,
@@ -58,7 +57,7 @@ raw_generic_event_t :: struct {
     sequence : u16,
     pad : [7]u32,
     full_sequence : u32,
-};
+}
 
 ge_event_t :: struct {
     response_type : u8,
@@ -81,24 +80,24 @@ generic_error_t :: struct {
              pad0 : u8,
               pad : [5]u32,
     full_sequence : u32,
-};
+}
 
 void_cookie_t :: struct {
     sequence : _c.uint,
-};
+}
 
 auth_info_t :: struct {
     namelen : _c.int,
        name : cstring,
     datalen : _c.int,
        data : cstring,
-};
+}
 
-special_event_t :: special_event;
+special_event_t :: special_event
 
-special_event :: struct {};
+special_event :: struct {}
 
-extension_t :: struct {};
+extension_t :: struct {}
 
 
 /***** libxcb *****/
@@ -116,7 +115,7 @@ foreign libxcb {
  * Forces any buffered output to be written to the server. Blocks
  * until the write is complete.
  */    
-flush :: proc(c : ^connection_t) -> _c.int ---;
+flush :: proc(c : ^connection_t) -> _c.int ---
 /**
  * @brief Returns the maximum request length that this server accepts.
  * @param c The connection to the X server.
@@ -132,7 +131,7 @@ flush :: proc(c : ^connection_t) -> _c.int ---;
  * theoretical maximum lengths roughly 256kB without BIG-REQUESTS and
  * 16GB with.
  */
-get_maximum_request_length :: proc(c : ^connection_t) -> u32 ---;
+get_maximum_request_length :: proc(c : ^connection_t) -> u32 ---
 /**
  * @brief Prefetch the maximum request length without blocking.
  * @param c The connection to the X server.
@@ -150,11 +149,11 @@ get_maximum_request_length :: proc(c : ^connection_t) -> u32 ---;
  * xcb_prefetch_extension_data(c, &xcb_big_requests_id) and the reply
  * must have already arrived.
  */
-prefetch_maximum_request_length :: proc(c : ^connection_t) ---;
+prefetch_maximum_request_length :: proc(c : ^connection_t) ---
 /**
  * @brief Stop listening for a special event
  */
-unregister_for_special_event :: proc(c : ^connection_t, se : ^special_event_t) ---;
+unregister_for_special_event :: proc(c : ^connection_t, se : ^special_event_t) ---
 /**
  * @brief Discards the reply for a request.
  * @param c The connection to the X server.
@@ -166,10 +165,10 @@ unregister_for_special_event :: proc(c : ^connection_t, se : ^special_event_t) -
  *
  * This function will not block even if the reply is not yet available.
  *
- * Note that the sequence really does have to come from an xcb cookie;
+ * Note that the sequence really does have to come from an xcb cookie
  * this function is not designed to operate on socket-handoff replies.
  */
-discard_reply :: proc(c : ^connection_t, sequence : _c.uint) ---;
+discard_reply :: proc(c : ^connection_t, sequence : _c.uint) ---
 /**
 * @brief Discards the reply for a request, given by a 64bit sequence number
 * @param c The connection to the X server.
@@ -181,7 +180,7 @@ discard_reply :: proc(c : ^connection_t, sequence : _c.uint) ---;
 *
 * This function will not block even if the reply is not yet available.
 *
-* Note that the sequence really does have to come from xcb_send_request64();
+* Note that the sequence really does have to come from xcb_send_request64()
 * the cookie sequence number is defined as "unsigned" int and therefore
 * not 64-bit on all platforms.
 * This function is not designed to operate on socket-handoff replies.
@@ -189,7 +188,7 @@ discard_reply :: proc(c : ^connection_t, sequence : _c.uint) ---;
 * Unlike its xcb_discard_reply() counterpart, the given sequence number is not
 * automatically "widened" to 64-bit.
 */
-discard_reply64 :: proc(c : ^connection_t, sequence : u64) ---;
+discard_reply64 :: proc(c : ^connection_t, sequence : u64) ---
 /**
  * @brief Returns the next event or error from the server.
  * @param c The connection to the X server.
@@ -199,7 +198,7 @@ discard_reply64 :: proc(c : ^connection_t, sequence : u64) ---;
  * the event of an I/O error. Blocks until either an event or error
  * arrive, or an I/O error occurs.
  */
-wait_for_event :: proc(c : ^connection_t) -> ^generic_event_t ---;
+wait_for_event :: proc(c : ^connection_t) -> ^generic_event_t ---
 /**
 * @brief Returns the next event or error from the server.
 * @param c The connection to the X server.
@@ -211,7 +210,7 @@ wait_for_event :: proc(c : ^connection_t) -> ^generic_event_t ---;
 * attempting to read the next event, in which case the connection is
 * shut down when this function returns.
 */
-poll_for_event :: proc(c : ^connection_t) -> ^generic_event_t ---;
+poll_for_event :: proc(c : ^connection_t) -> ^generic_event_t ---
 /**
  * @brief Returns the next event without reading from the connection.
  * @param c The connection to the X server.
@@ -226,19 +225,19 @@ poll_for_event :: proc(c : ^connection_t) -> ^generic_event_t ---;
  * example, callers might use xcb_wait_for_reply and be interested
  * only of events that preceded a specific reply.
  */
-poll_for_queued_event :: proc(c : ^connection_t) -> ^generic_event_t ---;
+poll_for_queued_event :: proc(c : ^connection_t) -> ^generic_event_t ---
 /**
 * @brief Returns the next event from a special queue
 */
-poll_for_special_event :: proc(c : ^connection_t, se : ^special_event_t) -> ^generic_event_t ---;
+poll_for_special_event :: proc(c : ^connection_t, se : ^special_event_t) -> ^generic_event_t ---
 /**
 * @brief Returns the next event from a special queue, blocking until one arrives
 */
-wait_for_special_event :: proc(c : ^connection_t, se : ^special_event_t) -> ^generic_event_t ---;
+wait_for_special_event :: proc(c : ^connection_t, se : ^special_event_t) -> ^generic_event_t ---
 /**
  * @typedef typedef struct xcb_extension_t xcb_extension_t
  */
-register_for_special_xge :: proc(c : ^connection_t, ext : ^extension_t, eid : u32, stamp : ^u32) -> ^special_event_t ---;
+register_for_special_xge :: proc(c : ^connection_t, ext : ^extension_t, eid : u32, stamp : ^u32) -> ^special_event_t ---
 /**
  * @brief Return the error for a request, or NULL if none can ever arrive.
  * @param c The connection to the X server.
@@ -255,7 +254,7 @@ register_for_special_xge :: proc(c : ^connection_t, ext : ^extension_t, eid : u3
  * sequence number will advance beyond that provided in cookie; this is a
  * convenience to avoid races in determining whether the sync is needed.
  */
-request_check :: proc(c : ^connection_t, cookie : void_cookie_t) -> ^generic_error_t ---;
+request_check :: proc(c : ^connection_t, cookie : void_cookie_t) -> ^generic_error_t ---
 /**
  * @brief Prefetch of extension data into the extension cache
  * @param c The connection.
@@ -267,7 +266,7 @@ request_check :: proc(c : ^connection_t, cookie : void_cookie_t) -> ^generic_err
  * reply. xcb_get_extension_data will return the prefetched data after
  * possibly blocking while it is retrieved.
  */
-prefetch_extension_data :: proc(c : ^connection_t, ext : ^extension_t) ---;
+prefetch_extension_data :: proc(c : ^connection_t, ext : ^extension_t) ---
 /**
  * @brief Access the file descriptor of the connection.
  * @param c The connection.
@@ -276,7 +275,7 @@ prefetch_extension_data :: proc(c : ^connection_t, ext : ^extension_t) ---;
  * Accessor for the file descriptor that was passed to the
  * xcb_connect_to_fd call that returned @p c.
  */
-get_file_descriptor :: proc(c : ^connection_t) -> _c.int ---;
+get_file_descriptor :: proc(c : ^connection_t) -> _c.int ---
 /**
  * @brief Test whether the connection has shut down due to a fatal error.
  * @param c The connection.
@@ -295,7 +294,7 @@ get_file_descriptor :: proc(c : ^connection_t) -> _c.int ---;
  * @return XCB_CONN_CLOSED_PARSE_ERR, error during parsing display string.
  * @return XCB_CONN_CLOSED_INVALID_SCREEN, because the server does not have a screen matching the display.
  */
-connection_has_error :: proc(c : ^connection_t) -> _c.int ---;
+connection_has_error :: proc(c : ^connection_t) -> _c.int ---
 /**
 * @brief Closes the connection.
 * @param c The connection.
@@ -303,7 +302,7 @@ connection_has_error :: proc(c : ^connection_t) -> _c.int ---;
 * Closes the file descriptor and frees all memory associated with the
 * connection @c c. If @p c is @c NULL, nothing is done.
 */
-disconnect :: proc(c : ^connection_t) ---;
+disconnect :: proc(c : ^connection_t) ---
 /**
  * @brief Parses a display string name in the form documented by X(7x).
  * @param name The name of the display.
@@ -321,7 +320,7 @@ disconnect :: proc(c : ^connection_t) ---;
  * can be @c NULL. If @p displayname does not contain a screen number,
  * it is set to @c 0.
  */
-parse_display :: proc(name : cstring, host : ^cstring, display : ^_c.int, screen : ^_c.int) -> _c.int ---;
+parse_display :: proc(name : cstring, host : ^cstring, display : ^_c.int, screen : ^_c.int) -> _c.int ---
 /**
  * @brief Connects to the X server.
  * @param fd The file descriptor.
@@ -339,7 +338,7 @@ parse_display :: proc(name : cstring, host : ^cstring, display : ^_c.int, screen
  * When finished, use xcb_disconnect() to close the connection and free
  * the structure.
  */
-connect_to_fd :: proc(fd : _c.int, auth_info : ^auth_info_t) -> ^connection_t ---;
+connect_to_fd :: proc(fd : _c.int, auth_info : ^auth_info_t) -> ^connection_t ---
 /**
  * @brief Connects to the X server.
  * @param displayname The name of the display.
@@ -357,7 +356,7 @@ connect_to_fd :: proc(fd : _c.int, auth_info : ^auth_info_t) -> ^connection_t --
  * When finished, use xcb_disconnect() to close the connection and free
  * the structure.
  */
-connect :: proc(displayname : cstring, screenp : ^_c.int) -> ^connection_t ---;
+connect :: proc(displayname : cstring, screenp : ^_c.int) -> ^connection_t ---
 /**
  * @brief Connects to the X server, using an authorization information.
  * @param display The name of the display.
@@ -375,7 +374,7 @@ connect :: proc(displayname : cstring, screenp : ^_c.int) -> ^connection_t ---;
  * When finished, use xcb_disconnect() to close the connection and free
  * the structure.
  */
-connect_to_display_with_auth_info :: proc(display : cstring, auth : ^auth_info_t, screen : ^_c.int) -> ^connection_t ---;
+connect_to_display_with_auth_info :: proc(display : cstring, auth : ^auth_info_t, screen : ^_c.int) -> ^connection_t ---
 /**
  * @brief Allocates an XID for a new object.
  * @param c The connection.
@@ -384,7 +383,7 @@ connect_to_display_with_auth_info :: proc(display : cstring, auth : ^auth_info_t
  * Allocates an XID for a new object. Typically used just prior to
  * various object creation functions, such as xcb_create_window.
  */
-generate_id :: proc(c : ^connection_t) -> u32 ---;
+generate_id :: proc(c : ^connection_t) -> u32 ---
 /**
  * @brief Obtain number of bytes read from the connection.
  * @param c The connection
@@ -395,7 +394,7 @@ generate_id :: proc(c : ^connection_t) -> u32 ---;
  * This retrieves the total number of bytes read from this connection,
  * to be used for diagnostic/monitoring/informative purposes.
  */
-total_read :: proc(c : ^connection_t) -> u64 ---;
+total_read :: proc(c : ^connection_t) -> u64 ---
 /**
  *
  * @brief Obtain number of bytes written to the connection.
@@ -407,7 +406,7 @@ total_read :: proc(c : ^connection_t) -> u64 ---;
  * This retrieves the total number of bytes written to this connection,
  * to be used for diagnostic/monitoring/informative purposes.
  */
-total_written :: proc(c : ^connection_t) -> u64 ---;
+total_written :: proc(c : ^connection_t) -> u64 ---
 /**
  * @brief Caches reply information from QueryExtension requests.
  * @param c The connection.
@@ -424,7 +423,7 @@ total_written :: proc(c : ^connection_t) -> u64 ---;
  * The result must not be freed. This storage is managed by the cache
  * itself.
  */
-get_extension_data :: proc(c : ^connection_t, ext : ^extension_t) -> ^query_extension_reply_t ---;
+get_extension_data :: proc(c : ^connection_t, ext : ^extension_t) -> ^query_extension_reply_t ---
 /**
  * @brief Access the data returned by the server.
  * @param c The connection.
@@ -443,6 +442,6 @@ get_extension_data :: proc(c : ^connection_t, ext : ^extension_t) -> ^query_exte
  *
  * The result must not be freed.
  */
-get_setup :: proc(c : ^connection_t) -> ^setup_t ---;
+get_setup :: proc(c : ^connection_t) -> ^setup_t ---
 }
 

@@ -3,340 +3,340 @@ package xcb
 import _c "core:c"
 
 /* Opcode Macros */
-KEY_PRESS :: 2;
-KEY_RELEASE :: 3;
-BUTTON_PRESS :: 4;
-BUTTON_RELEASE :: 5;
-MOTION_NOTIFY :: 6;
-ENTER_NOTIFY :: 7;
-LEAVE_NOTIFY :: 8;
-FOCUS_IN :: 9;
-FOCUS_OUT :: 10;
-KEYMAP_NOTIFY :: 11;
-EXPOSE :: 12;
-GRAPHICS_EXPOSURE :: 13;
-NO_EXPOSURE :: 14;
-VISIBILITY_NOTIFY :: 15;
-CREATE_NOTIFY :: 16;
-DESTROY_NOTIFY :: 17;
-UNMAP_NOTIFY :: 18;
-MAP_NOTIFY :: 19;
-MAP_REQUEST :: 20;
-REPARENT_NOTIFY :: 21;
-CONFIGURE_NOTIFY :: 22;
-CONFIGURE_REQUEST :: 23;
-GRAVITY_NOTIFY :: 24;
-RESIZE_REQUEST :: 25;
-CIRCULATE_NOTIFY :: 26;
-CIRCULATE_REQUEST :: 27;
-PROPERTY_NOTIFY :: 28;
-SELECTION_CLEAR :: 29;
-SELECTION_REQUEST :: 30;
-SELECTION_NOTIFY :: 31;
-COLORMAP_NOTIFY :: 32;
-CLIENT_MESSAGE :: 33;
-MAPPING_NOTIFY :: 34;
-GE_GENERIC :: 35;
-REQUEST :: 1;
-VALUE :: 2;
-WINDOW :: 3;
-PIXMAP :: 4;
-ATOM :: 5;
-CURSOR :: 6;
-FONT :: 7;
-MATCH :: 8;
-DRAWABLE :: 9;
-ACCESS :: 10;
-ALLOC :: 11;
-COLORMAP :: 12;
-G_CONTEXT :: 13;
-ID_CHOICE :: 14;
-NAME :: 15;
-LENGTH :: 16;
-IMPLEMENTATION :: 17;
-CREATE_WINDOW :: 1;
-CHANGE_WINDOW_ATTRIBUTES :: 2;
-GET_WINDOW_ATTRIBUTES :: 3;
-DESTROY_WINDOW :: 4;
-DESTROY_SUBWINDOWS :: 5;
-CHANGE_SAVE_SET :: 6;
-REPARENT_WINDOW :: 7;
-MAP_WINDOW :: 8;
-MAP_SUBWINDOWS :: 9;
-UNMAP_WINDOW :: 10;
-UNMAP_SUBWINDOWS :: 11;
-CONFIGURE_WINDOW :: 12;
-CIRCULATE_WINDOW :: 13;
-GET_GEOMETRY :: 14;
-QUERY_TREE :: 15;
-NO_OPERATION :: 127;
-INTERN_ATOM :: 16;
-GET_ATOM_NAME :: 17;
-CHANGE_PROPERTY :: 18;
-DELETE_PROPERTY :: 19;
-GET_PROPERTY :: 20;
-LIST_PROPERTIES :: 21;
-SET_SELECTION_OWNER :: 22;
-GET_SELECTION_OWNER :: 23;
-CONVERT_SELECTION :: 24;
-SEND_EVENT :: 25;
-GRAB_POINTER :: 26;
-UNGRAB_POINTER :: 27;
-GRAB_BUTTON :: 28;
-UNGRAB_BUTTON :: 29;
-CHANGE_ACTIVE_POINTER_GRAB :: 30;
-GRAB_KEYBOARD :: 31;
-UNGRAB_KEYBOARD :: 32;
-GRAB_KEY :: 33;
-UNGRAB_KEY :: 34;
-ALLOW_EVENTS :: 35;
-GRAB_SERVER :: 36;
-UNGRAB_SERVER :: 37;
-QUERY_POINTER :: 38;
-GET_MOTION_EVENTS :: 39;
-TRANSLATE_COORDINATES :: 40;
-WARP_POINTER :: 41;
-SET_INPUT_FOCUS :: 42;
-GET_INPUT_FOCUS :: 43;
-QUERY_KEYMAP :: 44;
-OPEN_FONT :: 45;
-CLOSE_FONT :: 46;
-QUERY_FONT :: 47;
-QUERY_TEXT_EXTENTS :: 48;
-LIST_FONTS :: 49;
-LIST_FONTS_WITH_INFO :: 50;
-SET_FONT_PATH :: 51;
-GET_FONT_PATH :: 52;
-CREATE_PIXMAP :: 53;
-FREE_PIXMAP :: 54;
-CREATE_GC :: 55;
-CHANGE_GC :: 56;
-COPY_GC :: 57;
-SET_DASHES :: 58;
-SET_CLIP_RECTANGLES :: 59;
-FREE_GC :: 60;
-CLEAR_AREA :: 61;
-COPY_AREA :: 62;
-COPY_PLANE :: 63;
-POLY_POINT :: 64;
-POLY_LINE :: 65;
-POLY_SEGMENT :: 66;
-POLY_RECTANGLE :: 67;
-POLY_ARC :: 68;
-FILL_POLY :: 69;
-POLY_FILL_RECTANGLE :: 70;
-POLY_FILL_ARC :: 71;
-PUT_IMAGE :: 72;
-GET_IMAGE :: 73;
-POLY_TEXT_8 :: 74;
-POLY_TEXT_16 :: 75;
-IMAGE_TEXT_8 :: 76;
-IMAGE_TEXT_16 :: 77;
-CREATE_COLORMAP :: 78;
-FREE_COLORMAP :: 79;
-COPY_COLORMAP_AND_FREE :: 80;
-INSTALL_COLORMAP :: 81;
-UNINSTALL_COLORMAP :: 82;
-LIST_INSTALLED_COLORMAPS :: 83;
-ALLOC_COLOR :: 84;
-ALLOC_NAMED_COLOR :: 85;
-ALLOC_COLOR_CELLS :: 86;
-ALLOC_COLOR_PLANES :: 87;
-FREE_COLORS :: 88;
-STORE_COLORS :: 89;
-STORE_NAMED_COLOR :: 90;
-QUERY_COLORS :: 91;
-LOOKUP_COLOR :: 92;
-CREATE_CURSOR :: 93;
-CREATE_GLYPH_CURSOR :: 94;
-FREE_CURSOR :: 95;
-RECOLOR_CURSOR :: 96;
-QUERY_BEST_SIZE :: 97;
-QUERY_EXTENSION :: 98;
-LIST_EXTENSIONS :: 99;
-CHANGE_KEYBOARD_MAPPING :: 100;
-GET_KEYBOARD_MAPPING :: 101;
-CHANGE_KEYBOARD_CONTROL :: 102;
-GET_KEYBOARD_CONTROL :: 103;
-BELL :: 104;
-CHANGE_POINTER_CONTROL :: 105;
-GET_POINTER_CONTROL :: 106;
-SET_SCREEN_SAVER :: 107;
-GET_SCREEN_SAVER :: 108;
-CHANGE_HOSTS :: 109;
-LIST_HOSTS :: 110;
-SET_ACCESS_CONTROL :: 111;
-SET_CLOSE_DOWN_MODE :: 112;
-KILL_CLIENT :: 113;
-ROTATE_PROPERTIES :: 114;
-FORCE_SCREEN_SAVER :: 115;
-SET_POINTER_MAPPING :: 116;
-GET_POINTER_MAPPING :: 117;
-SET_MODIFIER_MAPPING :: 118;
-GET_MODIFIER_MAPPING :: 119;
+KEY_PRESS :: 2
+KEY_RELEASE :: 3
+BUTTON_PRESS :: 4
+BUTTON_RELEASE :: 5
+MOTION_NOTIFY :: 6
+ENTER_NOTIFY :: 7
+LEAVE_NOTIFY :: 8
+FOCUS_IN :: 9
+FOCUS_OUT :: 10
+KEYMAP_NOTIFY :: 11
+EXPOSE :: 12
+GRAPHICS_EXPOSURE :: 13
+NO_EXPOSURE :: 14
+VISIBILITY_NOTIFY :: 15
+CREATE_NOTIFY :: 16
+DESTROY_NOTIFY :: 17
+UNMAP_NOTIFY :: 18
+MAP_NOTIFY :: 19
+MAP_REQUEST :: 20
+REPARENT_NOTIFY :: 21
+CONFIGURE_NOTIFY :: 22
+CONFIGURE_REQUEST :: 23
+GRAVITY_NOTIFY :: 24
+RESIZE_REQUEST :: 25
+CIRCULATE_NOTIFY :: 26
+CIRCULATE_REQUEST :: 27
+PROPERTY_NOTIFY :: 28
+SELECTION_CLEAR :: 29
+SELECTION_REQUEST :: 30
+SELECTION_NOTIFY :: 31
+COLORMAP_NOTIFY :: 32
+CLIENT_MESSAGE :: 33
+MAPPING_NOTIFY :: 34
+GE_GENERIC :: 35
+REQUEST :: 1
+VALUE :: 2
+WINDOW :: 3
+PIXMAP :: 4
+ATOM :: 5
+CURSOR :: 6
+FONT :: 7
+MATCH :: 8
+DRAWABLE :: 9
+ACCESS :: 10
+ALLOC :: 11
+COLORMAP :: 12
+G_CONTEXT :: 13
+ID_CHOICE :: 14
+NAME :: 15
+LENGTH :: 16
+IMPLEMENTATION :: 17
+CREATE_WINDOW :: 1
+CHANGE_WINDOW_ATTRIBUTES :: 2
+GET_WINDOW_ATTRIBUTES :: 3
+DESTROY_WINDOW :: 4
+DESTROY_SUBWINDOWS :: 5
+CHANGE_SAVE_SET :: 6
+REPARENT_WINDOW :: 7
+MAP_WINDOW :: 8
+MAP_SUBWINDOWS :: 9
+UNMAP_WINDOW :: 10
+UNMAP_SUBWINDOWS :: 11
+CONFIGURE_WINDOW :: 12
+CIRCULATE_WINDOW :: 13
+GET_GEOMETRY :: 14
+QUERY_TREE :: 15
+NO_OPERATION :: 127
+INTERN_ATOM :: 16
+GET_ATOM_NAME :: 17
+CHANGE_PROPERTY :: 18
+DELETE_PROPERTY :: 19
+GET_PROPERTY :: 20
+LIST_PROPERTIES :: 21
+SET_SELECTION_OWNER :: 22
+GET_SELECTION_OWNER :: 23
+CONVERT_SELECTION :: 24
+SEND_EVENT :: 25
+GRAB_POINTER :: 26
+UNGRAB_POINTER :: 27
+GRAB_BUTTON :: 28
+UNGRAB_BUTTON :: 29
+CHANGE_ACTIVE_POINTER_GRAB :: 30
+GRAB_KEYBOARD :: 31
+UNGRAB_KEYBOARD :: 32
+GRAB_KEY :: 33
+UNGRAB_KEY :: 34
+ALLOW_EVENTS :: 35
+GRAB_SERVER :: 36
+UNGRAB_SERVER :: 37
+QUERY_POINTER :: 38
+GET_MOTION_EVENTS :: 39
+TRANSLATE_COORDINATES :: 40
+WARP_POINTER :: 41
+SET_INPUT_FOCUS :: 42
+GET_INPUT_FOCUS :: 43
+QUERY_KEYMAP :: 44
+OPEN_FONT :: 45
+CLOSE_FONT :: 46
+QUERY_FONT :: 47
+QUERY_TEXT_EXTENTS :: 48
+LIST_FONTS :: 49
+LIST_FONTS_WITH_INFO :: 50
+SET_FONT_PATH :: 51
+GET_FONT_PATH :: 52
+CREATE_PIXMAP :: 53
+FREE_PIXMAP :: 54
+CREATE_GC :: 55
+CHANGE_GC :: 56
+COPY_GC :: 57
+SET_DASHES :: 58
+SET_CLIP_RECTANGLES :: 59
+FREE_GC :: 60
+CLEAR_AREA :: 61
+COPY_AREA :: 62
+COPY_PLANE :: 63
+POLY_POINT :: 64
+POLY_LINE :: 65
+POLY_SEGMENT :: 66
+POLY_RECTANGLE :: 67
+POLY_ARC :: 68
+FILL_POLY :: 69
+POLY_FILL_RECTANGLE :: 70
+POLY_FILL_ARC :: 71
+PUT_IMAGE :: 72
+GET_IMAGE :: 73
+POLY_TEXT_8 :: 74
+POLY_TEXT_16 :: 75
+IMAGE_TEXT_8 :: 76
+IMAGE_TEXT_16 :: 77
+CREATE_COLORMAP :: 78
+FREE_COLORMAP :: 79
+COPY_COLORMAP_AND_FREE :: 80
+INSTALL_COLORMAP :: 81
+UNINSTALL_COLORMAP :: 82
+LIST_INSTALLED_COLORMAPS :: 83
+ALLOC_COLOR :: 84
+ALLOC_NAMED_COLOR :: 85
+ALLOC_COLOR_CELLS :: 86
+ALLOC_COLOR_PLANES :: 87
+FREE_COLORS :: 88
+STORE_COLORS :: 89
+STORE_NAMED_COLOR :: 90
+QUERY_COLORS :: 91
+LOOKUP_COLOR :: 92
+CREATE_CURSOR :: 93
+CREATE_GLYPH_CURSOR :: 94
+FREE_CURSOR :: 95
+RECOLOR_CURSOR :: 96
+QUERY_BEST_SIZE :: 97
+QUERY_EXTENSION :: 98
+LIST_EXTENSIONS :: 99
+CHANGE_KEYBOARD_MAPPING :: 100
+GET_KEYBOARD_MAPPING :: 101
+CHANGE_KEYBOARD_CONTROL :: 102
+GET_KEYBOARD_CONTROL :: 103
+BELL :: 104
+CHANGE_POINTER_CONTROL :: 105
+GET_POINTER_CONTROL :: 106
+SET_SCREEN_SAVER :: 107
+GET_SCREEN_SAVER :: 108
+CHANGE_HOSTS :: 109
+LIST_HOSTS :: 110
+SET_ACCESS_CONTROL :: 111
+SET_CLOSE_DOWN_MODE :: 112
+KILL_CLIENT :: 113
+ROTATE_PROPERTIES :: 114
+FORCE_SCREEN_SAVER :: 115
+SET_POINTER_MAPPING :: 116
+GET_POINTER_MAPPING :: 117
+SET_MODIFIER_MAPPING :: 118
+GET_MODIFIER_MAPPING :: 119
 
 char2b_t :: struct {
     byte1 : u8,
     byte2 : u8,
-};
+}
 
 char2b_iterator_t :: struct {
      data : ^char2b_t,
       rem : _c.int,
     index : _c.int,
-};
+}
 
-window_t :: u32;
+window_t :: u32
 
 window_iterator_t :: struct {
      data : ^window_t,
       rem : _c.int,
     index : _c.int,
-};
+}
 
-pixmap_t :: u32;
+pixmap_t :: u32
 
 pixmap_iterator_t :: struct {
      data : ^pixmap_t,
       rem : _c.int,
     index : _c.int,
-};
+}
 
-cursor_t :: u32;
+cursor_t :: u32
 
 cursor_iterator_t :: struct {
      data : ^cursor_t,
       rem : _c.int,
     index : _c.int,
-};
+}
 
-font_t :: u32;
+font_t :: u32
 
 font_iterator_t :: struct {
      data : ^font_t,
       rem : _c.int,
     index : _c.int,
-};
+}
 
-gcontext_t :: u32;
+gcontext_t :: u32
 
 gcontext_iterator_t :: struct {
      data : ^gcontext_t,
       rem : _c.int,
     index : _c.int,
-};
+}
 
-colormap_t :: u32;
+colormap_t :: u32
 
 colormap_iterator_t :: struct {
      data : ^colormap_t,
       rem : _c.int,
     index : _c.int,
-};
+}
 
-atom_t :: u32;
+atom_t :: u32
 
 atom_iterator_t :: struct {
      data : ^atom_t,
       rem : _c.int,
     index : _c.int,
-};
+}
 
-drawable_t :: u32;
+drawable_t :: u32
 
 drawable_iterator_t :: struct {
      data : ^drawable_t,
       rem : _c.int,
     index : _c.int,
-};
+}
 
-fontable_t :: u32;
+fontable_t :: u32
 
 fontable_iterator_t :: struct {
      data : ^fontable_t,
       rem : _c.int,
     index : _c.int,
-};
+}
 
-bool32_t :: u32;
+bool32_t :: u32
 
 bool32_iterator_t :: struct {
      data : ^bool32_t,
       rem : _c.int,
     index : _c.int,
-};
+}
 
-visualid_t :: u32;
+visualid_t :: u32
 
 visualid_iterator_t :: struct {
      data : ^visualid_t,
       rem : _c.int,
     index : _c.int,
-};
+}
 
-timestamp_t :: u32;
+timestamp_t :: u32
 
 timestamp_iterator_t :: struct {
      data : ^timestamp_t,
       rem : _c.int,
     index : _c.int,
-};
+}
 
-keysym_t :: u32;
+keysym_t :: u32
 
 keysym_iterator_t :: struct {
      data : ^keysym_t,
       rem : _c.int,
     index : _c.int,
-};
+}
 
-keycode_t :: u8;
+keycode_t :: u8
 
 keycode_iterator_t :: struct {
      data : ^keycode_t,
       rem : _c.int,
     index : _c.int,
-};
+}
 
-keycode32_t :: u32;
+keycode32_t :: u32
 
 keycode32_iterator_t :: struct {
      data : ^keycode32_t,
       rem : _c.int,
     index : _c.int,
-};
+}
 
-button_t :: u8;
+button_t :: u8
 
 button_iterator_t :: struct {
      data : ^button_t,
       rem : _c.int,
     index : _c.int,
-};
+}
 
 point_t :: struct {
     x : i16,
     y : i16,
-};
+}
 
 point_iterator_t :: struct {
      data : ^point_t,
       rem : _c.int,
     index : _c.int,
-};
+}
 
 rectangle_t :: struct {
          x : i16,
          y : i16,
      width : u16,
     height : u16,
-};
+}
 
 rectangle_iterator_t :: struct {
      data : ^rectangle_t,
       rem : _c.int,
     index : _c.int,
-};
+}
 
 arc_t :: struct {
          x : i16,
@@ -345,26 +345,26 @@ arc_t :: struct {
     height : u16,
     angle1 : i16,
     angle2 : i16,
-};
+}
 
 arc_iterator_t :: struct {
      data : ^arc_t,
       rem : _c.int,
     index : _c.int,
-};
+}
 
 format_t :: struct {
              depth : u8,
     bits_per_pixel : u8,
       scanline_pad : u8,
               pad0 : [5]u8,
-};
+}
 
 format_iterator_t :: struct {
      data : ^format_t,
       rem : _c.int,
     index : _c.int,
-};
+}
 
 visual_class_t :: enum _c.int {
      VISUAL_CLASS_STATIC_GRAY,
@@ -384,26 +384,26 @@ visualtype_t :: struct {
             green_mask : u32,
              blue_mask : u32,
                   pad0 : [4]u8,
-};
+}
 
 visualtype_iterator_t :: struct {
      data : ^visualtype_t,
       rem : _c.int,
     index : _c.int,
-};
+}
 
 depth_t :: struct {
           depth : u8,
            pad0 : u8,
     visuals_len : u16,
            pad1 : [4]u8,
-};
+}
 
 depth_iterator_t :: struct {
      data : ^depth_t,
       rem : _c.int,
     index : _c.int,
-};
+}
 
 event_mask_t :: enum _c.int {
     EVENT_MASK_NO_EVENT = 0,
@@ -438,7 +438,7 @@ backing_store_t :: enum _c.int {
      BACKING_STORE_NOT_USEFUL,
     BACKING_STORE_WHEN_MAPPED,
          BACKING_STORE_ALWAYS,
-};
+}
 
 screen_t :: struct {
                      root : window_t,
@@ -457,13 +457,13 @@ screen_t :: struct {
               save_unders : u8,
                root_depth : u8,
        allowed_depths_len : u8,
-};
+}
 
 screen_iterator_t :: struct {
      data : ^screen_t,
       rem : _c.int,
     index : _c.int,
-};
+}
 
 setup_request_t :: struct {
                          byte_order : u8,
@@ -473,13 +473,13 @@ setup_request_t :: struct {
     authorization_protocol_name_len : u16,
     authorization_protocol_data_len : u16,
                                pad1 : [2]u8,
-};
+}
 
 setup_request_iterator_t :: struct {
      data : ^setup_request_t,
       rem : _c.int,
     index : _c.int,
-};
+}
 
 setup_failed_t :: struct {
                     status : u8,
@@ -487,25 +487,25 @@ setup_failed_t :: struct {
     protocol_major_version : u16,
     protocol_minor_version : u16,
                     length : u16,
-};
+}
 
 setup_failed_iterator_t :: struct {
      data : ^setup_failed_t,
       rem : _c.int,
     index : _c.int,
-};
+}
 
 setup_authenticate_t :: struct {
     status : u8,
       pad0 : [5]u8,
     length : u16,
-};
+}
 
 setup_authenticate_iterator_t :: struct {
      data : ^setup_authenticate_t,
       rem : _c.int,
     index : _c.int,
-};
+}
 
 image_order_t :: enum _c.int {
     IMAGE_ORDER_LSB_FIRST,
@@ -533,13 +533,13 @@ setup_t :: struct {
                     min_keycode : keycode_t,
                     max_keycode : keycode_t,
                            pad1 : [4]u8,
-};
+}
 
 setup_iterator_t :: struct {
      data : ^setup_t,
       rem : _c.int,
     index : _c.int,
-};
+}
 
 mod_mask_t :: enum _c.int {
       MOD_MASK_SHIFT = 1,
@@ -566,12 +566,12 @@ key_but_mask_t :: enum _c.int {
     KEY_BUT_MASK_BUTTON_2 = 512,
     KEY_BUT_MASK_BUTTON_3 = 1024,
     KEY_BUT_MASK_BUTTON_4 = 2048,
-    KEY_BUT_MASK_BUTTON_5 = 4096.
+    KEY_BUT_MASK_BUTTON_5 = 4096,
 }
 
 window_enum_t :: enum _c.int {
     WINDOW_NONE,
-};
+}
 
 key_press_event_t :: struct {
   response_type : u8,
@@ -596,8 +596,8 @@ button_mask_t :: enum _c.int {
       BUTTON_MASK_3 = 1024,
       BUTTON_MASK_4 = 2048,
       BUTTON_MASK_5 = 4096,
-      BUTTON_MASK_ANY = 32768
-};
+      BUTTON_MASK_ANY = 32768,
+}
 
 button_press_event_t :: struct {
   response_type : u8,
@@ -619,7 +619,7 @@ button_press_event_t :: struct {
 motion_t :: enum _c.int {
     MOTION_NORMAL,
     MOTION_HINT,
-};
+}
 
 motion_notify_event_t :: struct {
   response_type : u8,
@@ -654,7 +654,7 @@ notify_mode_t :: enum _c.int {
              NOTIFY_MODE_GRAB,
            NOTIFY_MODE_UNGRAB,
            NOTIFY_MODE_WHILE_GRABBED,
-};
+}
 
 enter_notify_event_t :: struct {
   response_type : u8,
@@ -731,7 +731,7 @@ visibility_t :: enum _c.int {
             VISIBILITY_UNOBSCURED,
     VISIBILITY_PARTIALLY_OBSCURED,
         VISIBILITY_FULLY_OBSCURED,
-};
+}
 
 visibility_notify_event_t :: struct {
   response_type : u8,
@@ -857,7 +857,7 @@ resize_request_event_t :: struct {
 place_t :: enum _c.int {
        PLACE_ON_TOP,
     PLACE_ON_BOTTOM,
-};
+}
 
 circulate_notify_event_t :: struct {
   response_type : u8,
@@ -899,7 +899,7 @@ selection_clear_event_t :: struct {
 
 xcb_time_t :: enum _c.int {
     TIME_CURRENT_TIME,
-};
+}
 
 atom_enum_t :: enum _c.int{
                    ATOM_NONE = 0,
@@ -1021,13 +1021,13 @@ client_message_data_t :: struct #raw_union {
      data8 : [20]u8,
     data16 : [10]u16,
     data32 : [5]u32,
-};
+}
 
 client_message_data_iterator_t :: struct {
      data : ^client_message_data_t,
       rem : _c.int,
     index : _c.int,
-};
+}
 
 client_message_event_t :: struct {
   response_type : u8,
@@ -1209,7 +1209,7 @@ cw_t :: enum _c.int {
 back_pixmap_t :: enum _c.int {
     BACK_PIXMAP_NONE,
     BACK_PIXMAP_PARENT_RELATIVE,
-};
+}
 
 gravity_t :: enum _c.int {
     GRAVITY_BIT_FORGET = 0,
@@ -1223,8 +1223,8 @@ gravity_t :: enum _c.int {
     GRAVITY_SOUTH_WEST = 7,
     GRAVITY_SOUTH      = 8,
     GRAVITY_SOUTH_EAST = 9,
-    GRAVITY_STATIC     = 10
-};
+    GRAVITY_STATIC     = 10,
+}
 
 create_window_value_list_t :: struct {
         background_pixmap : pixmap_t,
@@ -1242,7 +1242,7 @@ create_window_value_list_t :: struct {
     do_not_propogate_mask : u32,
                  colormap : colormap_t,
                    cursor : cursor_t,
-};
+}
 
 create_window_request_t :: struct {
     major_opcode : u8,
@@ -1258,7 +1258,7 @@ create_window_request_t :: struct {
           _class : u16,
           visual : visualid_t,
       value_mask : u32,
-};
+}
 
 change_window_attributes_value_list_t :: struct {
         background_pixmap : pixmap_t,
@@ -1276,7 +1276,7 @@ change_window_attributes_value_list_t :: struct {
     do_not_propogate_mask : u32,
                  colormap : colormap_t,
                    cursor : cursor_t,
-};
+}
 
 change_window_attributes_request_t :: struct {
     major_opcode : u8,
@@ -1284,17 +1284,17 @@ change_window_attributes_request_t :: struct {
           length : u16,
           window : window_t,
       value_mask : u32,
-};
+}
 
 map_state_t :: enum _c.int {
       MAP_STATE_UNMAPPED,
     MAP_STATE_UNVIEWABLE,
       MAP_STATE_VIEWABLE,
-};
+}
 
 get_window_attributes_cookie_t :: struct {
     sequence : _c.uint,
-};
+}
 
 get_window_attributes_request_t :: struct {
   major_opcode : u8,
@@ -1323,7 +1323,7 @@ get_window_attributes_reply_t :: struct {
           your_event_mask : u32,
     do_not_propagate_mask : u16,
                      pad0 : [2]u8,
-};
+}
 
 destroy_window_request_t :: struct {
   major_opcode : u8,
@@ -1396,7 +1396,7 @@ config_window_t :: enum _c.int {
           CONFIG_WINDOW_HEIGHT = 8,
     CONFIG_WINDOW_BORDER_WIDTH = 16,
          CONFIG_WINDOW_SIBLING = 32,
-      CONFIG_WINDOW_STACK_MODE = 64
+      CONFIG_WINDOW_STACK_MODE = 64,
 }
 
 stack_mode_t :: enum _c.int {
@@ -1405,7 +1405,7 @@ stack_mode_t :: enum _c.int {
        STACK_MODE_TOP_IF,
     STACK_MODE_BOTTOM_IF,
      STACK_MODE_OPPOSITE,
-};
+}
 
 configure_window_value_list_t :: struct {
                x : i32,
@@ -1415,7 +1415,7 @@ configure_window_value_list_t :: struct {
     border_width : u32,
          sibling : window_t,
       stack_mode : u32,
-};
+}
 
 configure_window_request_t :: struct {
     major_opcode : u8,
@@ -1424,7 +1424,7 @@ configure_window_request_t :: struct {
           window : window_t,
       value_mask : u16,
             pad1 : [2]u8,
-};
+}
 
 circulate_t :: enum _c.int {
      CIRCULATE_RAISE_LOWEST,
@@ -1440,7 +1440,7 @@ circulate_window_request_t :: struct {
 
 get_geometry_cookie_t :: struct {
     sequence : _c.uint,
-};
+}
 
 get_geometry_request_t :: struct {
   major_opcode : u8,
@@ -1461,11 +1461,11 @@ get_geometry_reply_t :: struct {
            height : u16,
      border_width : u16,
              pad0 : [2]u8,
-};
+}
 
 query_tree_cookie_t :: struct {
     sequence : _c.uint,
-};
+}
 
 query_tree_request_t :: struct {
   major_opcode : u8,
@@ -1483,11 +1483,11 @@ query_tree_reply_t :: struct {
            parent : window_t,
      children_len : u16,
              pad1 : [14]u8,
-};
+}
 
 intern_atom_cookie_t :: struct {
     sequence : _c.uint,
-};
+}
 
 intern_atom_request_t :: struct {
   major_opcode : u8,
@@ -1592,7 +1592,7 @@ get_property_reply_t :: struct {
 
 list_properties_cookie_t :: struct {
   sequence : _c.uint,
-};
+}
 
 list_properties_request_t :: struct {
   major_opcode : u8,
@@ -1668,7 +1668,7 @@ grab_mode_t :: enum _c.int {
     /**< The state of the keyboard appears to freeze: No further keyboard events are
     generated by the server until the grabbing client issues a releasing
     `AllowEvents` request or until the keyboard grab is released. */
-    XCB_GRAB_MODE_ASYNC = 1
+    XCB_GRAB_MODE_ASYNC = 1,
     /**< Keyboard event processing continues normally. */
 }
 
@@ -1766,7 +1766,7 @@ change_active_pointer_grab_request_t :: struct {
 
 grab_keyboard_cookie_t :: struct {
   sequence : _c.uint,
-};
+}
 
 grab_keyboard_request_t :: struct {
   major_opcode : u8,
@@ -1784,7 +1784,7 @@ grab_keyboard_reply_t :: struct {
   status : u8,
   sequence : u16,
   length : u32,
-};
+}
 
 
 ungrab_keyboard_request_t :: struct {
@@ -1891,23 +1891,23 @@ allow_events_request_t :: struct {
   major_opcode: u8,
   mode: u8,
   length: u16,
-  time: timestamp_t
+  time: timestamp_t,
 }
 
 grab_server_request_t :: struct {
   major_opcode: u8,
   pad0: u8,
-  length: u16
+  length: u16,
 }
 
 ungrab_server_request_t :: struct {
   major_opcode: u8,
   pad0: u8,
-  length: u16
+  length: u16,
 }
 
 query_pointer_cookie_t :: struct {
-  sequence: _c.uint
+  sequence: _c.uint,
 }
 
 query_pointer_request_t :: struct {
@@ -2024,18 +2024,18 @@ set_input_focus_request_t :: struct {
   revert_to: u8,
   length: u16,
   focus: window_t,
-  time: timestamp_t
+  time: timestamp_t,
 }
 
 get_input_focus_cookie_t :: struct {
-  sequence: _c.uint
+  sequence: _c.uint,
 }
 
 
 get_input_focus_request_t :: struct {
   major_opcode: u8,
   pad0: u8,
-  length: u16
+  length: u16,
 }
 
 get_input_focus_reply_t :: struct {
@@ -2043,17 +2043,17 @@ get_input_focus_reply_t :: struct {
   revert_to: u8,
   sequence: u16,
   length: u32,
-  focus: window_t
+  focus: window_t,
 }
 
 query_keymap_cookie_t :: struct {
-  sequence: _c.uint
+  sequence: _c.uint,
 }
 
 query_keymap_request_t :: struct {
   major_opcode: u8,
   pad0: u8,
-  length: u16
+  length: u16,
 }
 
 query_keymap_reply_t :: struct {
@@ -2061,7 +2061,7 @@ query_keymap_reply_t :: struct {
   pad0: u8,
   sequence: u16,
   length: u32,
-  keys: [32]u8
+  keys: [32]u8,
 }
 
 open_font_request_t :: struct {
@@ -2070,14 +2070,14 @@ open_font_request_t :: struct {
   length: u16,
   fid: font_t,
   name_len: u16,
-  pad1: [2]u8
+  pad1: [2]u8,
 }
 
 close_font_request_t :: struct {
   major_opcode: u8,
   pad0: u8,
   length: u16,
-  font: font_t
+  font: font_t,
 }
 
 font_draw_t :: enum _c.int {
@@ -2087,7 +2087,7 @@ font_draw_t :: enum _c.int {
 
 fontprop_t :: struct {
   name: atom_t,
-  value: u32
+  value: u32,
 }
 
 
@@ -2095,7 +2095,7 @@ fontprop_iterator_t :: struct {
      data : ^fontprop_t,
       rem : _c.int,
     index : _c.int,
-};
+}
 
 charinfo_t :: struct {
      left_side_bearing : i16,
@@ -2104,23 +2104,23 @@ charinfo_t :: struct {
                 ascent : i16,
                descent : i16,
             attributes : u16,
-};
+}
 
 charinfo_iterator_t :: struct {
      data : ^charinfo_t,
       rem : _c.int,
     index : _c.int,
-};
+}
 
 query_font_cookie_t :: struct {
     sequence : _c.uint,
-};
+}
 
 xcb_query_font_request_t :: struct {
   major_opcode: u8,
   pad0: u8,
   length: u16,
-  font: fontable_t
+  font: fontable_t,
 }
 
 query_font_reply_t :: struct {
@@ -2143,17 +2143,17 @@ query_font_reply_t :: struct {
           font_ascent : i16,
          font_descent : i16,
        char_infos_len : u32,
-};
+}
 
 query_text_extents_cookie_t :: struct {
     sequence : _c.uint,
-};
+}
 
 query_text_extents_request_t :: struct {
   major_opcode: u8,
   odd_length: u8,
   length: u16,
-  font: fontable_t
+  font: fontable_t,
 }
 
 query_text_extents_reply_t :: struct {
@@ -2168,29 +2168,29 @@ query_text_extents_reply_t :: struct {
       overall_width : i32,
        overall_left : i32,
       overall_right : i32,
-};
+}
 
 str_t :: struct {
     name_len : u8,
-};
+}
 
 str_iterator_t :: struct {
      data : ^str_t,
       rem : _c.int,
     index : _c.int,
-};
+}
 
 list_fonts_cookie_t :: struct {
     sequence : _c.uint,
-};
+}
 
 list_fonts_request_t :: struct {
   major_opcode: u8,
   pad0: u8,
   length: u16,
   max_names: u16,
-  pattern_len: u16
-};
+  pattern_len: u16,
+}
 
 list_fonts_reply_t :: struct {
     response_type : u8,
@@ -2199,11 +2199,11 @@ list_fonts_reply_t :: struct {
            length : u32,
         names_len : u16,
              pad1 : [22]u8,
-};
+}
 
 list_fonts_with_info_cookie_t :: struct {
     sequence : _c.uint,
-};
+}
 
 list_fonts_with_info_request_t :: struct {
   major_opcode: u8,
@@ -2233,7 +2233,7 @@ list_fonts_with_info_reply_t :: struct {
           font_ascent : i16,
          font_descent : i16,
          replies_hint : u32,
-};
+}
 
 set_font_path_request_t :: struct {
     major_opcode : u8,
@@ -2241,17 +2241,17 @@ set_font_path_request_t :: struct {
           length : u16,
         font_qty : u16,
             pad1 : [2]u8,
-};
+}
 
 get_font_path_cookie_t :: struct {
     sequence : _c.uint,
-};
+}
 
 get_font_path_request_t :: struct {
   major_opcode: u8,
   pad0: u8,
-  length: u16
-};
+  length: u16,
+}
 
 get_font_path_reply_t :: struct {
     response_type : u8,
@@ -2260,7 +2260,7 @@ get_font_path_reply_t :: struct {
            length : u32,
          path_len : u16,
              pad1 : [22]u8,
-};
+}
 
 create_pixmap_request_t :: struct {
   major_opcode: u8,
@@ -2269,15 +2269,15 @@ create_pixmap_request_t :: struct {
   pid: pixmap_t,
   drawable: drawable_t,
   width: u16,
-  height: u16
+  height: u16,
 }
 
 free_pixmap_request_t :: struct {
   major_opcode: u8,
   pad0: u8,
   length: u16,
-  pixmap: pixmap_t
-};
+  pixmap: pixmap_t,
+}
 
 gc_t :: enum _c.int{
                  GC_FUNCTION = 1,
@@ -2434,36 +2434,36 @@ cap_style_t :: enum _c.int {
       CAP_STYLE_NOT_LAST,
           CAP_STYLE_BUTT,
          CAP_STYLE_ROUND,
-    CAP_STYLE_PROJECTING
+    CAP_STYLE_PROJECTING,
 }
 
 join_style_t :: enum _c.int {
     JOIN_STYLE_MITER,
     JOIN_STYLE_ROUND,
-    JOIN_STYLE_BEVEL
-};
+    JOIN_STYLE_BEVEL,
+}
 
 fill_style_t :: enum _c.int {
               FILL_STYLE_SOLID,
               FILL_STYLE_TILED,
            FILL_STYLE_STIPPLED,
-    FILL_STYLE_OPAQUE_STIPPLED
-};
+    FILL_STYLE_OPAQUE_STIPPLED,
+}
 
 fill_rule_t :: enum _c.int {
     FILL_RULE_EVEN_ODD,
-    FILL_RULE_WINDING
-};
+    FILL_RULE_WINDING,
+}
 
 subwindow_mode_t :: enum _c.int {
      SUBWINDOW_MODE_CLIP_BY_CHILDREN,
-    SUBWINDOW_MODE_INCLUDE_INFERIORS
-};
+    SUBWINDOW_MODE_INCLUDE_INFERIORS,
+}
 
 arc_mode_t :: enum _c.int {
         ARC_MODE_CHORD,
-    ARC_MODE_PIE_SLICE
-};
+    ARC_MODE_PIE_SLICE,
+}
 
 create_gc_value_list_t :: struct {
                  function : u32,
@@ -2489,7 +2489,7 @@ create_gc_value_list_t :: struct {
               dash_offset : u32,
                    dashes : u32,
                  arc_mode : u32,
-};
+}
 
 create_gc_request_t :: struct {
     major_opcode : u8,
@@ -2498,7 +2498,7 @@ create_gc_request_t :: struct {
              cid : gcontext_t,
         drawable : drawable_t,
       value_mask : u32,
-};
+}
 
 change_gc_value_list_t :: struct {
                  function : u32,
@@ -2524,7 +2524,7 @@ change_gc_value_list_t :: struct {
               dash_offset : u32,
                    dashes : u32,
                  arc_mode : u32,
-};
+}
 
 change_gc_request_t :: struct {
     major_opcode : u8,
@@ -2532,7 +2532,7 @@ change_gc_request_t :: struct {
           length : u16,
               gc : gcontext_t,
       value_mask : u32,
-};
+}
 
 copy_gc_request_t :: struct {
   major_opcode : u8,
@@ -2550,14 +2550,14 @@ set_dashes_request_t :: struct {
               gc : gcontext_t,
      dash_offset : u16,
       dashes_len : u16,
-};
+}
 
 clip_ordering_t :: enum _c.int {
      CLIP_ORDERING_UNSORTED,
      CLIP_ORDERING_Y_SORTED,
     CLIP_ORDERING_YX_SORTED,
-    CLIP_ORDERING_YX_BANDED
-};
+    CLIP_ORDERING_YX_BANDED,
+}
 
 set_clip_rectangles_request_t :: struct {
      major_opcode : u8,
@@ -2566,7 +2566,7 @@ set_clip_rectangles_request_t :: struct {
                gc : gcontext_t,
     clip_x_origin : i16,
     clip_y_origin : i16,
-};
+}
 
 free_gc_request_t :: struct {
   major_opcode : u8,
@@ -2620,9 +2620,9 @@ copy_plane_request_t :: struct {
 coordinate_mode_t :: enum _c.int {
       COORD_MODE_ORIGIN,
 /**< Treats all coordinates as relative to the origin. */
-    COORD_MODE_PREVIOUS
+    COORD_MODE_PREVIOUS,
 /**< Treats all coordinates after the first as relative to the previous coordinate. */
-};
+}
 
 poly_point_request_t :: struct {
   major_opcode : u8,
@@ -2638,14 +2638,14 @@ poly_line_request_t :: struct {
              length : u16,
            drawable : drawable_t,
                  gc : gcontext_t,
-};
+}
 
 segment_t :: struct {
     x1 : i16,
     y1 : i16,
     x2 : i16,
     y2 : i16,
-};
+}
 
 segment_iterator_t :: struct {
   data : ^segment_t,
@@ -2659,7 +2659,7 @@ poly_segment_request_t :: struct {
           length : u16,
         drawable : drawable_t,
               gc : gcontext_t,
-};
+}
 
 poly_rectangle_request_t :: struct {
     major_opcode : u8,
@@ -2667,7 +2667,7 @@ poly_rectangle_request_t :: struct {
           length : u16,
         drawable : drawable_t,
               gc : gcontext_t,
-};
+}
 
 poly_arc_request_t :: struct {
     major_opcode : u8,
@@ -2675,7 +2675,7 @@ poly_arc_request_t :: struct {
           length : u16,
         drawable : drawable_t,
               gc : gcontext_t,
-};
+}
 
 poly_shape_t :: enum _c.int {
       POLY_SHAPE_COMPLEX,
@@ -2692,7 +2692,7 @@ fill_poly_request_t :: struct {
               shape : u8,
     coordinate_mode : u8,
                pad1 : [2]u8,
-};
+}
 
 poly_fill_rectangle_request_t :: struct {
   major_opcode : u8,
@@ -2700,7 +2700,7 @@ poly_fill_rectangle_request_t :: struct {
   length : u16,
   drawable : drawable_t,
   gc : gcontext_t,
-};
+}
 
 poly_fill_arc_request_t :: struct {
     major_opcode : u8,
@@ -2708,13 +2708,13 @@ poly_fill_arc_request_t :: struct {
           length : u16,
         drawable : drawable_t,
               gc : gcontext_t,
-};
+}
 
 image_format_t :: enum _c.int {
     IMAGE_FORMAT_XY_BITMAP,
     IMAGE_FORMAT_XY_PIXMAP,
      IMAGE_FORMAT_Z_PIXMAP,
-};
+}
 
 put_image_request_t :: struct {
   major_opcode : u8,
@@ -2733,7 +2733,7 @@ put_image_request_t :: struct {
 
 get_image_cookie_t :: struct {
     sequence : _c.uint,
-};
+}
 
 get_image_reply_t :: struct {
     response_type : u8,
@@ -2742,7 +2742,7 @@ get_image_reply_t :: struct {
            length : u32,
            visual : visualid_t,
              pad0 : [20]u8,
-};
+}
 
 get_image_request_t :: struct {
   major_opcode : u8,
@@ -2764,7 +2764,7 @@ poly_text_8_request_t :: struct {
               gc : gcontext_t,
                x : i16,
                y : i16,
-};
+}
 
 poly_text_16_request_t :: struct {
     major_opcode : u8,
@@ -2774,7 +2774,7 @@ poly_text_16_request_t :: struct {
               gc : gcontext_t,
                x : i16,
                y : i16,
-};
+}
 
 image_text_8_request_t :: struct {
     major_opcode : u8,
@@ -2784,7 +2784,7 @@ image_text_8_request_t :: struct {
               gc : gcontext_t,
                x : i16,
                y : i16,
-};
+}
 
 image_text_16_request_t :: struct {
     major_opcode : u8,
@@ -2794,7 +2794,7 @@ image_text_16_request_t :: struct {
               gc : gcontext_t,
                x : i16,
                y : i16,
-};
+}
 
 colormap_alloc_t :: enum _c.int {
       COLORMAP_ALLOC_NONE,
@@ -2841,7 +2841,7 @@ uninstall_colormap_request_t :: struct {
 
 list_installed_colormaps_cookie_t :: struct {
     sequence : _c.uint,
-};
+}
 
 list_installed_colormaps_request_t :: struct {
   major_opcode : u8,
@@ -2857,11 +2857,11 @@ list_installed_colormaps_reply_t :: struct {
            length : u32,
         cmaps_len : u16,
              pad1 : [22]u8,
-};
+}
 
 alloc_color_cookie_t :: struct {
     sequence : _c.uint,
-};
+}
 
 alloc_color_request_t :: struct {
   major_opcode : u8,
@@ -2888,7 +2888,7 @@ alloc_color_reply_t :: struct {
 
 alloc_named_color_cookie_t :: struct {
     sequence : _c.uint,
-};
+}
 
 alloc_named_color_request_t :: struct {
   major_opcode : u8,
@@ -2911,11 +2911,11 @@ alloc_named_color_reply_t :: struct {
        visual_red : u16,
      visual_green : u16,
       visual_blue : u16,
-};
+}
 
 alloc_color_cells_cookie_t :: struct {
     sequence : _c.uint,
-};
+}
 
 alloc_color_cells_request_t :: struct {
   major_opcode : u8,
@@ -2934,11 +2934,11 @@ alloc_color_cells_reply_t :: struct {
        pixels_len : u16,
         masks_len : u16,
              pad1 : [20]u8,
-};
+}
 
 alloc_color_planes_cookie_t :: struct {
     sequence : _c.uint,
-};
+}
 
 alloc_color_planes_request_t :: struct {
   major_opcode : u8,
@@ -2962,7 +2962,7 @@ alloc_color_planes_reply_t :: struct {
        green_mask : u32,
         blue_mask : u32,
              pad2 : [8]u8,
-};
+}
 
 free_colors_request_t :: struct {
     major_opcode : u8,
@@ -2970,13 +2970,13 @@ free_colors_request_t :: struct {
           length : u16,
             cmap : colormap_t,
       plane_mask : u32,
-};
+}
 
 color_flag_t :: enum _c.int {
       COLOR_FLAG_RED = 1,
     COLOR_FLAG_GREEN = 2,
      COLOR_FLAG_BLUE = 4,
-};
+}
 
 coloritem_t :: struct {
     pixel : u32,
@@ -2985,20 +2985,20 @@ coloritem_t :: struct {
      blue : u16,
     flags : u8,
      pad0 : u8,
-};
+}
 
 coloritem_iterator_t :: struct {
      data : ^coloritem_t,
       rem : _c.int,
     index : _c.int,
-};
+}
 
 store_colors_request_t :: struct {
     major_opcode : u8,
             pad0 : u8,
           length : u16,
             cmap : colormap_t,
-};
+}
 
 store_named_color_request_t :: struct {
     major_opcode : u8,
@@ -3008,24 +3008,24 @@ store_named_color_request_t :: struct {
            pixel : u32,
         name_len : u16,
             pad0 : [2]u8,
-};
+}
 
 rgb_t :: struct {
       red : u16,
     green : u16,
      blue : u16,
      pad0 : [2]u8,
-};
+}
 
 rgb_iterator_t :: struct {
      data : ^rgb_t,
       rem : _c.int,
     index : _c.int,
-};
+}
 
 query_colors_cookie_t :: struct {
     sequence : _c.uint,
-};
+}
 
 query_colors_request_t :: struct {
   major_opcode : u8,
@@ -3041,11 +3041,11 @@ query_colors_reply_t :: struct {
            length : u32,
        colors_len : u16,
              pad1 : [22]u8,
-};
+}
 
 lookup_color_cookie_t :: struct {
     sequence : _c.uint,
-};
+}
 
 lookup_color_request_t :: struct {
   major_opcode : u8,
@@ -3067,7 +3067,7 @@ lookup_color_reply_t :: struct {
        visual_red : u16,
      visual_green : u16,
       visual_blue : u16,
-};
+}
 
 pixmap_enum_t :: enum _c.int {
     PIXMAP_NONE,
@@ -3139,7 +3139,7 @@ query_shape_of_t :: enum _c.int {
 
 query_best_size_cookie_t :: struct {
     sequence : _c.uint,
-};
+}
 
 query_best_size_request_t :: struct {
   major_opcode : u8,
@@ -3157,11 +3157,11 @@ query_best_size_reply_t :: struct {
            length : u32,
             width : u16,
            height : u16,
-};
+}
 
 query_extension_cookie_t :: struct {
     sequence : _c.uint,
-};
+}
 
 query_extension_request_t :: struct {
   major_opcode : u8,
@@ -3180,11 +3180,11 @@ query_extension_reply_t :: struct {
      major_opcode : u8,
       first_event : u8,
       first_error : u8,
-};
+}
 
 list_extensions_cookie_t :: struct {
     sequence : _c.uint,
-};
+}
 
 list_extensions_request_t :: struct {
   major_opcode : u8,
@@ -3198,7 +3198,7 @@ list_extensions_reply_t :: struct {
          sequence : u16,
            length : u32,
              pad0 : [24]u8,
-};
+}
 
 change_keyboard_mapping_request_t :: struct {
            major_opcode : u8,
@@ -3207,11 +3207,11 @@ change_keyboard_mapping_request_t :: struct {
           first_keycode : keycode_t,
     keysyms_per_keycode : u8,
                    pad0 : [2]u8,
-};
+}
 
 get_keyboard_mapping_cookie_t :: struct {
     sequence : _c.uint,
-};
+}
 
 get_keyboard_mapping_request_t :: struct {
   major_opcode : u8,
@@ -3227,7 +3227,7 @@ get_keyboard_mapping_reply_t :: struct {
                sequence : u16,
                  length : u32,
                    pad0 : [24]u8,
-};
+}
 
 kb_t :: enum _c.int {
     KB_KEY_CLICK_PERCENT = 1,
@@ -3243,13 +3243,13 @@ kb_t :: enum _c.int {
 led_mode_t :: enum _c.int {
     LED_MODE_OFF,
      LED_MODE_ON,
-};
+}
 
 auto_repeat_mode_t :: enum _c.int {
     AUTO_REPEAT_MODE_OFF,
     AUTO_REPEAT_MODE_ON,
     AUTO_REPEAT_MODE_DEFAULT,
-};
+}
 
 change_keyboard_control_value_list_t :: struct {
     key_click_percent : i32,
@@ -3260,18 +3260,18 @@ change_keyboard_control_value_list_t :: struct {
              led_mode : u32,
                   key : keycode32_t,
      auto_repeat_mode : u32,
-};
+}
 
 change_keyboard_control_request_t :: struct {
     major_opcode : u8,
             pad0 : u8,
           length : u16,
       value_mask : u32,
-};
+}
 
 get_keyboard_control_cookie_t :: struct {
     sequence : _c.uint,
-};
+}
 
 get_keyboard_control_request_t :: struct {
   major_opcode : u8,
@@ -3291,13 +3291,13 @@ get_keyboard_control_reply_t :: struct {
          bell_duration : u16,
                   pad0 : [2]u8,
           auto_repeats : [32]u8,
-};
+}
 
 bell_request_t :: struct {
   major_opcode : u8,
   percent : i8,
   length : u16,
-};
+}
 
 change_pointer_control_request_t :: struct {
   major_opcode : u8,
@@ -3308,17 +3308,17 @@ change_pointer_control_request_t :: struct {
   threshold : i16,
   do_acceleration : u8,
   do_threshold : u8,
-};
+}
 
 get_pointer_control_cookie_t :: struct {
     sequence : _c.uint,
-};
+}
 
 get_pointer_control_request_t :: struct {
   major_opcode : u8,
   pad0 : u8,
   length : u16,
-};
+}
 
 get_pointer_control_reply_t :: struct {
                response_type : u8,
@@ -3329,7 +3329,7 @@ get_pointer_control_reply_t :: struct {
     acceleration_denominator : u16,
                    threshold : u16,
                         pad1 : [18]u8,
-};
+}
 
 blanking_t :: enum _c.int {
     BLANKING_NOT_PREFERRED,
@@ -3345,7 +3345,7 @@ exposures_t :: enum _c.int {
 
 get_screen_saver_cookie_t :: struct {
   sequence : _c.uint,
-};
+}
 
 get_screen_saver_request_t :: struct {
   major_opcode : u8,
@@ -3411,7 +3411,7 @@ host_iterator_t :: struct {
 
 list_hosts_cookie_t :: struct {
     sequence : _c.uint,
-};
+}
 
 list_hosts_request_t :: struct {
   major_opcode : u8,
@@ -3426,7 +3426,7 @@ list_hosts_reply_t :: struct {
            length : u32,
         hosts_len : u16,
              pad0 : [22]u8,
-};
+}
 
 access_control_t :: enum _c.int {
      ACCESS_CONTROL_DISABLE,
@@ -3490,7 +3490,7 @@ mapping_status_t :: enum _c.int {
 
 set_pointer_mapping_cookie_t :: struct {
     sequence : _c.uint,
-};
+}
 
 set_pointer_mapping_request_t :: struct {
   major_opcode : u8,
@@ -3507,7 +3507,7 @@ set_pointer_mapping_reply_t :: struct {
 
 get_pointer_mapping_cookie_t :: struct {
     sequence : _c.uint,
-};
+}
 
 get_pointer_mapping_request_t :: struct {
   major_opcode : u8,
@@ -3536,30 +3536,30 @@ map_index_t :: enum _c.int {
 
 set_modifier_mapping_cookie_t :: struct {
     sequence : _c.uint,
-};
+}
 
 set_modifier_mapping_request_t :: struct {
     major_opcode : u8,
           map_len : u8,
           length : u16,
-};
+}
 
 set_modifier_mapping_reply_t :: struct {
   response_type : u8,
   status : u8,
   sequence : u16,
   length : u32,
-};
+}
 
 get_modifier_mapping_cookie_t :: struct {
     sequence : _c.uint,
-};
+}
 
 get_modifier_mapping_request_t :: struct {
   major_opcode : u8,
   pad0 : u8,
   length : u16,
-};
+}
 
 get_modifier_mapping_reply_t :: struct {
             response_type : u8,
@@ -3567,13 +3567,13 @@ get_modifier_mapping_reply_t :: struct {
                  sequence : u16,
                    length : u32,
                      pad0 : [24]u8,
-};
+}
 
 no_operation_request_t :: struct {
   major_opcode : u8,
   pad0 : u8,
   length : u16,
-};
+}
 
 /***** libxcb *****/
 foreign import libxcb "system:libxcb.so"
@@ -3590,7 +3590,7 @@ foreign libxcb {
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(xcb_char2b_t)
  */
-char2b_next :: proc(i : ^char2b_iterator_t) ---;
+char2b_next :: proc(i : ^char2b_iterator_t) ---
 /**
  * Return the iterator pointing to the last element
  * @param i An xcb_char2b_iterator_t
@@ -3600,7 +3600,7 @@ char2b_next :: proc(i : ^char2b_iterator_t) ---;
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-char2b_end :: proc(i : char2b_iterator_t) -> generic_iterator_t ---;
+char2b_end :: proc(i : char2b_iterator_t) -> generic_iterator_t ---
 /**
  * Get the next element of the iterator
  * @param i Pointer to a xcb_window_iterator_t
@@ -3609,7 +3609,7 @@ char2b_end :: proc(i : char2b_iterator_t) -> generic_iterator_t ---;
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(window_t)
  */
-window_next :: proc(i : ^window_iterator_t) ---;
+window_next :: proc(i : ^window_iterator_t) ---
 /**
  * Return the iterator pointing to the last element
  * @param i An xcb_window_iterator_t
@@ -3619,7 +3619,7 @@ window_next :: proc(i : ^window_iterator_t) ---;
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-window_end :: proc(i : window_iterator_t) -> generic_iterator_t ---;
+window_end :: proc(i : window_iterator_t) -> generic_iterator_t ---
 /**
  * Get the next element of the iterator
  * @param i Pointer to a xcb_pixmap_iterator_t
@@ -3628,7 +3628,7 @@ window_end :: proc(i : window_iterator_t) -> generic_iterator_t ---;
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(pixmap_t)
  */
-pixmap_next :: proc(i : ^pixmap_iterator_t) ---;
+pixmap_next :: proc(i : ^pixmap_iterator_t) ---
 /**
  * Return the iterator pointing to the last element
  * @param i An xcb_pixmap_iterator_t
@@ -3638,7 +3638,7 @@ pixmap_next :: proc(i : ^pixmap_iterator_t) ---;
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-pixmap_end :: proc(i : pixmap_iterator_t) -> generic_iterator_t ---;
+pixmap_end :: proc(i : pixmap_iterator_t) -> generic_iterator_t ---
 /**
  * Get the next element of the iterator
  * @param i Pointer to a xcb_cursor_iterator_t
@@ -3647,7 +3647,7 @@ pixmap_end :: proc(i : pixmap_iterator_t) -> generic_iterator_t ---;
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(cursor_t)
  */
-cursor_next :: proc(i : ^cursor_iterator_t) ---;
+cursor_next :: proc(i : ^cursor_iterator_t) ---
 /**
  * Return the iterator pointing to the last element
  * @param i An xcb_cursor_iterator_t
@@ -3657,7 +3657,7 @@ cursor_next :: proc(i : ^cursor_iterator_t) ---;
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-cursor_end :: proc(i : cursor_iterator_t) -> generic_iterator_t ---;
+cursor_end :: proc(i : cursor_iterator_t) -> generic_iterator_t ---
 /**
  * Get the next element of the iterator
  * @param i Pointer to a xcb_font_iterator_t
@@ -3666,7 +3666,7 @@ cursor_end :: proc(i : cursor_iterator_t) -> generic_iterator_t ---;
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(font_t)
  */
-font_next :: proc(i : ^font_iterator_t) ---;
+font_next :: proc(i : ^font_iterator_t) ---
 /**
  * Return the iterator pointing to the last element
  * @param i An xcb_font_iterator_t
@@ -3676,7 +3676,7 @@ font_next :: proc(i : ^font_iterator_t) ---;
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-font_end :: proc(i : font_iterator_t) -> generic_iterator_t ---;
+font_end :: proc(i : font_iterator_t) -> generic_iterator_t ---
 /**
  * Get the next element of the iterator
  * @param i Pointer to a xcb_gcontext_iterator_t
@@ -3685,7 +3685,7 @@ font_end :: proc(i : font_iterator_t) -> generic_iterator_t ---;
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(xcb_gcontext_t)
  */
-gcontext_next :: proc(i : ^gcontext_iterator_t) ---;
+gcontext_next :: proc(i : ^gcontext_iterator_t) ---
 /**
  * Return the iterator pointing to the last element
  * @param i An xcb_gcontext_iterator_t
@@ -3695,7 +3695,7 @@ gcontext_next :: proc(i : ^gcontext_iterator_t) ---;
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-gcontext_end :: proc(i : gcontext_iterator_t) -> generic_iterator_t ---;
+gcontext_end :: proc(i : gcontext_iterator_t) -> generic_iterator_t ---
 /**
  * Get the next element of the iterator
  * @param i Pointer to a xcb_colormap_iterator_t
@@ -3704,7 +3704,7 @@ gcontext_end :: proc(i : gcontext_iterator_t) -> generic_iterator_t ---;
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(colormap_t)
  */
-colormap_next :: proc(i : ^colormap_iterator_t) ---;
+colormap_next :: proc(i : ^colormap_iterator_t) ---
 /**
  * Return the iterator pointing to the last element
  * @param i An xcb_colormap_iterator_t
@@ -3714,7 +3714,7 @@ colormap_next :: proc(i : ^colormap_iterator_t) ---;
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-colormap_end :: proc(i : colormap_iterator_t) -> generic_iterator_t ---;
+colormap_end :: proc(i : colormap_iterator_t) -> generic_iterator_t ---
 /**
  * Get the next element of the iterator
  * @param i Pointer to a xcb_atom_iterator_t
@@ -3723,7 +3723,7 @@ colormap_end :: proc(i : colormap_iterator_t) -> generic_iterator_t ---;
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(atom_t)
  */
-atom_next :: proc(i : ^atom_iterator_t) ---;
+atom_next :: proc(i : ^atom_iterator_t) ---
 /**
  * Return the iterator pointing to the last element
  * @param i An xcb_atom_iterator_t
@@ -3733,7 +3733,7 @@ atom_next :: proc(i : ^atom_iterator_t) ---;
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-atom_end :: proc(i : atom_iterator_t) -> generic_iterator_t ---;
+atom_end :: proc(i : atom_iterator_t) -> generic_iterator_t ---
 /**
  * Return the iterator pointing to the last element
  * @param i An xcb_drawable_iterator_t
@@ -3743,7 +3743,7 @@ atom_end :: proc(i : atom_iterator_t) -> generic_iterator_t ---;
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-drawable_end :: proc(i : drawable_iterator_t) -> generic_iterator_t ---;
+drawable_end :: proc(i : drawable_iterator_t) -> generic_iterator_t ---
 /**
  * Get the next element of the iterator
  * @param i Pointer to a xcb_fontable_iterator_t
@@ -3752,7 +3752,7 @@ drawable_end :: proc(i : drawable_iterator_t) -> generic_iterator_t ---;
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(fontable_t)
  */
-fontable_next :: proc(i : ^fontable_iterator_t) ---;
+fontable_next :: proc(i : ^fontable_iterator_t) ---
 /**
  * Return the iterator pointing to the last element
  * @param i An xcb_fontable_iterator_t
@@ -3762,7 +3762,7 @@ fontable_next :: proc(i : ^fontable_iterator_t) ---;
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-fontable_end :: proc(i : fontable_iterator_t) -> generic_iterator_t ---;
+fontable_end :: proc(i : fontable_iterator_t) -> generic_iterator_t ---
 /**
  * Get the next element of the iterator
  * @param i Pointer to a xcb_bool32_iterator_t
@@ -3771,7 +3771,7 @@ fontable_end :: proc(i : fontable_iterator_t) -> generic_iterator_t ---;
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(xcb_bool32_t)
  */
-bool32_next :: proc(i : ^bool32_iterator_t) ---;
+bool32_next :: proc(i : ^bool32_iterator_t) ---
 /**
  * Get the next element of the iterator
  * @param i Pointer to a xcb_drawable_iterator_t
@@ -3780,7 +3780,7 @@ bool32_next :: proc(i : ^bool32_iterator_t) ---;
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(drawable_t)
  */
-drawable_next :: proc(i : ^drawable_iterator_t) ---;
+drawable_next :: proc(i : ^drawable_iterator_t) ---
 /**
  * Return the iterator pointing to the last element
  * @param i An xcb_bool32_iterator_t
@@ -3790,7 +3790,7 @@ drawable_next :: proc(i : ^drawable_iterator_t) ---;
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-bool32_end :: proc(i : bool32_iterator_t) -> generic_iterator_t ---;
+bool32_end :: proc(i : bool32_iterator_t) -> generic_iterator_t ---
 /**
  * Get the next element of the iterator
  * @param i Pointer to a xcb_rectangle_iterator_t
@@ -3799,7 +3799,7 @@ bool32_end :: proc(i : bool32_iterator_t) -> generic_iterator_t ---;
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(xcb_rectangle_t)
  */
-rectangle_next :: proc(i : ^rectangle_iterator_t) ---;
+rectangle_next :: proc(i : ^rectangle_iterator_t) ---
 /**
  * Return the iterator pointing to the last element
  * @param i An xcb_visualtype_iterator_t
@@ -3809,7 +3809,7 @@ rectangle_next :: proc(i : ^rectangle_iterator_t) ---;
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-visualtype_end :: proc(i : visualtype_iterator_t) -> generic_iterator_t ---;
+visualtype_end :: proc(i : visualtype_iterator_t) -> generic_iterator_t ---
 /**
  * Get the next element of the iterator
  * @param i Pointer to a xcb_visualid_iterator_t
@@ -3818,7 +3818,7 @@ visualtype_end :: proc(i : visualtype_iterator_t) -> generic_iterator_t ---;
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(visualid_t)
  */
-visualid_next :: proc(i : ^visualid_iterator_t) ---;
+visualid_next :: proc(i : ^visualid_iterator_t) ---
 /**
  * Return the iterator pointing to the last element
  * @param i An xcb_visualid_iterator_t
@@ -3828,7 +3828,7 @@ visualid_next :: proc(i : ^visualid_iterator_t) ---;
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-visualid_end :: proc(i : visualid_iterator_t) -> generic_iterator_t ---;
+visualid_end :: proc(i : visualid_iterator_t) -> generic_iterator_t ---
 /**
  * Get the next element of the iterator
  * @param i Pointer to a xcb_timestamp_iterator_t
@@ -3837,7 +3837,7 @@ visualid_end :: proc(i : visualid_iterator_t) -> generic_iterator_t ---;
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(timestamp_t)
  */
-timestamp_next :: proc(i : ^timestamp_iterator_t) ---;
+timestamp_next :: proc(i : ^timestamp_iterator_t) ---
 /**
  * Return the iterator pointing to the last element
  * @param i An xcb_timestamp_iterator_t
@@ -3847,7 +3847,7 @@ timestamp_next :: proc(i : ^timestamp_iterator_t) ---;
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-timestamp_end :: proc(i : timestamp_iterator_t) -> generic_iterator_t ---;
+timestamp_end :: proc(i : timestamp_iterator_t) -> generic_iterator_t ---
 /**
  * Get the next element of the iterator
  * @param i Pointer to a xcb_keysym_iterator_t
@@ -3856,7 +3856,7 @@ timestamp_end :: proc(i : timestamp_iterator_t) -> generic_iterator_t ---;
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(xcb_keysym_t)
  */
-keysym_next :: proc(i : ^keysym_iterator_t) ---;
+keysym_next :: proc(i : ^keysym_iterator_t) ---
 /**
  * Return the iterator pointing to the last element
  * @param i An xcb_keysym_iterator_t
@@ -3866,7 +3866,7 @@ keysym_next :: proc(i : ^keysym_iterator_t) ---;
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-keysym_end :: proc(i : keysym_iterator_t) -> generic_iterator_t ---;
+keysym_end :: proc(i : keysym_iterator_t) -> generic_iterator_t ---
 /**
  * Get the next element of the iterator
  * @param i Pointer to a xcb_keycode_iterator_t
@@ -3875,7 +3875,7 @@ keysym_end :: proc(i : keysym_iterator_t) -> generic_iterator_t ---;
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(keycode_t)
  */
-keycode_next :: proc(i : ^keycode_iterator_t) ---;
+keycode_next :: proc(i : ^keycode_iterator_t) ---
 /**
  * Return the iterator pointing to the last element
  * @param i An xcb_keycode_iterator_t
@@ -3885,7 +3885,7 @@ keycode_next :: proc(i : ^keycode_iterator_t) ---;
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-keycode_end :: proc(i : keycode_iterator_t) -> generic_iterator_t ---;
+keycode_end :: proc(i : keycode_iterator_t) -> generic_iterator_t ---
 /**
  * Get the next element of the iterator
  * @param i Pointer to a xcb_keycode32_iterator_t
@@ -3894,7 +3894,7 @@ keycode_end :: proc(i : keycode_iterator_t) -> generic_iterator_t ---;
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(xcb_keycode32_t)
  */
-keycode32_next :: proc(i : ^keycode32_iterator_t) ---;
+keycode32_next :: proc(i : ^keycode32_iterator_t) ---
 /**
  * Return the iterator pointing to the last element
  * @param i An xcb_keycode32_iterator_t
@@ -3904,7 +3904,7 @@ keycode32_next :: proc(i : ^keycode32_iterator_t) ---;
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-keycode32_end :: proc(i : keycode32_iterator_t) -> generic_iterator_t ---;
+keycode32_end :: proc(i : keycode32_iterator_t) -> generic_iterator_t ---
 /**
  * Get the next element of the iterator
  * @param i Pointer to a xcb_button_iterator_t
@@ -3913,7 +3913,7 @@ keycode32_end :: proc(i : keycode32_iterator_t) -> generic_iterator_t ---;
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(button_t)
  */
-button_next :: proc(i : ^button_iterator_t) ---;
+button_next :: proc(i : ^button_iterator_t) ---
 /**
  * Return the iterator pointing to the last element
  * @param i An xcb_button_iterator_t
@@ -3923,7 +3923,7 @@ button_next :: proc(i : ^button_iterator_t) ---;
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-button_end :: proc(i : button_iterator_t) -> generic_iterator_t ---;
+button_end :: proc(i : button_iterator_t) -> generic_iterator_t ---
 /**
  * Get the next element of the iterator
  * @param i Pointer to a xcb_point_iterator_t
@@ -3932,7 +3932,7 @@ button_end :: proc(i : button_iterator_t) -> generic_iterator_t ---;
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(xcb_point_t)
  */
-point_next :: proc(i : ^point_iterator_t) ---;
+point_next :: proc(i : ^point_iterator_t) ---
 /**
  * Return the iterator pointing to the last element
  * @param i An xcb_point_iterator_t
@@ -3942,7 +3942,7 @@ point_next :: proc(i : ^point_iterator_t) ---;
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-point_end :: proc(i : point_iterator_t) -> generic_iterator_t ---;
+point_end :: proc(i : point_iterator_t) -> generic_iterator_t ---
 /**
  * Return the iterator pointing to the last element
  * @param i An xcb_rectangle_iterator_t
@@ -3952,7 +3952,7 @@ point_end :: proc(i : point_iterator_t) -> generic_iterator_t ---;
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-rectangle_end :: proc(i : rectangle_iterator_t) -> generic_iterator_t ---;
+rectangle_end :: proc(i : rectangle_iterator_t) -> generic_iterator_t ---
 /**
  * Get the next element of the iterator
  * @param i Pointer to a xcb_arc_iterator_t
@@ -3961,7 +3961,7 @@ rectangle_end :: proc(i : rectangle_iterator_t) -> generic_iterator_t ---;
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(xcb_arc_t)
  */
-arc_next :: proc(i : ^arc_iterator_t) ---;
+arc_next :: proc(i : ^arc_iterator_t) ---
 /**
  * Return the iterator pointing to the last element
  * @param i An xcb_arc_iterator_t
@@ -3971,7 +3971,7 @@ arc_next :: proc(i : ^arc_iterator_t) ---;
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-arc_end :: proc(i : arc_iterator_t) -> generic_iterator_t ---;
+arc_end :: proc(i : arc_iterator_t) -> generic_iterator_t ---
 /**
  * Get the next element of the iterator
  * @param i Pointer to a xcb_format_iterator_t
@@ -3980,7 +3980,7 @@ arc_end :: proc(i : arc_iterator_t) -> generic_iterator_t ---;
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(xcb_format_t)
  */
-format_next :: proc(i : ^format_iterator_t) ---;
+format_next :: proc(i : ^format_iterator_t) ---
 /**
  * Return the iterator pointing to the last element
  * @param i An xcb_format_iterator_t
@@ -3990,7 +3990,7 @@ format_next :: proc(i : ^format_iterator_t) ---;
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-format_end :: proc(i : format_iterator_t) -> generic_iterator_t ---;
+format_end :: proc(i : format_iterator_t) -> generic_iterator_t ---
 /**
  * Get the next element of the iterator
  * @param i Pointer to a xcb_visualtype_iterator_t
@@ -3999,10 +3999,10 @@ format_end :: proc(i : format_iterator_t) -> generic_iterator_t ---;
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(xcb_visualtype_t)
  */
-visualtype_next :: proc(i : ^visualtype_iterator_t) ---;
-depth_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
-depth_visuals_length :: proc(R : ^depth_t) -> _c.int ---;
-depth_visuals_iterator :: proc(R : ^depth_t) -> visualtype_iterator_t ---;
+visualtype_next :: proc(i : ^visualtype_iterator_t) ---
+depth_sizeof :: proc(_buffer : rawptr) -> _c.int ---
+depth_visuals_length :: proc(R : ^depth_t) -> _c.int ---
+depth_visuals_iterator :: proc(R : ^depth_t) -> visualtype_iterator_t ---
 /**
  * Get the next element of the iterator
  * @param i Pointer to a xcb_depth_iterator_t
@@ -4011,7 +4011,7 @@ depth_visuals_iterator :: proc(R : ^depth_t) -> visualtype_iterator_t ---;
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(xcb_depth_t)
  */
-depth_next :: proc(i : ^depth_iterator_t) ---;
+depth_next :: proc(i : ^depth_iterator_t) ---
 /**
  * Return the iterator pointing to the last element
  * @param i An xcb_depth_iterator_t
@@ -4021,10 +4021,10 @@ depth_next :: proc(i : ^depth_iterator_t) ---;
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-depth_end :: proc(i : depth_iterator_t) -> generic_iterator_t ---;
-screen_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
-screen_allowed_depths_length :: proc(R : ^screen_t) -> _c.int ---;
-screen_allowed_depths_iterator :: proc(R : ^screen_t) -> depth_iterator_t ---;
+depth_end :: proc(i : depth_iterator_t) -> generic_iterator_t ---
+screen_sizeof :: proc(_buffer : rawptr) -> _c.int ---
+screen_allowed_depths_length :: proc(R : ^screen_t) -> _c.int ---
+screen_allowed_depths_iterator :: proc(R : ^screen_t) -> depth_iterator_t ---
 /**
  * Get the next element of the iterator
  * @param i Pointer to a xcb_screen_iterator_t
@@ -4033,7 +4033,7 @@ screen_allowed_depths_iterator :: proc(R : ^screen_t) -> depth_iterator_t ---;
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(xcb_screen_t)
  */
-screen_next :: proc(i : ^screen_iterator_t) ---;
+screen_next :: proc(i : ^screen_iterator_t) ---
 /**
  * Return the iterator pointing to the last element
  * @param i An xcb_screen_iterator_t
@@ -4043,12 +4043,12 @@ screen_next :: proc(i : ^screen_iterator_t) ---;
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-screen_end :: proc(i : screen_iterator_t) -> generic_iterator_t ---;
-setup_request_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
-setup_request_authorization_protocol_name_length :: proc(R : ^setup_request_t) -> _c.int ---;
-setup_request_authorization_protocol_name_end :: proc(R : ^setup_request_t) -> generic_iterator_t ---;
-setup_request_authorization_protocol_data_length :: proc(R : ^setup_request_t) -> _c.int ---;
-setup_request_authorization_protocol_data_end :: proc(R : ^setup_request_t) -> generic_iterator_t ---;
+screen_end :: proc(i : screen_iterator_t) -> generic_iterator_t ---
+setup_request_sizeof :: proc(_buffer : rawptr) -> _c.int ---
+setup_request_authorization_protocol_name_length :: proc(R : ^setup_request_t) -> _c.int ---
+setup_request_authorization_protocol_name_end :: proc(R : ^setup_request_t) -> generic_iterator_t ---
+setup_request_authorization_protocol_data_length :: proc(R : ^setup_request_t) -> _c.int ---
+setup_request_authorization_protocol_data_end :: proc(R : ^setup_request_t) -> generic_iterator_t ---
 /**
  * Return the iterator pointing to the last element
  * @param i An xcb_setup_request_iterator_t
@@ -4058,10 +4058,10 @@ setup_request_authorization_protocol_data_end :: proc(R : ^setup_request_t) -> g
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-setup_request_end :: proc(i : setup_request_iterator_t) -> generic_iterator_t ---;
-setup_failed_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
-setup_failed_reason_length :: proc(R : ^setup_failed_t) -> _c.int ---;
-setup_failed_reason_end :: proc(R : ^setup_failed_t) -> generic_iterator_t ---;
+setup_request_end :: proc(i : setup_request_iterator_t) -> generic_iterator_t ---
+setup_failed_sizeof :: proc(_buffer : rawptr) -> _c.int ---
+setup_failed_reason_length :: proc(R : ^setup_failed_t) -> _c.int ---
+setup_failed_reason_end :: proc(R : ^setup_failed_t) -> generic_iterator_t ---
 /**
  * Get the next element of the iterator
  * @param i Pointer to a xcb_setup_failed_iterator_t
@@ -4070,7 +4070,7 @@ setup_failed_reason_end :: proc(R : ^setup_failed_t) -> generic_iterator_t ---;
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(xcb_setup_failed_t)
  */
-setup_failed_next :: proc(i : ^setup_failed_iterator_t) ---;
+setup_failed_next :: proc(i : ^setup_failed_iterator_t) ---
 /**
  * Return the iterator pointing to the last element
  * @param i An xcb_setup_failed_iterator_t
@@ -4080,10 +4080,10 @@ setup_failed_next :: proc(i : ^setup_failed_iterator_t) ---;
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-setup_failed_end :: proc(i : setup_failed_iterator_t) -> generic_iterator_t ---;
-setup_authenticate_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
-setup_authenticate_reason_length :: proc(R : ^setup_authenticate_t) -> _c.int ---;
-setup_authenticate_reason_end :: proc(R : ^setup_authenticate_t) -> generic_iterator_t ---;
+setup_failed_end :: proc(i : setup_failed_iterator_t) -> generic_iterator_t ---
+setup_authenticate_sizeof :: proc(_buffer : rawptr) -> _c.int ---
+setup_authenticate_reason_length :: proc(R : ^setup_authenticate_t) -> _c.int ---
+setup_authenticate_reason_end :: proc(R : ^setup_authenticate_t) -> generic_iterator_t ---
 /**
  * Get the next element of the iterator
  * @param i Pointer to a xcb_setup_request_iterator_t
@@ -4092,7 +4092,7 @@ setup_authenticate_reason_end :: proc(R : ^setup_authenticate_t) -> generic_iter
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(xcb_setup_request_t)
  */
-setup_request_next :: proc(i : ^setup_request_iterator_t) ---;
+setup_request_next :: proc(i : ^setup_request_iterator_t) ---
 /**
  * Get the next element of the iterator
  * @param i Pointer to a xcb_setup_authenticate_iterator_t
@@ -4101,7 +4101,7 @@ setup_request_next :: proc(i : ^setup_request_iterator_t) ---;
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(xcb_setup_authenticate_t)
  */
-setup_authenticate_next :: proc(i : ^setup_authenticate_iterator_t) ---;
+setup_authenticate_next :: proc(i : ^setup_authenticate_iterator_t) ---
 /**
  * Return the iterator pointing to the last element
  * @param i An xcb_setup_authenticate_iterator_t
@@ -4111,14 +4111,14 @@ setup_authenticate_next :: proc(i : ^setup_authenticate_iterator_t) ---;
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-setup_authenticate_end :: proc(i : setup_authenticate_iterator_t) -> generic_iterator_t ---;
-setup_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
-setup_vendor_length :: proc(R : ^setup_t) -> _c.int ---;
-setup_vendor_end :: proc(R : ^setup_t) -> generic_iterator_t ---;
-setup_pixmap_formats_length :: proc(R : ^setup_t) -> _c.int ---;
-setup_pixmap_formats_iterator :: proc(R : ^setup_t) -> format_iterator_t ---;
-setup_roots_length :: proc(R : ^setup_t) -> _c.int ---;
-setup_roots_iterator :: proc(R : ^setup_t) -> screen_iterator_t ---;
+setup_authenticate_end :: proc(i : setup_authenticate_iterator_t) -> generic_iterator_t ---
+setup_sizeof :: proc(_buffer : rawptr) -> _c.int ---
+setup_vendor_length :: proc(R : ^setup_t) -> _c.int ---
+setup_vendor_end :: proc(R : ^setup_t) -> generic_iterator_t ---
+setup_pixmap_formats_length :: proc(R : ^setup_t) -> _c.int ---
+setup_pixmap_formats_iterator :: proc(R : ^setup_t) -> format_iterator_t ---
+setup_roots_length :: proc(R : ^setup_t) -> _c.int ---
+setup_roots_iterator :: proc(R : ^setup_t) -> screen_iterator_t ---
 /**
  * Get the next element of the iterator
  * @param i Pointer to a xcb_setup_iterator_t
@@ -4127,7 +4127,7 @@ setup_roots_iterator :: proc(R : ^setup_t) -> screen_iterator_t ---;
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(xcb_setup_t)
  */
-setup_next :: proc(i : ^setup_iterator_t) ---;
+setup_next :: proc(i : ^setup_iterator_t) ---
 /**
  * Return the iterator pointing to the last element
  * @param i An xcb_setup_iterator_t
@@ -4137,7 +4137,7 @@ setup_next :: proc(i : ^setup_iterator_t) ---;
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-setup_end :: proc(i : setup_iterator_t) -> generic_iterator_t ---;
+setup_end :: proc(i : setup_iterator_t) -> generic_iterator_t ---
 /**
  * Get the next element of the iterator
  * @param i Pointer to a xcb_client_message_data_iterator_t
@@ -4146,7 +4146,7 @@ setup_end :: proc(i : setup_iterator_t) -> generic_iterator_t ---;
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(client_message_data_t)
  */
-client_message_data_next :: proc(i : ^client_message_data_iterator_t) ---;
+client_message_data_next :: proc(i : ^client_message_data_iterator_t) ---
 /**
  * Return the iterator pointing to the last element
  * @param i An xcb_client_message_data_iterator_t
@@ -4156,11 +4156,11 @@ client_message_data_next :: proc(i : ^client_message_data_iterator_t) ---;
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-client_message_data_end :: proc(i : client_message_data_iterator_t) -> generic_iterator_t ---;
-create_window_value_list_serialize :: proc(_buffer : ^rawptr, value_mask : u32, _aux : ^create_window_value_list_t) -> _c.int ---;
-create_window_value_list_unpack :: proc(_buffer : rawptr, value_mask : u32, _aux : ^create_window_value_list_t) -> _c.int ---;
-create_window_value_list_sizeof :: proc(_buffer : rawptr, value_mask : u32) -> _c.int ---;
-create_window_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
+client_message_data_end :: proc(i : client_message_data_iterator_t) -> generic_iterator_t ---
+create_window_value_list_serialize :: proc(_buffer : ^rawptr, value_mask : u32, _aux : ^create_window_value_list_t) -> _c.int ---
+create_window_value_list_unpack :: proc(_buffer : rawptr, value_mask : u32, _aux : ^create_window_value_list_t) -> _c.int ---
+create_window_value_list_sizeof :: proc(_buffer : rawptr, value_mask : u32) -> _c.int ---
+create_window_sizeof :: proc(_buffer : rawptr) -> _c.int ---
 /**
  * @brief Creates a window
  *
@@ -4207,7 +4207,7 @@ create_window_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-create_window_checked :: proc(c : ^connection_t, depth : u8, wid : window_t, parent : window_t, x : i16, y : i16, width : u16, height : u16, border_width : u16, _class : u16, visual : visualid_t, value_mask : u32, value_list : rawptr) -> void_cookie_t ---;
+create_window_checked :: proc(c : ^connection_t, depth : u8, wid : window_t, parent : window_t, x : i16, y : i16, width : u16, height : u16, border_width : u16, _class : u16, visual : visualid_t, value_mask : u32, value_list : rawptr) -> void_cookie_t ---
 /**
  * @brief Creates a window
  *
@@ -4251,7 +4251,7 @@ create_window_checked :: proc(c : ^connection_t, depth : u8, wid : window_t, par
  * The created window will initially use the same cursor as its parent.
  *
  */
-create_window :: proc(c : ^connection_t, depth : u8, wid : window_t, parent : window_t, x : i16, y : i16, width : u16, height : u16, border_width : u16, _class : u16, visual : visualid_t, value_mask : u32, value_list : rawptr) -> void_cookie_t ---;
+create_window :: proc(c : ^connection_t, depth : u8, wid : window_t, parent : window_t, x : i16, y : i16, width : u16, height : u16, border_width : u16, _class : u16, visual : visualid_t, value_mask : u32, value_list : rawptr) -> void_cookie_t ---
 /**
  * @brief Creates a window
  *
@@ -4298,7 +4298,7 @@ create_window :: proc(c : ^connection_t, depth : u8, wid : window_t, parent : wi
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-create_window_aux_checked :: proc(c : ^connection_t, depth : u8, wid : window_t, parent : window_t, x : i16, y : i16, width : u16, height : u16, border_width : u16, _class : u16, visual : visualid_t, value_mask : u32, value_list : ^create_window_value_list_t) -> void_cookie_t ---;
+create_window_aux_checked :: proc(c : ^connection_t, depth : u8, wid : window_t, parent : window_t, x : i16, y : i16, width : u16, height : u16, border_width : u16, _class : u16, visual : visualid_t, value_mask : u32, value_list : ^create_window_value_list_t) -> void_cookie_t ---
 /**
  * @brief Creates a window
  *
@@ -4342,11 +4342,11 @@ create_window_aux_checked :: proc(c : ^connection_t, depth : u8, wid : window_t,
  * The created window will initially use the same cursor as its parent.
  *
  */
-create_window_aux :: proc(c : ^connection_t, depth : u8, wid : window_t, parent : window_t, x : i16, y : i16, width : u16, height : u16, border_width : u16, _class : u16, visual : visualid_t, value_mask : u32, value_list : ^create_window_value_list_t) -> void_cookie_t ---;
-change_window_attributes_value_list_serialize :: proc(_buffer : ^rawptr, value_mask : u32, _aux : ^change_window_attributes_value_list_t) -> _c.int ---;
-change_window_attributes_value_list_unpack :: proc(_buffer : rawptr, value_mask : u32, _aux : ^change_window_attributes_value_list_t) -> _c.int ---;
-change_window_attributes_value_list_sizeof :: proc(_buffer : rawptr, value_mask : u32) -> _c.int ---;
-change_window_attributes_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
+create_window_aux :: proc(c : ^connection_t, depth : u8, wid : window_t, parent : window_t, x : i16, y : i16, width : u16, height : u16, border_width : u16, _class : u16, visual : visualid_t, value_mask : u32, value_list : ^create_window_value_list_t) -> void_cookie_t ---
+change_window_attributes_value_list_serialize :: proc(_buffer : ^rawptr, value_mask : u32, _aux : ^change_window_attributes_value_list_t) -> _c.int ---
+change_window_attributes_value_list_unpack :: proc(_buffer : rawptr, value_mask : u32, _aux : ^change_window_attributes_value_list_t) -> _c.int ---
+change_window_attributes_value_list_sizeof :: proc(_buffer : rawptr, value_mask : u32) -> _c.int ---
+change_window_attributes_sizeof :: proc(_buffer : rawptr) -> _c.int ---
 /**
  * @brief change window attributes
  *
@@ -4365,7 +4365,7 @@ change_window_attributes_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-change_window_attributes_checked :: proc(c : ^connection_t, window : window_t, value_mask : u32, value_list : rawptr) -> void_cookie_t ---;
+change_window_attributes_checked :: proc(c : ^connection_t, window : window_t, value_mask : u32, value_list : rawptr) -> void_cookie_t ---
 /**
  * @brief change window attributes
  *
@@ -4381,7 +4381,7 @@ change_window_attributes_checked :: proc(c : ^connection_t, window : window_t, v
  * Changes the attributes specified by \a value_mask for the specified \a window.
  *
  */
-change_window_attributes :: proc(c : ^connection_t, window : window_t, value_mask : u32, value_list : rawptr) -> void_cookie_t ---;
+change_window_attributes :: proc(c : ^connection_t, window : window_t, value_mask : u32, value_list : rawptr) -> void_cookie_t ---
 /**
  * @brief change window attributes
  *
@@ -4400,7 +4400,7 @@ change_window_attributes :: proc(c : ^connection_t, window : window_t, value_mas
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-change_window_attributes_aux_checked :: proc(c : ^connection_t, window : window_t, value_mask : u32, value_list : ^change_window_attributes_value_list_t) -> void_cookie_t ---;
+change_window_attributes_aux_checked :: proc(c : ^connection_t, window : window_t, value_mask : u32, value_list : ^change_window_attributes_value_list_t) -> void_cookie_t ---
 /**
  * @brief change window attributes
  *
@@ -4416,7 +4416,7 @@ change_window_attributes_aux_checked :: proc(c : ^connection_t, window : window_
  * Changes the attributes specified by \a value_mask for the specified \a window.
  *
  */
-change_window_attributes_aux :: proc(c : ^connection_t, window : window_t, value_mask : u32, value_list : ^change_window_attributes_value_list_t) -> void_cookie_t ---;
+change_window_attributes_aux :: proc(c : ^connection_t, window : window_t, value_mask : u32, value_list : ^change_window_attributes_value_list_t) -> void_cookie_t ---
 /**
  * @brief Gets window attributes
  *
@@ -4427,7 +4427,7 @@ change_window_attributes_aux :: proc(c : ^connection_t, window : window_t, value
  * Gets the current attributes for the specified \a window.
  *
  */
-get_window_attributes :: proc(c : ^connection_t, window : window_t) -> get_window_attributes_cookie_t ---;
+get_window_attributes :: proc(c : ^connection_t, window : window_t) -> get_window_attributes_cookie_t ---
 /**
  * @brief Gets window attributes
  *
@@ -4441,7 +4441,7 @@ get_window_attributes :: proc(c : ^connection_t, window : window_t) -> get_windo
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-get_window_attributes_unchecked :: proc(c : ^connection_t, window : window_t) -> get_window_attributes_cookie_t ---;
+get_window_attributes_unchecked :: proc(c : ^connection_t, window : window_t) -> get_window_attributes_cookie_t ---
 /**
  * @brief Destroys a window
  *
@@ -4460,7 +4460,7 @@ get_window_attributes_unchecked :: proc(c : ^connection_t, window : window_t) ->
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-destroy_window_checked :: proc(c : ^connection_t, window : window_t) -> void_cookie_t ---;
+destroy_window_checked :: proc(c : ^connection_t, window : window_t) -> void_cookie_t ---
 /**
  * @brief Destroys a window
  *
@@ -4476,7 +4476,7 @@ destroy_window_checked :: proc(c : ^connection_t, window : window_t) -> void_coo
  * Calling DestroyWindow on the root window will do nothing.
  *
  */
-destroy_window :: proc(c : ^connection_t, window : window_t) -> void_cookie_t ---;
+destroy_window :: proc(c : ^connection_t, window : window_t) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -4488,7 +4488,7 @@ destroy_window :: proc(c : ^connection_t, window : window_t) -> void_cookie_t --
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-destroy_subwindows_checked :: proc(c : ^connection_t, window : window_t) -> void_cookie_t ---;
+destroy_subwindows_checked :: proc(c : ^connection_t, window : window_t) -> void_cookie_t ---
 /**
  * @brief Get current window geometry
  *
@@ -4499,7 +4499,7 @@ destroy_subwindows_checked :: proc(c : ^connection_t, window : window_t) -> void
  * Gets the current geometry of the specified drawable (either `Window` or `Pixmap`).
  *
  */
-get_geometry :: proc(c : ^connection_t, drawable : drawable_t) -> get_geometry_cookie_t ---;
+get_geometry :: proc(c : ^connection_t, drawable : drawable_t) -> get_geometry_cookie_t ---
 /**
  * @brief Get current window geometry
  *
@@ -4513,8 +4513,8 @@ get_geometry :: proc(c : ^connection_t, drawable : drawable_t) -> get_geometry_c
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-get_geometry_unchecked :: proc(c : ^connection_t, drawable : drawable_t) -> get_geometry_cookie_t ---;
-intern_atom_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
+get_geometry_unchecked :: proc(c : ^connection_t, drawable : drawable_t) -> get_geometry_cookie_t ---
+intern_atom_sizeof :: proc(_buffer : rawptr) -> _c.int ---
 /**
  *
  * @param c The connection
@@ -4523,7 +4523,7 @@ intern_atom_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
  * Delivers a request to the X server.
  *
  */
-destroy_subwindows :: proc(c : ^connection_t, window : window_t) -> void_cookie_t ---;
+destroy_subwindows :: proc(c : ^connection_t, window : window_t) -> void_cookie_t ---
 /**
  * @brief Changes a client's save set
  *
@@ -4542,7 +4542,7 @@ destroy_subwindows :: proc(c : ^connection_t, window : window_t) -> void_cookie_
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-change_save_set_checked :: proc(c : ^connection_t, mode : u8, window : window_t) -> void_cookie_t ---;
+change_save_set_checked :: proc(c : ^connection_t, mode : u8, window : window_t) -> void_cookie_t ---
 /**
  * @brief Changes a client's save set
  *
@@ -4558,7 +4558,7 @@ change_save_set_checked :: proc(c : ^connection_t, mode : u8, window : window_t)
  * application's) save set.
  *
  */
-change_save_set :: proc(c : ^connection_t, mode : u8, window : window_t) -> void_cookie_t ---;
+change_save_set :: proc(c : ^connection_t, mode : u8, window : window_t) -> void_cookie_t ---
 /**
  * @brief Reparents a window
  *
@@ -4580,7 +4580,7 @@ change_save_set :: proc(c : ^connection_t, mode : u8, window : window_t) -> void
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-reparent_window_checked :: proc(c : ^connection_t, window : window_t, parent : window_t, x : i16, y : i16) -> void_cookie_t ---;
+reparent_window_checked :: proc(c : ^connection_t, window : window_t, parent : window_t, x : i16, y : i16) -> void_cookie_t ---
 /**
  * @brief Reparents a window
  *
@@ -4599,7 +4599,7 @@ reparent_window_checked :: proc(c : ^connection_t, window : window_t, parent : w
  * After reparenting, a ReparentNotify event is generated.
  *
  */
-reparent_window :: proc(c : ^connection_t, window : window_t, parent : window_t, x : i16, y : i16) -> void_cookie_t ---;
+reparent_window :: proc(c : ^connection_t, window : window_t, parent : window_t, x : i16, y : i16) -> void_cookie_t ---
 /**
  * @brief Makes a window visible
  *
@@ -4631,7 +4631,7 @@ reparent_window :: proc(c : ^connection_t, window : window_t, parent : window_t,
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-map_window_checked :: proc(c : ^connection_t, window : window_t) -> void_cookie_t ---;
+map_window_checked :: proc(c : ^connection_t, window : window_t) -> void_cookie_t ---
 /**
  * @brief Makes a window visible
  *
@@ -4660,7 +4660,7 @@ map_window_checked :: proc(c : ^connection_t, window : window_t) -> void_cookie_
  * repaint the window.
  *
  */
-map_window :: proc(c : ^connection_t, window : window_t) -> void_cookie_t ---;
+map_window :: proc(c : ^connection_t, window : window_t) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -4672,7 +4672,7 @@ map_window :: proc(c : ^connection_t, window : window_t) -> void_cookie_t ---;
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-map_subwindows_checked :: proc(c : ^connection_t, window : window_t) -> void_cookie_t ---;
+map_subwindows_checked :: proc(c : ^connection_t, window : window_t) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -4681,7 +4681,7 @@ map_subwindows_checked :: proc(c : ^connection_t, window : window_t) -> void_coo
  * Delivers a request to the X server.
  *
  */
-map_subwindows :: proc(c : ^connection_t, window : window_t) -> void_cookie_t ---;
+map_subwindows :: proc(c : ^connection_t, window : window_t) -> void_cookie_t ---
 /**
  * @brief Makes a window invisible
  *
@@ -4699,7 +4699,7 @@ map_subwindows :: proc(c : ^connection_t, window : window_t) -> void_cookie_t --
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-unmap_window_checked :: proc(c : ^connection_t, window : window_t) -> void_cookie_t ---;
+unmap_window_checked :: proc(c : ^connection_t, window : window_t) -> void_cookie_t ---
 /**
  * @brief Makes a window invisible
  *
@@ -4714,7 +4714,7 @@ unmap_window_checked :: proc(c : ^connection_t, window : window_t) -> void_cooki
  * `Expose` events are generated for formerly obscured windows.
  *
  */
-unmap_window :: proc(c : ^connection_t, window : window_t) -> void_cookie_t ---;
+unmap_window :: proc(c : ^connection_t, window : window_t) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -4726,7 +4726,7 @@ unmap_window :: proc(c : ^connection_t, window : window_t) -> void_cookie_t ---;
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-unmap_subwindows_checked :: proc(c : ^connection_t, window : window_t) -> void_cookie_t ---;
+unmap_subwindows_checked :: proc(c : ^connection_t, window : window_t) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -4735,11 +4735,11 @@ unmap_subwindows_checked :: proc(c : ^connection_t, window : window_t) -> void_c
  * Delivers a request to the X server.
  *
  */
-unmap_subwindows :: proc(c : ^connection_t, window : window_t) -> void_cookie_t ---;
-configure_window_value_list_serialize :: proc(_buffer : ^rawptr, value_mask : u16, _aux : ^configure_window_value_list_t) -> _c.int ---;
-configure_window_value_list_unpack :: proc(_buffer : rawptr, value_mask : u16, _aux : ^configure_window_value_list_t) -> _c.int ---;
-configure_window_value_list_sizeof :: proc(_buffer : rawptr, value_mask : u16) -> _c.int ---;
-configure_window_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
+unmap_subwindows :: proc(c : ^connection_t, window : window_t) -> void_cookie_t ---
+configure_window_value_list_serialize :: proc(_buffer : ^rawptr, value_mask : u16, _aux : ^configure_window_value_list_t) -> _c.int ---
+configure_window_value_list_unpack :: proc(_buffer : rawptr, value_mask : u16, _aux : ^configure_window_value_list_t) -> _c.int ---
+configure_window_value_list_sizeof :: proc(_buffer : rawptr, value_mask : u16) -> _c.int ---
+configure_window_sizeof :: proc(_buffer : rawptr) -> _c.int ---
 /**
  * @brief Configures window attributes
  *
@@ -4756,7 +4756,7 @@ configure_window_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-configure_window_checked :: proc(c : ^connection_t, window : window_t, value_mask : u16, value_list : rawptr) -> void_cookie_t ---;
+configure_window_checked :: proc(c : ^connection_t, window : window_t, value_mask : u16, value_list : rawptr) -> void_cookie_t ---
 /**
  * @brief Configures window attributes
  *
@@ -4770,7 +4770,7 @@ configure_window_checked :: proc(c : ^connection_t, window : window_t, value_mas
  * Configures a window's size, position, border width and stacking order.
  *
  */
-configure_window :: proc(c : ^connection_t, window : window_t, value_mask : u16, value_list : rawptr) -> void_cookie_t ---;
+configure_window :: proc(c : ^connection_t, window : window_t, value_mask : u16, value_list : rawptr) -> void_cookie_t ---
 /**
  * @brief Configures window attributes
  *
@@ -4787,7 +4787,7 @@ configure_window :: proc(c : ^connection_t, window : window_t, value_mask : u16,
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-configure_window_aux_checked :: proc(c : ^connection_t, window : window_t, value_mask : u16, value_list : ^configure_window_value_list_t) -> void_cookie_t ---;
+configure_window_aux_checked :: proc(c : ^connection_t, window : window_t, value_mask : u16, value_list : ^configure_window_value_list_t) -> void_cookie_t ---
 /**
  * @brief Configures window attributes
  *
@@ -4801,7 +4801,7 @@ configure_window_aux_checked :: proc(c : ^connection_t, window : window_t, value
  * Configures a window's size, position, border width and stacking order.
  *
  */
-configure_window_aux :: proc(c : ^connection_t, window : window_t, value_mask : u16, value_list : ^configure_window_value_list_t) -> void_cookie_t ---;
+configure_window_aux :: proc(c : ^connection_t, window : window_t, value_mask : u16, value_list : ^configure_window_value_list_t) -> void_cookie_t ---
 /**
  * @brief Change window stacking order
  *
@@ -4821,7 +4821,7 @@ configure_window_aux :: proc(c : ^connection_t, window : window_t, value_mask : 
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-circulate_window_checked :: proc(c : ^connection_t, direction : u8, window : window_t) -> void_cookie_t ---;
+circulate_window_checked :: proc(c : ^connection_t, direction : u8, window : window_t) -> void_cookie_t ---
 /**
  * @brief Change window stacking order
  *
@@ -4838,8 +4838,8 @@ circulate_window_checked :: proc(c : ^connection_t, direction : u8, window : win
  * be lowered to the bottom of the stack.
  *
  */
-circulate_window :: proc(c : ^connection_t, direction : u8, window : window_t) -> void_cookie_t ---;
-query_tree_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
+circulate_window :: proc(c : ^connection_t, direction : u8, window : window_t) -> void_cookie_t ---
+query_tree_sizeof :: proc(_buffer : rawptr) -> _c.int ---
 /**
  * @brief query the window tree
  *
@@ -4851,7 +4851,7 @@ query_tree_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
  * specified \a window. The children are listed in bottom-to-top stacking order.
  *
  */
-query_tree :: proc(c : ^connection_t, window : window_t) -> query_tree_cookie_t ---;
+query_tree :: proc(c : ^connection_t, window : window_t) -> query_tree_cookie_t ---
 /**
  * @brief query the window tree
  *
@@ -4866,9 +4866,9 @@ query_tree :: proc(c : ^connection_t, window : window_t) -> query_tree_cookie_t 
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-query_tree_unchecked :: proc(c : ^connection_t, window : window_t) -> query_tree_cookie_t ---;
-query_tree_children_length :: proc(R : ^query_tree_reply_t) -> _c.int ---;
-query_tree_children_end :: proc(R : ^query_tree_reply_t) -> generic_iterator_t ---;
+query_tree_unchecked :: proc(c : ^connection_t, window : window_t) -> query_tree_cookie_t ---
+query_tree_children_length :: proc(R : ^query_tree_reply_t) -> _c.int ---
+query_tree_children_end :: proc(R : ^query_tree_reply_t) -> generic_iterator_t ---
 /**
  * @brief Get atom identifier by name
  *
@@ -4887,7 +4887,7 @@ query_tree_children_end :: proc(R : ^query_tree_reply_t) -> generic_iterator_t -
  * not yet exist.
  *
  */
-intern_atom :: proc(c : ^connection_t, only_if_exists : u8, name_len : u16, name : cstring) -> intern_atom_cookie_t ---;
+intern_atom :: proc(c : ^connection_t, only_if_exists : u8, name_len : u16, name : cstring) -> intern_atom_cookie_t ---
 /**
  * @brief Get atom identifier by name
  *
@@ -4909,12 +4909,12 @@ intern_atom :: proc(c : ^connection_t, only_if_exists : u8, name_len : u16, name
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-intern_atom_unchecked :: proc(c : ^connection_t, only_if_exists : u8, name_len : u16, name : cstring) -> intern_atom_cookie_t ---;
-create_window_value_list :: proc(R : ^create_window_request_t) -> rawptr ---;
-change_window_attributes_value_list :: proc(R : ^change_window_attributes_request_t) -> rawptr ---;
-setup_pixmap_formats :: proc(R : ^setup_t) -> ^format_t ---;
-configure_window_value_list :: proc(R : ^configure_window_request_t) -> rawptr ---;
-get_atom_name_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
+intern_atom_unchecked :: proc(c : ^connection_t, only_if_exists : u8, name_len : u16, name : cstring) -> intern_atom_cookie_t ---
+create_window_value_list :: proc(R : ^create_window_request_t) -> rawptr ---
+change_window_attributes_value_list :: proc(R : ^change_window_attributes_request_t) -> rawptr ---
+setup_pixmap_formats :: proc(R : ^setup_t) -> ^format_t ---
+configure_window_value_list :: proc(R : ^configure_window_request_t) -> rawptr ---
+get_atom_name_sizeof :: proc(_buffer : rawptr) -> _c.int ---
 /**
  *
  * @param c The connection
@@ -4923,7 +4923,7 @@ get_atom_name_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
  * Delivers a request to the X server.
  *
  */
-get_atom_name :: proc(c : ^connection_t, atom : atom_t) -> get_atom_name_cookie_t ---;
+get_atom_name :: proc(c : ^connection_t, atom : atom_t) -> get_atom_name_cookie_t ---
 /**
  *
  * @param c The connection
@@ -4935,12 +4935,12 @@ get_atom_name :: proc(c : ^connection_t, atom : atom_t) -> get_atom_name_cookie_
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-get_atom_name_unchecked :: proc(c : ^connection_t, atom : atom_t) -> get_atom_name_cookie_t ---;
-get_atom_name_name_length :: proc(R : ^get_atom_name_reply_t) -> _c.int ---;
-setup_failed_reason :: proc(R : ^setup_failed_t) -> cstring ---;
-get_atom_name_name_end :: proc(R : ^get_atom_name_reply_t) -> generic_iterator_t ---;
-setup_vendor :: proc(R : ^setup_t) -> cstring ---;
-depth_visuals :: proc(R : ^depth_t) -> ^visualtype_t ---;
+get_atom_name_unchecked :: proc(c : ^connection_t, atom : atom_t) -> get_atom_name_cookie_t ---
+get_atom_name_name_length :: proc(R : ^get_atom_name_reply_t) -> _c.int ---
+setup_failed_reason :: proc(R : ^setup_failed_t) -> cstring ---
+get_atom_name_name_end :: proc(R : ^get_atom_name_reply_t) -> generic_iterator_t ---
+setup_vendor :: proc(R : ^setup_t) -> cstring ---
+depth_visuals :: proc(R : ^depth_t) -> ^visualtype_t ---
 /**
  * Return the reply
  * @param c      The connection
@@ -4955,9 +4955,9 @@ depth_visuals :: proc(R : ^depth_t) -> ^visualtype_t ---;
  *
  * The returned value must be freed by the caller using free().
  */
-get_geometry_reply :: proc(c : ^connection_t, cookie : get_geometry_cookie_t, e : ^^generic_error_t) -> ^get_geometry_reply_t ---;
-query_tree_children :: proc(R : ^query_tree_reply_t) -> ^window_t ---;
-change_property_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
+get_geometry_reply :: proc(c : ^connection_t, cookie : get_geometry_cookie_t, e : ^^generic_error_t) -> ^get_geometry_reply_t ---
+query_tree_children :: proc(R : ^query_tree_reply_t) -> ^window_t ---
+change_property_sizeof :: proc(_buffer : rawptr) -> _c.int ---
 /**
  * @brief Changes a window property
  *
@@ -4983,11 +4983,11 @@ change_property_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-change_property_checked :: proc(c : ^connection_t, mode : u8, window : window_t, property : atom_t, type : atom_t, format : u8, data_len : u32, data : rawptr) -> void_cookie_t ---;
-setup_request_authorization_protocol_data :: proc(R : ^setup_request_t) -> cstring ---;
-setup_request_authorization_protocol_name :: proc(R : ^setup_request_t) -> cstring ---;
-setup_authenticate_reason :: proc(R : ^setup_authenticate_t) -> cstring ---;
-get_atom_name_name :: proc(R : ^get_atom_name_reply_t) -> cstring ---;
+change_property_checked :: proc(c : ^connection_t, mode : u8, window : window_t, property : atom_t, type : atom_t, format : u8, data_len : u32, data : rawptr) -> void_cookie_t ---
+setup_request_authorization_protocol_data :: proc(R : ^setup_request_t) -> cstring ---
+setup_request_authorization_protocol_name :: proc(R : ^setup_request_t) -> cstring ---
+setup_authenticate_reason :: proc(R : ^setup_authenticate_t) -> cstring ---
+get_atom_name_name :: proc(R : ^get_atom_name_reply_t) -> cstring ---
 /**
  * Return the reply
  * @param c      The connection
@@ -5002,7 +5002,7 @@ get_atom_name_name :: proc(R : ^get_atom_name_reply_t) -> cstring ---;
  *
  * The returned value must be freed by the caller using free().
  */
-query_tree_reply :: proc(c : ^connection_t, cookie : query_tree_cookie_t, e : ^^generic_error_t) -> ^query_tree_reply_t ---;
+query_tree_reply :: proc(c : ^connection_t, cookie : query_tree_cookie_t, e : ^^generic_error_t) -> ^query_tree_reply_t ---
 /**
  * Return the reply
  * @param c      The connection
@@ -5017,7 +5017,7 @@ query_tree_reply :: proc(c : ^connection_t, cookie : query_tree_cookie_t, e : ^^
  *
  * The returned value must be freed by the caller using free().
  */
-get_window_attributes_reply :: proc(c : ^connection_t, cookie : get_window_attributes_cookie_t, e : ^^generic_error_t) -> ^get_window_attributes_reply_t ---;
+get_window_attributes_reply :: proc(c : ^connection_t, cookie : get_window_attributes_cookie_t, e : ^^generic_error_t) -> ^get_window_attributes_reply_t ---
 /**
  * Return the reply
  * @param c      The connection
@@ -5032,7 +5032,7 @@ get_window_attributes_reply :: proc(c : ^connection_t, cookie : get_window_attri
  *
  * The returned value must be freed by the caller using free().
  */
-intern_atom_reply :: proc(c : ^connection_t, cookie : intern_atom_cookie_t, e : ^^generic_error_t) -> ^intern_atom_reply_t ---;
+intern_atom_reply :: proc(c : ^connection_t, cookie : intern_atom_cookie_t, e : ^^generic_error_t) -> ^intern_atom_reply_t ---
 /**
  * Return the reply
  * @param c      The connection
@@ -5047,7 +5047,7 @@ intern_atom_reply :: proc(c : ^connection_t, cookie : intern_atom_cookie_t, e : 
  *
  * The returned value must be freed by the caller using free().
  */
-get_atom_name_reply :: proc(c : ^connection_t, cookie : get_atom_name_cookie_t, e : ^^generic_error_t) -> ^get_atom_name_reply_t ---;
+get_atom_name_reply :: proc(c : ^connection_t, cookie : get_atom_name_cookie_t, e : ^^generic_error_t) -> ^get_atom_name_reply_t ---
 /**
  * @brief Changes a window property
  *
@@ -5070,10 +5070,10 @@ get_atom_name_reply :: proc(c : ^connection_t, cookie : get_atom_name_cookie_t, 
  * window title, encoded as UTF-8 string, in the `_NET_WM_NAME` property.
  *
  */
-change_property :: proc(c : ^connection_t, mode : u8, window : window_t, property : atom_t, type : atom_t, format : u8, data_len : u32, data : rawptr) -> void_cookie_t ---;
-change_property_data_length :: proc(R : ^change_property_request_t) -> _c.int ---;
-change_property_data :: proc(R : ^change_property_request_t) -> rawptr ---;
-change_property_data_end :: proc(R : ^change_property_request_t) -> generic_iterator_t ---;
+change_property :: proc(c : ^connection_t, mode : u8, window : window_t, property : atom_t, type : atom_t, format : u8, data_len : u32, data : rawptr) -> void_cookie_t ---
+change_property_data_length :: proc(R : ^change_property_request_t) -> _c.int ---
+change_property_data :: proc(R : ^change_property_request_t) -> rawptr ---
+change_property_data_end :: proc(R : ^change_property_request_t) -> generic_iterator_t ---
 /**
  *
  * @param c The connection
@@ -5085,7 +5085,7 @@ change_property_data_end :: proc(R : ^change_property_request_t) -> generic_iter
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-delete_property_checked :: proc(c : ^connection_t, window : window_t, property : atom_t) -> void_cookie_t ---;
+delete_property_checked :: proc(c : ^connection_t, window : window_t, property : atom_t) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -5094,8 +5094,8 @@ delete_property_checked :: proc(c : ^connection_t, window : window_t, property :
  * Delivers a request to the X server.
  *
  */
-delete_property :: proc(c : ^connection_t, window : window_t, property : atom_t) -> void_cookie_t ---;
-get_property_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
+delete_property :: proc(c : ^connection_t, window : window_t, property : atom_t) -> void_cookie_t ---
+get_property_sizeof :: proc(_buffer : rawptr) -> _c.int ---
 /**
  * @brief Gets a window property
  *
@@ -5123,7 +5123,7 @@ get_property_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
  * TODO: talk about the offset/length thing. what's a valid use case?
  *
  */
-get_property :: proc(c : ^connection_t, _delete : u8, window : window_t, property : atom_t, type : atom_t, long_offset : u32, long_length : u32) -> get_property_cookie_t ---;
+get_property :: proc(c : ^connection_t, _delete : u8, window : window_t, property : atom_t, type : atom_t, long_offset : u32, long_length : u32) -> get_property_cookie_t ---
 /**
  * @brief Gets a window property
  *
@@ -5154,11 +5154,11 @@ get_property :: proc(c : ^connection_t, _delete : u8, window : window_t, propert
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-get_property_unchecked :: proc(c : ^connection_t, _delete : u8, window : window_t, property : atom_t, type : atom_t, long_offset : u32, long_length : u32) -> get_property_cookie_t ---;
-get_property_value :: proc(R : ^get_property_reply_t) -> rawptr ---;
-get_property_value_length :: proc(R : ^get_property_reply_t) -> _c.int ---;
-get_property_value_end :: proc(R : ^get_property_reply_t) -> generic_iterator_t ---;
-list_properties_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
+get_property_unchecked :: proc(c : ^connection_t, _delete : u8, window : window_t, property : atom_t, type : atom_t, long_offset : u32, long_length : u32) -> get_property_cookie_t ---
+get_property_value :: proc(R : ^get_property_reply_t) -> rawptr ---
+get_property_value_length :: proc(R : ^get_property_reply_t) -> _c.int ---
+get_property_value_end :: proc(R : ^get_property_reply_t) -> generic_iterator_t ---
+list_properties_sizeof :: proc(_buffer : rawptr) -> _c.int ---
 /**
  *
  * @param c The connection
@@ -5167,7 +5167,7 @@ list_properties_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
  * Delivers a request to the X server.
  *
  */
-list_properties :: proc(c : ^connection_t, window : window_t) -> list_properties_cookie_t ---;
+list_properties :: proc(c : ^connection_t, window : window_t) -> list_properties_cookie_t ---
 /**
  * Return the reply
  * @param c      The connection
@@ -5182,7 +5182,7 @@ list_properties :: proc(c : ^connection_t, window : window_t) -> list_properties
  *
  * The returned value must be freed by the caller using free().
  */
-get_property_reply :: proc(c : ^connection_t, cookie : get_property_cookie_t, e : ^^generic_error_t) -> ^get_property_reply_t ---;
+get_property_reply :: proc(c : ^connection_t, cookie : get_property_cookie_t, e : ^^generic_error_t) -> ^get_property_reply_t ---
 /**
  *
  * @param c The connection
@@ -5194,10 +5194,10 @@ get_property_reply :: proc(c : ^connection_t, cookie : get_property_cookie_t, e 
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-list_properties_unchecked :: proc(c : ^connection_t, window : window_t) -> list_properties_cookie_t ---;
-list_properties_atoms_length :: proc(R : ^list_properties_reply_t) -> _c.int ---;
-list_properties_atoms :: proc(R : ^list_properties_reply_t) -> ^atom_t ---;
-list_properties_atoms_end :: proc(R : ^list_properties_reply_t) -> generic_iterator_t ---;
+list_properties_unchecked :: proc(c : ^connection_t, window : window_t) -> list_properties_cookie_t ---
+list_properties_atoms_length :: proc(R : ^list_properties_reply_t) -> _c.int ---
+list_properties_atoms :: proc(R : ^list_properties_reply_t) -> ^atom_t ---
+list_properties_atoms_end :: proc(R : ^list_properties_reply_t) -> generic_iterator_t ---
 /**
  * Return the reply
  * @param c      The connection
@@ -5212,7 +5212,7 @@ list_properties_atoms_end :: proc(R : ^list_properties_reply_t) -> generic_itera
  *
  * The returned value must be freed by the caller using free().
  */
-list_properties_reply :: proc(c : ^connection_t, cookie : list_properties_cookie_t, e : ^^generic_error_t) -> ^list_properties_reply_t ---;
+list_properties_reply :: proc(c : ^connection_t, cookie : list_properties_cookie_t, e : ^^generic_error_t) -> ^list_properties_reply_t ---
 /**
  * @brief Sets the owner of a selection
  *
@@ -5240,7 +5240,7 @@ list_properties_reply :: proc(c : ^connection_t, cookie : list_properties_cookie
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-set_selection_owner_checked :: proc(c : ^connection_t, owner : window_t, selection : atom_t, time : timestamp_t) -> void_cookie_t ---;
+set_selection_owner_checked :: proc(c : ^connection_t, owner : window_t, selection : atom_t, time : timestamp_t) -> void_cookie_t ---
 /**
  * @brief Sets the owner of a selection
  *
@@ -5265,7 +5265,7 @@ set_selection_owner_checked :: proc(c : ^connection_t, owner : window_t, selecti
  * TODO: briefly explain what a selection is.
  *
  */
-set_selection_owner :: proc(c : ^connection_t, owner : window_t, selection : atom_t, time : timestamp_t) -> void_cookie_t ---;
+set_selection_owner :: proc(c : ^connection_t, owner : window_t, selection : atom_t, time : timestamp_t) -> void_cookie_t ---
 /**
  * @brief Gets the owner of a selection
  *
@@ -5278,7 +5278,7 @@ set_selection_owner :: proc(c : ^connection_t, owner : window_t, selection : ato
  * TODO: briefly explain what a selection is.
  *
  */
-get_selection_owner :: proc(c : ^connection_t, selection : atom_t) -> get_selection_owner_cookie_t ---;
+get_selection_owner :: proc(c : ^connection_t, selection : atom_t) -> get_selection_owner_cookie_t ---
 /**
  * @brief Gets the owner of a selection
  *
@@ -5294,7 +5294,7 @@ get_selection_owner :: proc(c : ^connection_t, selection : atom_t) -> get_select
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-get_selection_owner_unchecked :: proc(c : ^connection_t, selection : atom_t) -> get_selection_owner_cookie_t ---;
+get_selection_owner_unchecked :: proc(c : ^connection_t, selection : atom_t) -> get_selection_owner_cookie_t ---
 /**
  * Return the reply
  * @param c      The connection
@@ -5309,7 +5309,7 @@ get_selection_owner_unchecked :: proc(c : ^connection_t, selection : atom_t) -> 
  *
  * The returned value must be freed by the caller using free().
  */
-get_selection_owner_reply :: proc(c : ^connection_t, cookie : get_selection_owner_cookie_t, e : ^^generic_error_t) -> ^get_selection_owner_reply_t ---;
+get_selection_owner_reply :: proc(c : ^connection_t, cookie : get_selection_owner_cookie_t, e : ^^generic_error_t) -> ^get_selection_owner_reply_t ---
 /**
  *
  * @param c The connection
@@ -5321,7 +5321,7 @@ get_selection_owner_reply :: proc(c : ^connection_t, cookie : get_selection_owne
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-convert_selection_checked :: proc(c : ^connection_t, requestor : window_t, selection : atom_t, target : atom_t, property : atom_t, time : timestamp_t) -> void_cookie_t ---;
+convert_selection_checked :: proc(c : ^connection_t, requestor : window_t, selection : atom_t, target : atom_t, property : atom_t, time : timestamp_t) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -5330,7 +5330,7 @@ convert_selection_checked :: proc(c : ^connection_t, requestor : window_t, selec
  * Delivers a request to the X server.
  *
  */
-convert_selection :: proc(c : ^connection_t, requestor : window_t, selection : atom_t, target : atom_t, property : atom_t, time : timestamp_t) -> void_cookie_t ---;
+convert_selection :: proc(c : ^connection_t, requestor : window_t, selection : atom_t, target : atom_t, property : atom_t, time : timestamp_t) -> void_cookie_t ---
 /**
  * @brief send an event
  *
@@ -5368,7 +5368,7 @@ convert_selection :: proc(c : ^connection_t, requestor : window_t, selection : a
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-send_event_checked :: proc(c : ^connection_t, propagate : u8, destination : window_t, event_mask : u32, event : cstring) -> void_cookie_t ---;
+send_event_checked :: proc(c : ^connection_t, propagate : u8, destination : window_t, event_mask : u32, event : cstring) -> void_cookie_t ---
 /**
  * @brief send an event
  *
@@ -5403,7 +5403,7 @@ send_event_checked :: proc(c : ^connection_t, propagate : u8, destination : wind
  * `send_event` field which is forced to 'true'.
  *
  */
-send_event :: proc(c : ^connection_t, propagate : u8, destination : window_t, event_mask : u32, event : cstring) -> void_cookie_t ---;
+send_event :: proc(c : ^connection_t, propagate : u8, destination : window_t, event_mask : u32, event : cstring) -> void_cookie_t ---
 /**
  * @brief Grab the pointer
  *
@@ -5440,7 +5440,7 @@ send_event :: proc(c : ^connection_t, propagate : u8, destination : window_t, ev
  * Actively grabs control of the pointer. Further pointer events are reported only to the grabbing client. Overrides any active pointer grab by this client.
  *
  */
-grab_pointer :: proc(c : ^connection_t, owner_events : u8, grab_window : window_t, event_mask : u16, pointer_mode : u8, keyboard_mode : u8, confine_to : window_t, cursor : cursor_t, time : timestamp_t) -> grab_pointer_cookie_t ---;
+grab_pointer :: proc(c : ^connection_t, owner_events : u8, grab_window : window_t, event_mask : u16, pointer_mode : u8, keyboard_mode : u8, confine_to : window_t, cursor : cursor_t, time : timestamp_t) -> grab_pointer_cookie_t ---
 /**
  * @brief Grab the pointer
  *
@@ -5480,7 +5480,7 @@ grab_pointer :: proc(c : ^connection_t, owner_events : u8, grab_window : window_
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-grab_pointer_unchecked :: proc(c : ^connection_t, owner_events : u8, grab_window : window_t, event_mask : u16, pointer_mode : u8, keyboard_mode : u8, confine_to : window_t, cursor : cursor_t, time : timestamp_t) -> grab_pointer_cookie_t ---;
+grab_pointer_unchecked :: proc(c : ^connection_t, owner_events : u8, grab_window : window_t, event_mask : u16, pointer_mode : u8, keyboard_mode : u8, confine_to : window_t, cursor : cursor_t, time : timestamp_t) -> grab_pointer_cookie_t ---
 /**
  * @brief release the pointer
  *
@@ -5501,7 +5501,7 @@ grab_pointer_unchecked :: proc(c : ^connection_t, owner_events : u8, grab_window
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-ungrab_pointer_checked :: proc(c : ^connection_t, time : timestamp_t) -> void_cookie_t ---;
+ungrab_pointer_checked :: proc(c : ^connection_t, time : timestamp_t) -> void_cookie_t ---
 /**
  * @brief release the pointer
  *
@@ -5519,7 +5519,7 @@ ungrab_pointer_checked :: proc(c : ^connection_t, time : timestamp_t) -> void_co
  * EnterNotify and LeaveNotify events are generated.
  *
  */
-ungrab_pointer :: proc(c : ^connection_t, time : timestamp_t) -> void_cookie_t ---;
+ungrab_pointer :: proc(c : ^connection_t, time : timestamp_t) -> void_cookie_t ---
 /**
  * @brief Grab pointer button(s)
  *
@@ -5588,7 +5588,7 @@ ungrab_pointer :: proc(c : ^connection_t, time : timestamp_t) -> void_cookie_t -
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-grab_button_checked :: proc(c : ^connection_t, owner_events : u8, grab_window : window_t, event_mask : u16, pointer_mode : u8, keyboard_mode : u8, confine_to : window_t, cursor : cursor_t, button : u8, modifiers : u16) -> void_cookie_t ---;
+grab_button_checked :: proc(c : ^connection_t, owner_events : u8, grab_window : window_t, event_mask : u16, pointer_mode : u8, keyboard_mode : u8, confine_to : window_t, cursor : cursor_t, button : u8, modifiers : u16) -> void_cookie_t ---
 /**
  * Return the reply
  * @param c      The connection
@@ -5603,7 +5603,7 @@ grab_button_checked :: proc(c : ^connection_t, owner_events : u8, grab_window : 
  *
  * The returned value must be freed by the caller using free().
  */
-grab_pointer_reply :: proc(c : ^connection_t, cookie : grab_pointer_cookie_t, e : ^^generic_error_t) -> ^grab_pointer_reply_t ---;
+grab_pointer_reply :: proc(c : ^connection_t, cookie : grab_pointer_cookie_t, e : ^^generic_error_t) -> ^grab_pointer_reply_t ---
 /**
  * @brief Grab pointer button(s)
  *
@@ -5669,7 +5669,7 @@ grab_pointer_reply :: proc(c : ^connection_t, cookie : grab_pointer_cookie_t, e 
  * for any combination. The request has no effect on an active grab.
  *
  */
-grab_button :: proc(c : ^connection_t, owner_events : u8, grab_window : window_t, event_mask : u16, pointer_mode : u8, keyboard_mode : u8, confine_to : window_t, cursor : cursor_t, button : u8, modifiers : u16) -> void_cookie_t ---;
+grab_button :: proc(c : ^connection_t, owner_events : u8, grab_window : window_t, event_mask : u16, pointer_mode : u8, keyboard_mode : u8, confine_to : window_t, cursor : cursor_t, button : u8, modifiers : u16) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -5681,7 +5681,7 @@ grab_button :: proc(c : ^connection_t, owner_events : u8, grab_window : window_t
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-ungrab_button_checked :: proc(c : ^connection_t, button : u8, grab_window : window_t, modifiers : u16) -> void_cookie_t ---;
+ungrab_button_checked :: proc(c : ^connection_t, button : u8, grab_window : window_t, modifiers : u16) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -5690,7 +5690,7 @@ ungrab_button_checked :: proc(c : ^connection_t, button : u8, grab_window : wind
  * Delivers a request to the X server.
  *
  */
-ungrab_button :: proc(c : ^connection_t, button : u8, grab_window : window_t, modifiers : u16) -> void_cookie_t ---;
+ungrab_button :: proc(c : ^connection_t, button : u8, grab_window : window_t, modifiers : u16) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -5702,7 +5702,7 @@ ungrab_button :: proc(c : ^connection_t, button : u8, grab_window : window_t, mo
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-change_active_pointer_grab_checked :: proc(c : ^connection_t, cursor : cursor_t, time : timestamp_t, event_mask : u16) -> void_cookie_t ---;
+change_active_pointer_grab_checked :: proc(c : ^connection_t, cursor : cursor_t, time : timestamp_t, event_mask : u16) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -5711,7 +5711,7 @@ change_active_pointer_grab_checked :: proc(c : ^connection_t, cursor : cursor_t,
  * Delivers a request to the X server.
  *
  */
-change_active_pointer_grab :: proc(c : ^connection_t, cursor : cursor_t, time : timestamp_t, event_mask : u16) -> void_cookie_t ---;
+change_active_pointer_grab :: proc(c : ^connection_t, cursor : cursor_t, time : timestamp_t, event_mask : u16) -> void_cookie_t ---
 /**
  * @brief Grab the keyboard
  *
@@ -5741,7 +5741,7 @@ change_active_pointer_grab :: proc(c : ^connection_t, cursor : cursor_t, time : 
  * last-keyboard-grab time is set to the specified time.
  *
  */
-grab_keyboard :: proc(c : ^connection_t, owner_events : u8, grab_window : window_t, time : timestamp_t, pointer_mode : u8, keyboard_mode : u8) -> grab_keyboard_cookie_t ---;
+grab_keyboard :: proc(c : ^connection_t, owner_events : u8, grab_window : window_t, time : timestamp_t, pointer_mode : u8, keyboard_mode : u8) -> grab_keyboard_cookie_t ---
 /**
  * @brief Grab the keyboard
  *
@@ -5774,7 +5774,7 @@ grab_keyboard :: proc(c : ^connection_t, owner_events : u8, grab_window : window
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-grab_keyboard_unchecked :: proc(c : ^connection_t, owner_events : u8, grab_window : window_t, time : timestamp_t, pointer_mode : u8, keyboard_mode : u8) -> grab_keyboard_cookie_t ---;
+grab_keyboard_unchecked :: proc(c : ^connection_t, owner_events : u8, grab_window : window_t, time : timestamp_t, pointer_mode : u8, keyboard_mode : u8) -> grab_keyboard_cookie_t ---
 /**
  *
  * @param c The connection
@@ -5786,7 +5786,7 @@ grab_keyboard_unchecked :: proc(c : ^connection_t, owner_events : u8, grab_windo
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-ungrab_keyboard_checked :: proc(c : ^connection_t, time : timestamp_t) -> void_cookie_t ---;
+ungrab_keyboard_checked :: proc(c : ^connection_t, time : timestamp_t) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -5795,7 +5795,7 @@ ungrab_keyboard_checked :: proc(c : ^connection_t, time : timestamp_t) -> void_c
  * Delivers a request to the X server.
  *
  */
-ungrab_keyboard :: proc(c : ^connection_t, time : timestamp_t) -> void_cookie_t ---;
+ungrab_keyboard :: proc(c : ^connection_t, time : timestamp_t) -> void_cookie_t ---
 /**
  * Return the reply
  * @param c      The connection
@@ -5810,7 +5810,7 @@ ungrab_keyboard :: proc(c : ^connection_t, time : timestamp_t) -> void_cookie_t 
  *
  * The returned value must be freed by the caller using free().
  */
-grab_keyboard_reply :: proc(c : ^connection_t, cookie : grab_keyboard_cookie_t, e : ^^generic_error_t) -> ^grab_keyboard_reply_t ---;
+grab_keyboard_reply :: proc(c : ^connection_t, cookie : grab_keyboard_cookie_t, e : ^^generic_error_t) -> ^grab_keyboard_reply_t ---
 /**
  * @brief Grab keyboard key(s)
  *
@@ -5866,7 +5866,7 @@ grab_keyboard_reply :: proc(c : ^connection_t, cookie : grab_keyboard_cookie_t, 
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-grab_key_checked :: proc(c : ^connection_t, owner_events : u8, grab_window : window_t, modifiers : u16, key : keycode_t, pointer_mode : u8, keyboard_mode : u8) -> void_cookie_t ---;
+grab_key_checked :: proc(c : ^connection_t, owner_events : u8, grab_window : window_t, modifiers : u16, key : keycode_t, pointer_mode : u8, keyboard_mode : u8) -> void_cookie_t ---
 /**
  * @brief Grab keyboard key(s)
  *
@@ -5919,7 +5919,7 @@ grab_key_checked :: proc(c : ^connection_t, owner_events : u8, grab_window : win
  * results (no grabs are established) if there is a conflicting grab for any combination.
  *
  */
-grab_key :: proc(c : ^connection_t, owner_events : u8, grab_window : window_t, modifiers : u16, key : keycode_t, pointer_mode : u8, keyboard_mode : u8) -> void_cookie_t ---;
+grab_key :: proc(c : ^connection_t, owner_events : u8, grab_window : window_t, modifiers : u16, key : keycode_t, pointer_mode : u8, keyboard_mode : u8) -> void_cookie_t ---
 /**
  * @brief release a key combination
  *
@@ -5941,7 +5941,7 @@ grab_key :: proc(c : ^connection_t, owner_events : u8, grab_window : window_t, m
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-ungrab_key_checked :: proc(c : ^connection_t, key : keycode_t, grab_window : window_t, modifiers : u16) -> void_cookie_t ---;
+ungrab_key_checked :: proc(c : ^connection_t, key : keycode_t, grab_window : window_t, modifiers : u16) -> void_cookie_t ---
 /**
  * @brief release a key combination
  *
@@ -5960,7 +5960,7 @@ ungrab_key_checked :: proc(c : ^connection_t, key : keycode_t, grab_window : win
  * `xcb_grab_key` before.
  *
  */
-ungrab_key :: proc(c : ^connection_t, key : keycode_t, grab_window : window_t, modifiers : u16) -> void_cookie_t ---;
+ungrab_key :: proc(c : ^connection_t, key : keycode_t, grab_window : window_t, modifiers : u16) -> void_cookie_t ---
 /**
  * @brief release queued events
  *
@@ -5982,7 +5982,7 @@ ungrab_key :: proc(c : ^connection_t, key : keycode_t, grab_window : window_t, m
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-allow_events_checked :: proc(c : ^connection_t, mode : u8, time : timestamp_t) -> void_cookie_t ---;
+allow_events_checked :: proc(c : ^connection_t, mode : u8, time : timestamp_t) -> void_cookie_t ---
 /**
  * @brief release queued events
  *
@@ -6001,7 +6001,7 @@ allow_events_checked :: proc(c : ^connection_t, mode : u8, time : timestamp_t) -
  * or if \a time is later than the current X server time.
  *
  */
-allow_events :: proc(c : ^connection_t, mode : u8, time : timestamp_t) -> void_cookie_t ---;
+allow_events :: proc(c : ^connection_t, mode : u8, time : timestamp_t) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -6013,7 +6013,7 @@ allow_events :: proc(c : ^connection_t, mode : u8, time : timestamp_t) -> void_c
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-grab_server_checked :: proc(c : ^connection_t) -> void_cookie_t ---;
+grab_server_checked :: proc(c : ^connection_t) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -6022,7 +6022,7 @@ grab_server_checked :: proc(c : ^connection_t) -> void_cookie_t ---;
  * Delivers a request to the X server.
  *
  */
-grab_server :: proc(c : ^connection_t) -> void_cookie_t ---;
+grab_server :: proc(c : ^connection_t) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -6034,7 +6034,7 @@ grab_server :: proc(c : ^connection_t) -> void_cookie_t ---;
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-ungrab_server_checked :: proc(c : ^connection_t) -> void_cookie_t ---;
+ungrab_server_checked :: proc(c : ^connection_t) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -6043,7 +6043,7 @@ ungrab_server_checked :: proc(c : ^connection_t) -> void_cookie_t ---;
  * Delivers a request to the X server.
  *
  */
-ungrab_server :: proc(c : ^connection_t) -> void_cookie_t ---;
+ungrab_server :: proc(c : ^connection_t) -> void_cookie_t ---
 /**
  * @brief get pointer coordinates
  *
@@ -6056,7 +6056,7 @@ ungrab_server :: proc(c : ^connection_t) -> void_cookie_t ---;
  * relative to the root window's origin.
  *
  */
-query_pointer :: proc(c : ^connection_t, window : window_t) -> query_pointer_cookie_t ---;
+query_pointer :: proc(c : ^connection_t, window : window_t) -> query_pointer_cookie_t ---
 /**
  * @brief get pointer coordinates
  *
@@ -6072,7 +6072,7 @@ query_pointer :: proc(c : ^connection_t, window : window_t) -> query_pointer_coo
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-query_pointer_unchecked :: proc(c : ^connection_t, window : window_t) -> query_pointer_cookie_t ---;
+query_pointer_unchecked :: proc(c : ^connection_t, window : window_t) -> query_pointer_cookie_t ---
 /**
  * Return the reply
  * @param c      The connection
@@ -6087,7 +6087,7 @@ query_pointer_unchecked :: proc(c : ^connection_t, window : window_t) -> query_p
  *
  * The returned value must be freed by the caller using free().
  */
-query_pointer_reply :: proc(c : ^connection_t, cookie : query_pointer_cookie_t, e : ^^generic_error_t) -> ^query_pointer_reply_t ---;
+query_pointer_reply :: proc(c : ^connection_t, cookie : query_pointer_cookie_t, e : ^^generic_error_t) -> ^query_pointer_reply_t ---
 /**
  * Get the next element of the iterator
  * @param i Pointer to a xcb_timecoord_iterator_t
@@ -6096,7 +6096,7 @@ query_pointer_reply :: proc(c : ^connection_t, cookie : query_pointer_cookie_t, 
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(xcb_timecoord_t)
  */
-timecoord_next :: proc(i : ^timecoord_iterator_t) ---;
+timecoord_next :: proc(i : ^timecoord_iterator_t) ---
 /**
  * Return the iterator pointing to the last element
  * @param i An xcb_timecoord_iterator_t
@@ -6106,8 +6106,8 @@ timecoord_next :: proc(i : ^timecoord_iterator_t) ---;
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-timecoord_end :: proc(i : timecoord_iterator_t) -> generic_iterator_t ---;
-get_motion_events_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
+timecoord_end :: proc(i : timecoord_iterator_t) -> generic_iterator_t ---
+get_motion_events_sizeof :: proc(_buffer : rawptr) -> _c.int ---
 /**
  *
  * @param c The connection
@@ -6116,30 +6116,7 @@ get_motion_events_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
  * Delivers a request to the X server.
  *
  */
-get_motion_events :: proc(c : ^connection_t, window : window_t, start : timestamp_t, stop : timestamp_t) -> get_motion_events_cookie_t ---;
-/**
- *
- * @param c The connection
- * @return A cookie
- *
- * Delivers a request to the X server.
- *
- * This form can be used only if the request will cause
- * a reply to be generated. Any returned error will be
- * placed in the event queue.
- */
-get_motion_events_unchecked :: proc(c : ^connection_t, window : window_t, start : timestamp_t, stop : timestamp_t) -> get_motion_events_cookie_t ---;
-get_motion_events_events_length :: proc(R : ^get_motion_events_reply_t) -> _c.int ---;
-get_motion_events_events_iterator :: proc(R : ^get_motion_events_reply_t) -> timecoord_iterator_t ---;
-/**
- *
- * @param c The connection
- * @return A cookie
- *
- * Delivers a request to the X server.
- *
- */
-translate_coordinates :: proc(c : ^connection_t, src_window : window_t, dst_window : window_t, src_x : i16, src_y : i16) -> translate_coordinates_cookie_t ---;
+get_motion_events :: proc(c : ^connection_t, window : window_t, start : timestamp_t, stop : timestamp_t) -> get_motion_events_cookie_t ---
 /**
  *
  * @param c The connection
@@ -6151,7 +6128,30 @@ translate_coordinates :: proc(c : ^connection_t, src_window : window_t, dst_wind
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-translate_coordinates_unchecked :: proc(c : ^connection_t, src_window : window_t, dst_window : window_t, src_x : i16, src_y : i16) -> translate_coordinates_cookie_t ---;
+get_motion_events_unchecked :: proc(c : ^connection_t, window : window_t, start : timestamp_t, stop : timestamp_t) -> get_motion_events_cookie_t ---
+get_motion_events_events_length :: proc(R : ^get_motion_events_reply_t) -> _c.int ---
+get_motion_events_events_iterator :: proc(R : ^get_motion_events_reply_t) -> timecoord_iterator_t ---
+/**
+ *
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ *
+ */
+translate_coordinates :: proc(c : ^connection_t, src_window : window_t, dst_window : window_t, src_x : i16, src_y : i16) -> translate_coordinates_cookie_t ---
+/**
+ *
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ *
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
+translate_coordinates_unchecked :: proc(c : ^connection_t, src_window : window_t, dst_window : window_t, src_x : i16, src_y : i16) -> translate_coordinates_cookie_t ---
 /**
  * @brief move mouse pointer
  *
@@ -6182,7 +6182,7 @@ translate_coordinates_unchecked :: proc(c : ^connection_t, src_window : window_t
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-warp_pointer_checked :: proc(c : ^connection_t, src_window : window_t, dst_window : window_t, src_x : i16, src_y : i16, src_width : u16, src_height : u16, dst_x : i16, dst_y : i16) -> void_cookie_t ---;
+warp_pointer_checked :: proc(c : ^connection_t, src_window : window_t, dst_window : window_t, src_x : i16, src_y : i16, src_width : u16, src_height : u16, dst_x : i16, dst_y : i16) -> void_cookie_t ---
 /**
  * @brief move mouse pointer
  *
@@ -6210,7 +6210,7 @@ warp_pointer_checked :: proc(c : ^connection_t, src_window : window_t, dst_windo
  * relative to the current position of the pointer.
  *
  */
-warp_pointer :: proc(c : ^connection_t, src_window : window_t, dst_window : window_t, src_x : i16, src_y : i16, src_width : u16, src_height : u16, dst_x : i16, dst_y : i16) -> void_cookie_t ---;
+warp_pointer :: proc(c : ^connection_t, src_window : window_t, dst_window : window_t, src_x : i16, src_y : i16, src_width : u16, src_height : u16, dst_x : i16, dst_y : i16) -> void_cookie_t ---
 /**
  * @brief Sets input focus
  *
@@ -6242,8 +6242,8 @@ warp_pointer :: proc(c : ^connection_t, src_window : window_t, dst_window : wind
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-set_input_focus_checked :: proc(c : ^connection_t, revert_to : u8, focus : window_t, time : timestamp_t) -> void_cookie_t ---;
-get_motion_events_events :: proc(R : ^get_motion_events_reply_t) -> ^timecoord_t ---;
+set_input_focus_checked :: proc(c : ^connection_t, revert_to : u8, focus : window_t, time : timestamp_t) -> void_cookie_t ---
+get_motion_events_events :: proc(R : ^get_motion_events_reply_t) -> ^timecoord_t ---
 /**
  * Return the reply
  * @param c      The connection
@@ -6258,7 +6258,7 @@ get_motion_events_events :: proc(R : ^get_motion_events_reply_t) -> ^timecoord_t
  *
  * The returned value must be freed by the caller using free().
  */
-get_motion_events_reply :: proc(c : ^connection_t, cookie : get_motion_events_cookie_t, e : ^^generic_error_t) -> ^get_motion_events_reply_t ---;
+get_motion_events_reply :: proc(c : ^connection_t, cookie : get_motion_events_cookie_t, e : ^^generic_error_t) -> ^get_motion_events_reply_t ---
 /**
  * @brief Sets input focus
  *
@@ -6287,7 +6287,7 @@ get_motion_events_reply :: proc(c : ^connection_t, cookie : get_motion_events_co
  * A FocusIn and FocusOut event is generated when focus is changed.
  *
  */
-set_input_focus :: proc(c : ^connection_t, revert_to : u8, focus : window_t, time : timestamp_t) -> void_cookie_t ---;
+set_input_focus :: proc(c : ^connection_t, revert_to : u8, focus : window_t, time : timestamp_t) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -6296,28 +6296,7 @@ set_input_focus :: proc(c : ^connection_t, revert_to : u8, focus : window_t, tim
  * Delivers a request to the X server.
  *
  */
-get_input_focus :: proc(c : ^connection_t) -> get_input_focus_cookie_t ---;
-/**
- *
- * @param c The connection
- * @return A cookie
- *
- * Delivers a request to the X server.
- *
- * This form can be used only if the request will cause
- * a reply to be generated. Any returned error will be
- * placed in the event queue.
- */
-get_input_focus_unchecked :: proc(c : ^connection_t) -> get_input_focus_cookie_t ---;
-/**
- *
- * @param c The connection
- * @return A cookie
- *
- * Delivers a request to the X server.
- *
- */
-query_keymap :: proc(c : ^connection_t) -> query_keymap_cookie_t ---;
+get_input_focus :: proc(c : ^connection_t) -> get_input_focus_cookie_t ---
 /**
  *
  * @param c The connection
@@ -6329,7 +6308,28 @@ query_keymap :: proc(c : ^connection_t) -> query_keymap_cookie_t ---;
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-query_keymap_unchecked :: proc(c : ^connection_t) -> query_keymap_cookie_t ---;
+get_input_focus_unchecked :: proc(c : ^connection_t) -> get_input_focus_cookie_t ---
+/**
+ *
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ *
+ */
+query_keymap :: proc(c : ^connection_t) -> query_keymap_cookie_t ---
+/**
+ *
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ *
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
+query_keymap_unchecked :: proc(c : ^connection_t) -> query_keymap_cookie_t ---
 /**
  * Return the reply
  * @param c      The connection
@@ -6344,8 +6344,8 @@ query_keymap_unchecked :: proc(c : ^connection_t) -> query_keymap_cookie_t ---;
  *
  * The returned value must be freed by the caller using free().
  */
-translate_coordinates_reply :: proc(c : ^connection_t, cookie : translate_coordinates_cookie_t, e : ^^generic_error_t) -> ^translate_coordinates_reply_t ---;
-open_font_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
+translate_coordinates_reply :: proc(c : ^connection_t, cookie : translate_coordinates_cookie_t, e : ^^generic_error_t) -> ^translate_coordinates_reply_t ---
+open_font_sizeof :: proc(_buffer : rawptr) -> _c.int ---
 /**
  * @brief opens a font
  *
@@ -6364,7 +6364,7 @@ open_font_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-open_font_checked :: proc(c : ^connection_t, fid : font_t, name_len : u16, name : cstring) -> void_cookie_t ---;
+open_font_checked :: proc(c : ^connection_t, fid : font_t, name_len : u16, name : cstring) -> void_cookie_t ---
 /**
  * @brief opens a font
  *
@@ -6380,9 +6380,9 @@ open_font_checked :: proc(c : ^connection_t, fid : font_t, name_len : u16, name 
  * client-side rendering using Xft.
  *
  */
-open_font :: proc(c : ^connection_t, fid : font_t, name_len : u16, name : cstring) -> void_cookie_t ---;
-open_font_name_length :: proc(R : ^open_font_request_t) -> _c.int ---;
-open_font_name_end :: proc(R : ^open_font_request_t) -> generic_iterator_t ---;
+open_font :: proc(c : ^connection_t, fid : font_t, name_len : u16, name : cstring) -> void_cookie_t ---
+open_font_name_length :: proc(R : ^open_font_request_t) -> _c.int ---
+open_font_name_end :: proc(R : ^open_font_request_t) -> generic_iterator_t ---
 /**
  *
  * @param c The connection
@@ -6394,7 +6394,7 @@ open_font_name_end :: proc(R : ^open_font_request_t) -> generic_iterator_t ---;
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-close_font_checked :: proc(c : ^connection_t, font : font_t) -> void_cookie_t ---;
+close_font_checked :: proc(c : ^connection_t, font : font_t) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -6403,7 +6403,7 @@ close_font_checked :: proc(c : ^connection_t, font : font_t) -> void_cookie_t --
  * Delivers a request to the X server.
  *
  */
-close_font :: proc(c : ^connection_t, font : font_t) -> void_cookie_t ---;
+close_font :: proc(c : ^connection_t, font : font_t) -> void_cookie_t ---
 /**
  * Get the next element of the iterator
  * @param i Pointer to a xcb_fontprop_iterator_t
@@ -6412,7 +6412,7 @@ close_font :: proc(c : ^connection_t, font : font_t) -> void_cookie_t ---;
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(xcb_fontprop_t)
  */
-fontprop_next :: proc(i : ^fontprop_iterator_t) ---;
+fontprop_next :: proc(i : ^fontprop_iterator_t) ---
 /**
  * Return the iterator pointing to the last element
  * @param i An xcb_fontprop_iterator_t
@@ -6422,7 +6422,7 @@ fontprop_next :: proc(i : ^fontprop_iterator_t) ---;
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-fontprop_end :: proc(i : fontprop_iterator_t) -> generic_iterator_t ---;
+fontprop_end :: proc(i : fontprop_iterator_t) -> generic_iterator_t ---
 /**
  * Get the next element of the iterator
  * @param i Pointer to a xcb_charinfo_iterator_t
@@ -6431,7 +6431,7 @@ fontprop_end :: proc(i : fontprop_iterator_t) -> generic_iterator_t ---;
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(xcb_charinfo_t)
  */
-charinfo_next :: proc(i : ^charinfo_iterator_t) ---;
+charinfo_next :: proc(i : ^charinfo_iterator_t) ---
 /**
  * Return the iterator pointing to the last element
  * @param i An xcb_charinfo_iterator_t
@@ -6441,8 +6441,8 @@ charinfo_next :: proc(i : ^charinfo_iterator_t) ---;
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-charinfo_end :: proc(i : charinfo_iterator_t) -> generic_iterator_t ---;
-query_font_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
+charinfo_end :: proc(i : charinfo_iterator_t) -> generic_iterator_t ---
+query_font_sizeof :: proc(_buffer : rawptr) -> _c.int ---
 /**
  * @brief query font metrics
  *
@@ -6453,7 +6453,7 @@ query_font_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
  * Queries information associated with the font.
  *
  */
-query_font :: proc(c : ^connection_t, font : fontable_t) -> query_font_cookie_t ---;
+query_font :: proc(c : ^connection_t, font : fontable_t) -> query_font_cookie_t ---
 /**
  * Return the reply
  * @param c      The connection
@@ -6468,7 +6468,7 @@ query_font :: proc(c : ^connection_t, font : fontable_t) -> query_font_cookie_t 
  *
  * The returned value must be freed by the caller using free().
  */
-get_input_focus_reply :: proc(c : ^connection_t, cookie : get_input_focus_cookie_t, e : ^^generic_error_t) -> ^get_input_focus_reply_t ---;
+get_input_focus_reply :: proc(c : ^connection_t, cookie : get_input_focus_cookie_t, e : ^^generic_error_t) -> ^get_input_focus_reply_t ---
 /**
  * Return the reply
  * @param c      The connection
@@ -6483,7 +6483,7 @@ get_input_focus_reply :: proc(c : ^connection_t, cookie : get_input_focus_cookie
  *
  * The returned value must be freed by the caller using free().
  */
-query_keymap_reply :: proc(c : ^connection_t, cookie : query_keymap_cookie_t, e : ^^generic_error_t) -> ^query_keymap_reply_t ---;
+query_keymap_reply :: proc(c : ^connection_t, cookie : query_keymap_cookie_t, e : ^^generic_error_t) -> ^query_keymap_reply_t ---
 /**
  * @brief query font metrics
  *
@@ -6497,13 +6497,13 @@ query_keymap_reply :: proc(c : ^connection_t, cookie : query_keymap_cookie_t, e 
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-query_font_unchecked :: proc(c : ^connection_t, font : fontable_t) -> query_font_cookie_t ---;
-open_font_name :: proc(R : ^open_font_request_t) -> cstring ---;
-query_font_properties_length :: proc(R : ^query_font_reply_t) -> _c.int ---;
-query_font_properties_iterator :: proc(R : ^query_font_reply_t) -> fontprop_iterator_t ---;
-query_font_char_infos_length :: proc(R : ^query_font_reply_t) -> _c.int ---;
-query_font_char_infos_iterator :: proc(R : ^query_font_reply_t) -> charinfo_iterator_t ---;
-query_text_extents_sizeof :: proc(_buffer : rawptr, string_len : u32) -> _c.int ---;
+query_font_unchecked :: proc(c : ^connection_t, font : fontable_t) -> query_font_cookie_t ---
+open_font_name :: proc(R : ^open_font_request_t) -> cstring ---
+query_font_properties_length :: proc(R : ^query_font_reply_t) -> _c.int ---
+query_font_properties_iterator :: proc(R : ^query_font_reply_t) -> fontprop_iterator_t ---
+query_font_char_infos_length :: proc(R : ^query_font_reply_t) -> _c.int ---
+query_font_char_infos_iterator :: proc(R : ^query_font_reply_t) -> charinfo_iterator_t ---
+query_text_extents_sizeof :: proc(_buffer : rawptr, string_len : u32) -> _c.int ---
 /**
  * @brief get text extents
  *
@@ -6536,7 +6536,7 @@ query_text_extents_sizeof :: proc(_buffer : rawptr, string_len : u32) -> _c.int 
  * default_char, the undefined characters in the string are also ignored.
  *
  */
-query_text_extents :: proc(c : ^connection_t, font : fontable_t, string_len : u32, string : ^char2b_t) -> query_text_extents_cookie_t ---;
+query_text_extents :: proc(c : ^connection_t, font : fontable_t, string_len : u32, string : ^char2b_t) -> query_text_extents_cookie_t ---
 /**
  * @brief get text extents
  *
@@ -6572,10 +6572,10 @@ query_text_extents :: proc(c : ^connection_t, font : fontable_t, string_len : u3
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-query_text_extents_unchecked :: proc(c : ^connection_t, font : fontable_t, string_len : u32, string : ^char2b_t) -> query_text_extents_cookie_t ---;
-str_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
-str_name_length :: proc(R : ^str_t) -> _c.int ---;
-str_name_end :: proc(R : ^str_t) -> generic_iterator_t ---;
+query_text_extents_unchecked :: proc(c : ^connection_t, font : fontable_t, string_len : u32, string : ^char2b_t) -> query_text_extents_cookie_t ---
+str_sizeof :: proc(_buffer : rawptr) -> _c.int ---
+str_name_length :: proc(R : ^str_t) -> _c.int ---
+str_name_end :: proc(R : ^str_t) -> generic_iterator_t ---
 /**
  * Get the next element of the iterator
  * @param i Pointer to a xcb_str_iterator_t
@@ -6584,8 +6584,8 @@ str_name_end :: proc(R : ^str_t) -> generic_iterator_t ---;
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(xcb_str_t)
  */
-str_next :: proc(i : ^str_iterator_t) ---;
-query_font_properties :: proc(R : ^query_font_reply_t) -> ^fontprop_t ---;
+str_next :: proc(i : ^str_iterator_t) ---
+query_font_properties :: proc(R : ^query_font_reply_t) -> ^fontprop_t ---
 /**
  * Return the iterator pointing to the last element
  * @param i An xcb_str_iterator_t
@@ -6595,9 +6595,9 @@ query_font_properties :: proc(R : ^query_font_reply_t) -> ^fontprop_t ---;
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-str_end :: proc(i : str_iterator_t) -> generic_iterator_t ---;
-list_fonts_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
-query_font_char_infos :: proc(R : ^query_font_reply_t) -> ^charinfo_t ---;
+str_end :: proc(i : str_iterator_t) -> generic_iterator_t ---
+list_fonts_sizeof :: proc(_buffer : rawptr) -> _c.int ---
+query_font_char_infos :: proc(R : ^query_font_reply_t) -> ^charinfo_t ---
 /**
  * Return the reply
  * @param c      The connection
@@ -6612,7 +6612,7 @@ query_font_char_infos :: proc(R : ^query_font_reply_t) -> ^charinfo_t ---;
  *
  * The returned value must be freed by the caller using free().
  */
-query_font_reply :: proc(c : ^connection_t, cookie : query_font_cookie_t, e : ^^generic_error_t) -> ^query_font_reply_t ---;
+query_font_reply :: proc(c : ^connection_t, cookie : query_font_cookie_t, e : ^^generic_error_t) -> ^query_font_reply_t ---
 /**
  * Return the reply
  * @param c      The connection
@@ -6627,7 +6627,7 @@ query_font_reply :: proc(c : ^connection_t, cookie : query_font_cookie_t, e : ^^
  *
  * The returned value must be freed by the caller using free().
  */
-query_text_extents_reply :: proc(c : ^connection_t, cookie : query_text_extents_cookie_t, e : ^^generic_error_t) -> ^query_text_extents_reply_t ---;
+query_text_extents_reply :: proc(c : ^connection_t, cookie : query_text_extents_cookie_t, e : ^^generic_error_t) -> ^query_text_extents_reply_t ---
 /**
  * @brief get matching font names
  *
@@ -6644,7 +6644,7 @@ query_text_extents_reply :: proc(c : ^connection_t, cookie : query_text_extents_
  * Gets a list of available font names which match the given \a pattern.
  *
  */
-list_fonts :: proc(c : ^connection_t, max_names : u16, pattern_len : u16, pattern : cstring) -> list_fonts_cookie_t ---;
+list_fonts :: proc(c : ^connection_t, max_names : u16, pattern_len : u16, pattern : cstring) -> list_fonts_cookie_t ---
 /**
  * @brief get matching font names
  *
@@ -6664,10 +6664,10 @@ list_fonts :: proc(c : ^connection_t, max_names : u16, pattern_len : u16, patter
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-list_fonts_unchecked :: proc(c : ^connection_t, max_names : u16, pattern_len : u16, pattern : cstring) -> list_fonts_cookie_t ---;
-list_fonts_names_length :: proc(R : ^list_fonts_reply_t) -> _c.int ---;
-list_fonts_names_iterator :: proc(R : ^list_fonts_reply_t) -> str_iterator_t ---;
-list_fonts_with_info_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
+list_fonts_unchecked :: proc(c : ^connection_t, max_names : u16, pattern_len : u16, pattern : cstring) -> list_fonts_cookie_t ---
+list_fonts_names_length :: proc(R : ^list_fonts_reply_t) -> _c.int ---
+list_fonts_names_iterator :: proc(R : ^list_fonts_reply_t) -> str_iterator_t ---
+list_fonts_with_info_sizeof :: proc(_buffer : rawptr) -> _c.int ---
 /**
  * @brief get matching font names and information
  *
@@ -6684,7 +6684,7 @@ list_fonts_with_info_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
  * Gets a list of available font names which match the given \a pattern.
  *
  */
-list_fonts_with_info :: proc(c : ^connection_t, max_names : u16, pattern_len : u16, pattern : cstring) -> list_fonts_with_info_cookie_t ---;
+list_fonts_with_info :: proc(c : ^connection_t, max_names : u16, pattern_len : u16, pattern : cstring) -> list_fonts_with_info_cookie_t ---
 /**
  * @brief get matching font names and information
  *
@@ -6704,11 +6704,11 @@ list_fonts_with_info :: proc(c : ^connection_t, max_names : u16, pattern_len : u
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-list_fonts_with_info_unchecked :: proc(c : ^connection_t, max_names : u16, pattern_len : u16, pattern : cstring) -> list_fonts_with_info_cookie_t ---;
-list_fonts_with_info_properties_length :: proc(R : ^list_fonts_with_info_reply_t) -> _c.int ---;
-list_fonts_with_info_properties_iterator :: proc(R : ^list_fonts_with_info_reply_t) -> fontprop_iterator_t ---;
-list_fonts_with_info_name_length :: proc(R : ^list_fonts_with_info_reply_t) -> _c.int ---;
-list_fonts_with_info_name_end :: proc(R : ^list_fonts_with_info_reply_t) -> generic_iterator_t ---;
+list_fonts_with_info_unchecked :: proc(c : ^connection_t, max_names : u16, pattern_len : u16, pattern : cstring) -> list_fonts_with_info_cookie_t ---
+list_fonts_with_info_properties_length :: proc(R : ^list_fonts_with_info_reply_t) -> _c.int ---
+list_fonts_with_info_properties_iterator :: proc(R : ^list_fonts_with_info_reply_t) -> fontprop_iterator_t ---
+list_fonts_with_info_name_length :: proc(R : ^list_fonts_with_info_reply_t) -> _c.int ---
+list_fonts_with_info_name_end :: proc(R : ^list_fonts_with_info_reply_t) -> generic_iterator_t ---
 /**
  * Return the reply
  * @param c      The connection
@@ -6723,8 +6723,8 @@ list_fonts_with_info_name_end :: proc(R : ^list_fonts_with_info_reply_t) -> gene
  *
  * The returned value must be freed by the caller using free().
  */
-list_fonts_reply :: proc(c : ^connection_t, cookie : list_fonts_cookie_t, e : ^^generic_error_t) -> ^list_fonts_reply_t ---;
-set_font_path_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
+list_fonts_reply :: proc(c : ^connection_t, cookie : list_fonts_cookie_t, e : ^^generic_error_t) -> ^list_fonts_reply_t ---
+set_font_path_sizeof :: proc(_buffer : rawptr) -> _c.int ---
 /**
  *
  * @param c The connection
@@ -6736,7 +6736,7 @@ set_font_path_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-set_font_path_checked :: proc(c : ^connection_t, font_qty : u16, font : ^str_t) -> void_cookie_t ---;
+set_font_path_checked :: proc(c : ^connection_t, font_qty : u16, font : ^str_t) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -6745,10 +6745,10 @@ set_font_path_checked :: proc(c : ^connection_t, font_qty : u16, font : ^str_t) 
  * Delivers a request to the X server.
  *
  */
-set_font_path :: proc(c : ^connection_t, font_qty : u16, font : ^str_t) -> void_cookie_t ---;
-set_font_path_font_length :: proc(R : ^set_font_path_request_t) -> _c.int ---;
-set_font_path_font_iterator :: proc(R : ^set_font_path_request_t) -> str_iterator_t ---;
-get_font_path_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
+set_font_path :: proc(c : ^connection_t, font_qty : u16, font : ^str_t) -> void_cookie_t ---
+set_font_path_font_length :: proc(R : ^set_font_path_request_t) -> _c.int ---
+set_font_path_font_iterator :: proc(R : ^set_font_path_request_t) -> str_iterator_t ---
+get_font_path_sizeof :: proc(_buffer : rawptr) -> _c.int ---
 /**
  *
  * @param c The connection
@@ -6757,7 +6757,7 @@ get_font_path_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
  * Delivers a request to the X server.
  *
  */
-get_font_path :: proc(c : ^connection_t) -> get_font_path_cookie_t ---;
+get_font_path :: proc(c : ^connection_t) -> get_font_path_cookie_t ---
 /**
  *
  * @param c The connection
@@ -6769,9 +6769,9 @@ get_font_path :: proc(c : ^connection_t) -> get_font_path_cookie_t ---;
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-get_font_path_unchecked :: proc(c : ^connection_t) -> get_font_path_cookie_t ---;
-get_font_path_path_length :: proc(R : ^get_font_path_reply_t) -> _c.int ---;
-get_font_path_path_iterator :: proc(R : ^get_font_path_reply_t) -> str_iterator_t ---;
+get_font_path_unchecked :: proc(c : ^connection_t) -> get_font_path_cookie_t ---
+get_font_path_path_length :: proc(R : ^get_font_path_reply_t) -> _c.int ---
+get_font_path_path_iterator :: proc(R : ^get_font_path_reply_t) -> str_iterator_t ---
 /**
  * @brief Creates a pixmap
  *
@@ -6791,7 +6791,7 @@ get_font_path_path_iterator :: proc(R : ^get_font_path_reply_t) -> str_iterator_
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-create_pixmap_checked :: proc(c : ^connection_t, depth : u8, pid : pixmap_t, drawable : drawable_t, width : u16, height : u16) -> void_cookie_t ---;
+create_pixmap_checked :: proc(c : ^connection_t, depth : u8, pid : pixmap_t, drawable : drawable_t, width : u16, height : u16) -> void_cookie_t ---
 /**
  * @brief Destroys a pixmap
  *
@@ -6806,7 +6806,7 @@ create_pixmap_checked :: proc(c : ^connection_t, depth : u8, pid : pixmap_t, dra
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-create_pixmap :: proc(c : ^connection_t, depth : u8, pid : pixmap_t, drawable : drawable_t, width : u16, height : u16) -> void_cookie_t ---;
+create_pixmap :: proc(c : ^connection_t, depth : u8, pid : pixmap_t, drawable : drawable_t, width : u16, height : u16) -> void_cookie_t ---
 /**
  * @brief Destroys a pixmap
  *
@@ -6821,7 +6821,7 @@ create_pixmap :: proc(c : ^connection_t, depth : u8, pid : pixmap_t, drawable : 
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-free_pixmap_checked :: proc(c : ^connection_t, pixmap : pixmap_t) -> void_cookie_t ---;
+free_pixmap_checked :: proc(c : ^connection_t, pixmap : pixmap_t) -> void_cookie_t ---
 /**
  * @brief Destroys a pixmap
  *
@@ -6833,11 +6833,11 @@ free_pixmap_checked :: proc(c : ^connection_t, pixmap : pixmap_t) -> void_cookie
  * storage will be freed when there are no more references to it.
  *
  */
-free_pixmap :: proc(c : ^connection_t, pixmap : pixmap_t) -> void_cookie_t ---;
-create_gc_value_list_serialize :: proc(_buffer : ^rawptr, value_mask : u32, _aux : ^create_gc_value_list_t) -> _c.int ---;
-create_gc_value_list_unpack :: proc(_buffer : rawptr, value_mask : u32, _aux : ^create_gc_value_list_t) -> _c.int ---;
-create_gc_value_list_sizeof :: proc(_buffer : rawptr, value_mask : u32) -> _c.int ---;
-create_gc_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
+free_pixmap :: proc(c : ^connection_t, pixmap : pixmap_t) -> void_cookie_t ---
+create_gc_value_list_serialize :: proc(_buffer : ^rawptr, value_mask : u32, _aux : ^create_gc_value_list_t) -> _c.int ---
+create_gc_value_list_unpack :: proc(_buffer : rawptr, value_mask : u32, _aux : ^create_gc_value_list_t) -> _c.int ---
+create_gc_value_list_sizeof :: proc(_buffer : rawptr, value_mask : u32) -> _c.int ---
+create_gc_sizeof :: proc(_buffer : rawptr) -> _c.int ---
 /**
  * @brief Creates a graphics context
  *
@@ -6854,7 +6854,7 @@ create_gc_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-create_gc_checked :: proc(c : ^connection_t, cid : gcontext_t, drawable : drawable_t, value_mask : u32, value_list : rawptr) -> void_cookie_t ---;
+create_gc_checked :: proc(c : ^connection_t, cid : gcontext_t, drawable : drawable_t, value_mask : u32, value_list : rawptr) -> void_cookie_t ---
 /**
  * @brief Creates a graphics context
  *
@@ -6868,7 +6868,7 @@ create_gc_checked :: proc(c : ^connection_t, cid : gcontext_t, drawable : drawab
  * that has the same root and depth as the specified drawable.
  *
  */
-create_gc :: proc(c : ^connection_t, cid : gcontext_t, drawable : drawable_t, value_mask : u32, value_list : rawptr) -> void_cookie_t ---;
+create_gc :: proc(c : ^connection_t, cid : gcontext_t, drawable : drawable_t, value_mask : u32, value_list : rawptr) -> void_cookie_t ---
 /**
  * @brief Creates a graphics context
  *
@@ -6885,7 +6885,7 @@ create_gc :: proc(c : ^connection_t, cid : gcontext_t, drawable : drawable_t, va
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-create_gc_aux_checked :: proc(c : ^connection_t, cid : gcontext_t, drawable : drawable_t, value_mask : u32, value_list : ^create_gc_value_list_t) -> void_cookie_t ---;
+create_gc_aux_checked :: proc(c : ^connection_t, cid : gcontext_t, drawable : drawable_t, value_mask : u32, value_list : ^create_gc_value_list_t) -> void_cookie_t ---
 /**
  * @brief Creates a graphics context
  *
@@ -6899,11 +6899,11 @@ create_gc_aux_checked :: proc(c : ^connection_t, cid : gcontext_t, drawable : dr
  * that has the same root and depth as the specified drawable.
  *
  */
-create_gc_aux :: proc(c : ^connection_t, cid : gcontext_t, drawable : drawable_t, value_mask : u32, value_list : ^create_gc_value_list_t) -> void_cookie_t ---;
-change_gc_value_list_serialize :: proc(_buffer : ^rawptr, value_mask : u32, _aux : ^change_gc_value_list_t) -> _c.int ---;
-change_gc_value_list_unpack :: proc(_buffer : rawptr, value_mask : u32, _aux : ^change_gc_value_list_t) -> _c.int ---;
-change_gc_value_list_sizeof :: proc(_buffer : rawptr, value_mask : u32) -> _c.int ---;
-change_gc_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
+create_gc_aux :: proc(c : ^connection_t, cid : gcontext_t, drawable : drawable_t, value_mask : u32, value_list : ^create_gc_value_list_t) -> void_cookie_t ---
+change_gc_value_list_serialize :: proc(_buffer : ^rawptr, value_mask : u32, _aux : ^change_gc_value_list_t) -> _c.int ---
+change_gc_value_list_unpack :: proc(_buffer : rawptr, value_mask : u32, _aux : ^change_gc_value_list_t) -> _c.int ---
+change_gc_value_list_sizeof :: proc(_buffer : rawptr, value_mask : u32) -> _c.int ---
+change_gc_sizeof :: proc(_buffer : rawptr) -> _c.int ---
 /**
  * @brief change graphics context components
  *
@@ -6922,7 +6922,7 @@ change_gc_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-change_gc_checked :: proc(c : ^connection_t, gc : gcontext_t, value_mask : u32, value_list : rawptr) -> void_cookie_t ---;
+change_gc_checked :: proc(c : ^connection_t, gc : gcontext_t, value_mask : u32, value_list : rawptr) -> void_cookie_t ---
 /**
  * @brief change graphics context components
  *
@@ -6938,7 +6938,7 @@ change_gc_checked :: proc(c : ^connection_t, gc : gcontext_t, value_mask : u32, 
  * Changes the components specified by \a value_mask for the specified graphics context.
  *
  */
-change_gc :: proc(c : ^connection_t, gc : gcontext_t, value_mask : u32, value_list : rawptr) -> void_cookie_t ---;
+change_gc :: proc(c : ^connection_t, gc : gcontext_t, value_mask : u32, value_list : rawptr) -> void_cookie_t ---
 /**
  * @brief change graphics context components
  *
@@ -6957,7 +6957,7 @@ change_gc :: proc(c : ^connection_t, gc : gcontext_t, value_mask : u32, value_li
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-change_gc_aux_checked :: proc(c : ^connection_t, gc : gcontext_t, value_mask : u32, value_list : ^change_gc_value_list_t) -> void_cookie_t ---;
+change_gc_aux_checked :: proc(c : ^connection_t, gc : gcontext_t, value_mask : u32, value_list : ^change_gc_value_list_t) -> void_cookie_t ---
 /**
  * @brief change graphics context components
  *
@@ -6973,7 +6973,7 @@ change_gc_aux_checked :: proc(c : ^connection_t, gc : gcontext_t, value_mask : u
  * Changes the components specified by \a value_mask for the specified graphics context.
  *
  */
-change_gc_aux :: proc(c : ^connection_t, gc : gcontext_t, value_mask : u32, value_list : ^change_gc_value_list_t) -> void_cookie_t ---;
+change_gc_aux :: proc(c : ^connection_t, gc : gcontext_t, value_mask : u32, value_list : ^change_gc_value_list_t) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -6985,7 +6985,7 @@ change_gc_aux :: proc(c : ^connection_t, gc : gcontext_t, value_mask : u32, valu
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-copy_gc_checked :: proc(c : ^connection_t, src_gc : gcontext_t, dst_gc : gcontext_t, value_mask : u32) -> void_cookie_t ---;
+copy_gc_checked :: proc(c : ^connection_t, src_gc : gcontext_t, dst_gc : gcontext_t, value_mask : u32) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -6994,32 +6994,8 @@ copy_gc_checked :: proc(c : ^connection_t, src_gc : gcontext_t, dst_gc : gcontex
  * Delivers a request to the X server.
  *
  */
-copy_gc :: proc(c : ^connection_t, src_gc : gcontext_t, dst_gc : gcontext_t, value_mask : u32) -> void_cookie_t ---;
-set_dashes_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
-/**
- *
- * @param c The connection
- * @return A cookie
- *
- * Delivers a request to the X server.
- *
- * This form can be used only if the request will not cause
- * a reply to be generated. Any returned error will be
- * saved for handling by xcb_request_check().
- */
-set_dashes_checked :: proc(c : ^connection_t, gc : gcontext_t, dash_offset : u16, dashes_len : u16, dashes : ^u8) -> void_cookie_t ---;
-/**
- *
- * @param c The connection
- * @return A cookie
- *
- * Delivers a request to the X server.
- *
- */
-set_dashes :: proc(c : ^connection_t, gc : gcontext_t, dash_offset : u16, dashes_len : u16, dashes : ^u8) -> void_cookie_t ---;
-set_dashes_dashes_length :: proc(R : ^set_dashes_request_t) -> _c.int ---;
-set_dashes_dashes_end :: proc(R : ^set_dashes_request_t) -> generic_iterator_t ---;
-set_clip_rectangles_sizeof :: proc(_buffer : rawptr, rectangles_len : u32) -> _c.int ---;
+copy_gc :: proc(c : ^connection_t, src_gc : gcontext_t, dst_gc : gcontext_t, value_mask : u32) -> void_cookie_t ---
+set_dashes_sizeof :: proc(_buffer : rawptr) -> _c.int ---
 /**
  *
  * @param c The connection
@@ -7031,7 +7007,7 @@ set_clip_rectangles_sizeof :: proc(_buffer : rawptr, rectangles_len : u32) -> _c
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-set_clip_rectangles_checked :: proc(c : ^connection_t, ordering : u8, gc : gcontext_t, clip_x_origin : i16, clip_y_origin : i16, rectangles_len : u32, rectangles : ^rectangle_t) -> void_cookie_t ---;
+set_dashes_checked :: proc(c : ^connection_t, gc : gcontext_t, dash_offset : u16, dashes_len : u16, dashes : ^u8) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -7040,9 +7016,33 @@ set_clip_rectangles_checked :: proc(c : ^connection_t, ordering : u8, gc : gcont
  * Delivers a request to the X server.
  *
  */
-set_clip_rectangles :: proc(c : ^connection_t, ordering : u8, gc : gcontext_t, clip_x_origin : i16, clip_y_origin : i16, rectangles_len : u32, rectangles : ^rectangle_t) -> void_cookie_t ---;
-set_clip_rectangles_rectangles_length :: proc(R : ^set_clip_rectangles_request_t) -> _c.int ---;
-set_clip_rectangles_rectangles_iterator :: proc(R : ^set_clip_rectangles_request_t) -> rectangle_iterator_t ---;
+set_dashes :: proc(c : ^connection_t, gc : gcontext_t, dash_offset : u16, dashes_len : u16, dashes : ^u8) -> void_cookie_t ---
+set_dashes_dashes_length :: proc(R : ^set_dashes_request_t) -> _c.int ---
+set_dashes_dashes_end :: proc(R : ^set_dashes_request_t) -> generic_iterator_t ---
+set_clip_rectangles_sizeof :: proc(_buffer : rawptr, rectangles_len : u32) -> _c.int ---
+/**
+ *
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ *
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
+set_clip_rectangles_checked :: proc(c : ^connection_t, ordering : u8, gc : gcontext_t, clip_x_origin : i16, clip_y_origin : i16, rectangles_len : u32, rectangles : ^rectangle_t) -> void_cookie_t ---
+/**
+ *
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ *
+ */
+set_clip_rectangles :: proc(c : ^connection_t, ordering : u8, gc : gcontext_t, clip_x_origin : i16, clip_y_origin : i16, rectangles_len : u32, rectangles : ^rectangle_t) -> void_cookie_t ---
+set_clip_rectangles_rectangles_length :: proc(R : ^set_clip_rectangles_request_t) -> _c.int ---
+set_clip_rectangles_rectangles_iterator :: proc(R : ^set_clip_rectangles_request_t) -> rectangle_iterator_t ---
 /**
  * @brief Destroys a graphics context
  *
@@ -7056,7 +7056,7 @@ set_clip_rectangles_rectangles_iterator :: proc(R : ^set_clip_rectangles_request
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-free_gc_checked :: proc(c : ^connection_t, gc : gcontext_t) -> void_cookie_t ---;
+free_gc_checked :: proc(c : ^connection_t, gc : gcontext_t) -> void_cookie_t ---
 /**
  * @brief Destroys a graphics context
  *
@@ -7067,7 +7067,7 @@ free_gc_checked :: proc(c : ^connection_t, gc : gcontext_t) -> void_cookie_t ---
  * Destroys the specified \a gc and all associated storage.
  *
  */
-free_gc :: proc(c : ^connection_t, gc : gcontext_t) -> void_cookie_t ---;
+free_gc :: proc(c : ^connection_t, gc : gcontext_t) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -7079,7 +7079,7 @@ free_gc :: proc(c : ^connection_t, gc : gcontext_t) -> void_cookie_t ---;
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-clear_area_checked :: proc(c : ^connection_t, exposures : u8, window : window_t, x : i16, y : i16, width : u16, height : u16) -> void_cookie_t ---;
+clear_area_checked :: proc(c : ^connection_t, exposures : u8, window : window_t, x : i16, y : i16, width : u16, height : u16) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -7088,7 +7088,7 @@ clear_area_checked :: proc(c : ^connection_t, exposures : u8, window : window_t,
  * Delivers a request to the X server.
  *
  */
-clear_area :: proc(c : ^connection_t, exposures : u8, window : window_t, x : i16, y : i16, width : u16, height : u16) -> void_cookie_t ---;
+clear_area :: proc(c : ^connection_t, exposures : u8, window : window_t, x : i16, y : i16, width : u16, height : u16) -> void_cookie_t ---
 /**
  * @brief copy areas
  *
@@ -7110,7 +7110,7 @@ clear_area :: proc(c : ^connection_t, exposures : u8, window : window_t, x : i16
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-copy_area_checked :: proc(c : ^connection_t, src_drawable : drawable_t, dst_drawable : drawable_t, gc : gcontext_t, src_x : i16, src_y : i16, dst_x : i16, dst_y : i16, width : u16, height : u16) -> void_cookie_t ---;
+copy_area_checked :: proc(c : ^connection_t, src_drawable : drawable_t, dst_drawable : drawable_t, gc : gcontext_t, src_x : i16, src_y : i16, dst_x : i16, dst_y : i16, width : u16, height : u16) -> void_cookie_t ---
 /**
  * @brief copy areas
  *
@@ -7129,7 +7129,7 @@ copy_area_checked :: proc(c : ^connection_t, src_drawable : drawable_t, dst_draw
  * Copies the specified rectangle from \a src_drawable to \a dst_drawable.
  *
  */
-copy_area :: proc(c : ^connection_t, src_drawable : drawable_t, dst_drawable : drawable_t, gc : gcontext_t, src_x : i16, src_y : i16, dst_x : i16, dst_y : i16, width : u16, height : u16) -> void_cookie_t ---;
+copy_area :: proc(c : ^connection_t, src_drawable : drawable_t, dst_drawable : drawable_t, gc : gcontext_t, src_x : i16, src_y : i16, dst_x : i16, dst_y : i16, width : u16, height : u16) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -7138,11 +7138,11 @@ copy_area :: proc(c : ^connection_t, src_drawable : drawable_t, dst_drawable : d
  * Delivers a request to the X server.
  *
  */
-copy_plane :: proc(c : ^connection_t, src_drawable : drawable_t, dst_drawable : drawable_t, gc : gcontext_t, src_x : i16, src_y : i16, dst_x : i16, dst_y : i16, width : u16, height : u16, bit_plane : u32) -> void_cookie_t ---;
-create_gc_value_list :: proc(R : ^create_gc_request_t) -> rawptr ---;
-change_gc_value_list :: proc(R : ^change_gc_request_t) -> rawptr ---;
-set_dashes_dashes :: proc(R : ^set_dashes_request_t) -> ^u8 ---;
-poly_point_sizeof :: proc(_buffer : rawptr, points_len : u32) -> _c.int ---;
+copy_plane :: proc(c : ^connection_t, src_drawable : drawable_t, dst_drawable : drawable_t, gc : gcontext_t, src_x : i16, src_y : i16, dst_x : i16, dst_y : i16, width : u16, height : u16, bit_plane : u32) -> void_cookie_t ---
+create_gc_value_list :: proc(R : ^create_gc_request_t) -> rawptr ---
+change_gc_value_list :: proc(R : ^change_gc_request_t) -> rawptr ---
+set_dashes_dashes :: proc(R : ^set_dashes_request_t) -> ^u8 ---
+poly_point_sizeof :: proc(_buffer : rawptr, points_len : u32) -> _c.int ---
 /**
  *
  * @param c The connection
@@ -7154,7 +7154,7 @@ poly_point_sizeof :: proc(_buffer : rawptr, points_len : u32) -> _c.int ---;
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-poly_point_checked :: proc(c : ^connection_t, coordinate_mode : u8, drawable : drawable_t, gc : gcontext_t, points_len : u32, points : ^point_t) -> void_cookie_t ---;
+poly_point_checked :: proc(c : ^connection_t, coordinate_mode : u8, drawable : drawable_t, gc : gcontext_t, points_len : u32, points : ^point_t) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -7163,10 +7163,10 @@ poly_point_checked :: proc(c : ^connection_t, coordinate_mode : u8, drawable : d
  * Delivers a request to the X server.
  *
  */
-poly_point :: proc(c : ^connection_t, coordinate_mode : u8, drawable : drawable_t, gc : gcontext_t, points_len : u32, points : ^point_t) -> void_cookie_t ---;
-poly_point_points_length :: proc(R : ^poly_point_request_t) -> _c.int ---;
-poly_point_points_iterator :: proc(R : ^poly_point_request_t) -> point_iterator_t ---;
-poly_line_sizeof :: proc(_buffer : rawptr, points_len : u32) -> _c.int ---;
+poly_point :: proc(c : ^connection_t, coordinate_mode : u8, drawable : drawable_t, gc : gcontext_t, points_len : u32, points : ^point_t) -> void_cookie_t ---
+poly_point_points_length :: proc(R : ^poly_point_request_t) -> _c.int ---
+poly_point_points_iterator :: proc(R : ^poly_point_request_t) -> point_iterator_t ---
+poly_line_sizeof :: proc(_buffer : rawptr, points_len : u32) -> _c.int ---
 /**
  * @brief draw lines
  *
@@ -7192,7 +7192,7 @@ poly_line_sizeof :: proc(_buffer : rawptr, points_len : u32) -> _c.int ---;
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-poly_line_checked :: proc(c : ^connection_t, coordinate_mode : u8, drawable : drawable_t, gc : gcontext_t, points_len : u32, points : ^point_t) -> void_cookie_t ---;
+poly_line_checked :: proc(c : ^connection_t, coordinate_mode : u8, drawable : drawable_t, gc : gcontext_t, points_len : u32, points : ^point_t) -> void_cookie_t ---
 /**
  * @brief draw lines
  *
@@ -7215,9 +7215,9 @@ poly_line_checked :: proc(c : ^connection_t, coordinate_mode : u8, drawable : dr
  * request were a single, filled shape.
  *
  */
-poly_line :: proc(c : ^connection_t, coordinate_mode : u8, drawable : drawable_t, gc : gcontext_t, points_len : u32, points : ^point_t) -> void_cookie_t ---;
-poly_line_points_length :: proc(R : ^poly_line_request_t) -> _c.int ---;
-poly_line_points_iterator :: proc(R : ^poly_line_request_t) -> point_iterator_t ---;
+poly_line :: proc(c : ^connection_t, coordinate_mode : u8, drawable : drawable_t, gc : gcontext_t, points_len : u32, points : ^point_t) -> void_cookie_t ---
+poly_line_points_length :: proc(R : ^poly_line_request_t) -> _c.int ---
+poly_line_points_iterator :: proc(R : ^poly_line_request_t) -> point_iterator_t ---
 /**
  * Get the next element of the iterator
  * @param i Pointer to a xcb_segment_iterator_t
@@ -7226,7 +7226,7 @@ poly_line_points_iterator :: proc(R : ^poly_line_request_t) -> point_iterator_t 
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(xcb_segment_t)
  */
-segment_next :: proc(i : ^segment_iterator_t) ---;
+segment_next :: proc(i : ^segment_iterator_t) ---
 /**
  * Return the iterator pointing to the last element
  * @param i An xcb_segment_iterator_t
@@ -7236,8 +7236,8 @@ segment_next :: proc(i : ^segment_iterator_t) ---;
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-segment_end :: proc(i : segment_iterator_t) -> generic_iterator_t ---;
-poly_segment_sizeof :: proc(_buffer : rawptr, segments_len : u32) -> _c.int ---;
+segment_end :: proc(i : segment_iterator_t) -> generic_iterator_t ---
+poly_segment_sizeof :: proc(_buffer : rawptr, segments_len : u32) -> _c.int ---
 /**
  * @brief draw lines
  *
@@ -7264,7 +7264,7 @@ poly_segment_sizeof :: proc(_buffer : rawptr, segments_len : u32) -> _c.int ---;
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-poly_segment_checked :: proc(c : ^connection_t, drawable : drawable_t, gc : gcontext_t, segments_len : u32, segments : ^segment_t) -> void_cookie_t ---;
+poly_segment_checked :: proc(c : ^connection_t, drawable : drawable_t, gc : gcontext_t, segments_len : u32, segments : ^segment_t) -> void_cookie_t ---
 /**
  * @brief draw lines
  *
@@ -7288,10 +7288,10 @@ poly_segment_checked :: proc(c : ^connection_t, drawable : drawable_t, gc : gcon
  * TODO: an example
  *
  */
-poly_segment :: proc(c : ^connection_t, drawable : drawable_t, gc : gcontext_t, segments_len : u32, segments : ^segment_t) -> void_cookie_t ---;
-poly_segment_segments_length :: proc(R : ^poly_segment_request_t) -> _c.int ---;
-poly_segment_segments_iterator :: proc(R : ^poly_segment_request_t) -> segment_iterator_t ---;
-poly_rectangle_sizeof :: proc(_buffer : rawptr, rectangles_len : u32) -> _c.int ---;
+poly_segment :: proc(c : ^connection_t, drawable : drawable_t, gc : gcontext_t, segments_len : u32, segments : ^segment_t) -> void_cookie_t ---
+poly_segment_segments_length :: proc(R : ^poly_segment_request_t) -> _c.int ---
+poly_segment_segments_iterator :: proc(R : ^poly_segment_request_t) -> segment_iterator_t ---
+poly_rectangle_sizeof :: proc(_buffer : rawptr, rectangles_len : u32) -> _c.int ---
 /**
  *
  * @param c The connection
@@ -7303,7 +7303,7 @@ poly_rectangle_sizeof :: proc(_buffer : rawptr, rectangles_len : u32) -> _c.int 
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-poly_rectangle_checked :: proc(c : ^connection_t, drawable : drawable_t, gc : gcontext_t, rectangles_len : u32, rectangles : ^rectangle_t) -> void_cookie_t ---;
+poly_rectangle_checked :: proc(c : ^connection_t, drawable : drawable_t, gc : gcontext_t, rectangles_len : u32, rectangles : ^rectangle_t) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -7312,22 +7312,10 @@ poly_rectangle_checked :: proc(c : ^connection_t, drawable : drawable_t, gc : gc
  * Delivers a request to the X server.
  *
  */
-poly_rectangle :: proc(c : ^connection_t, drawable : drawable_t, gc : gcontext_t, rectangles_len : u32, rectangles : ^rectangle_t) -> void_cookie_t ---;
-poly_rectangle_rectangles_length :: proc(R : ^poly_rectangle_request_t) -> _c.int ---;
-poly_rectangle_rectangles_iterator :: proc(R : ^poly_rectangle_request_t) -> rectangle_iterator_t ---;
-poly_arc_sizeof :: proc(_buffer : rawptr, arcs_len : u32) -> _c.int ---;
-/**
- *
- * @param c The connection
- * @return A cookie
- *
- * Delivers a request to the X server.
- *
- * This form can be used only if the request will not cause
- * a reply to be generated. Any returned error will be
- * saved for handling by xcb_request_check().
- */
-poly_arc_checked :: proc(c : ^connection_t, drawable : drawable_t, gc : gcontext_t, arcs_len : u32, arcs : ^arc_t) -> void_cookie_t ---;
+poly_rectangle :: proc(c : ^connection_t, drawable : drawable_t, gc : gcontext_t, rectangles_len : u32, rectangles : ^rectangle_t) -> void_cookie_t ---
+poly_rectangle_rectangles_length :: proc(R : ^poly_rectangle_request_t) -> _c.int ---
+poly_rectangle_rectangles_iterator :: proc(R : ^poly_rectangle_request_t) -> rectangle_iterator_t ---
+poly_arc_sizeof :: proc(_buffer : rawptr, arcs_len : u32) -> _c.int ---
 /**
  *
  * @param c The connection
@@ -7339,16 +7327,7 @@ poly_arc_checked :: proc(c : ^connection_t, drawable : drawable_t, gc : gcontext
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-poly_arc :: proc(c : ^connection_t, drawable : drawable_t, gc : gcontext_t, arcs_len : u32, arcs : ^arc_t) -> void_cookie_t ---;
-poly_arc_arcs_length :: proc(R : ^poly_arc_request_t) -> _c.int ---;
-str_name :: proc(R : ^str_t) -> cstring ---;
-list_fonts_with_info_name :: proc(R : ^list_fonts_with_info_reply_t) -> cstring ---;
-poly_point_points :: proc(R : ^poly_point_request_t) -> ^point_t ---;
-set_clip_rectangles_rectangles :: proc(R : ^set_clip_rectangles_request_t) -> ^rectangle_t ---;
-poly_line_points :: proc(R : ^poly_line_request_t) -> ^point_t ---;
-poly_rectangle_rectangles :: proc(R : ^poly_rectangle_request_t) -> ^rectangle_t ---;
-poly_arc_arcs_iterator :: proc(R : ^poly_arc_request_t) -> arc_iterator_t ---;
-fill_poly_sizeof :: proc(_buffer : rawptr, points_len : u32) -> _c.int ---;
+poly_arc_checked :: proc(c : ^connection_t, drawable : drawable_t, gc : gcontext_t, arcs_len : u32, arcs : ^arc_t) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -7360,7 +7339,28 @@ fill_poly_sizeof :: proc(_buffer : rawptr, points_len : u32) -> _c.int ---;
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-fill_poly_checked :: proc(c : ^connection_t, drawable : drawable_t, gc : gcontext_t, shape : u8, coordinate_mode : u8, points_len : u32, points : ^point_t) -> void_cookie_t ---;
+poly_arc :: proc(c : ^connection_t, drawable : drawable_t, gc : gcontext_t, arcs_len : u32, arcs : ^arc_t) -> void_cookie_t ---
+poly_arc_arcs_length :: proc(R : ^poly_arc_request_t) -> _c.int ---
+str_name :: proc(R : ^str_t) -> cstring ---
+list_fonts_with_info_name :: proc(R : ^list_fonts_with_info_reply_t) -> cstring ---
+poly_point_points :: proc(R : ^poly_point_request_t) -> ^point_t ---
+set_clip_rectangles_rectangles :: proc(R : ^set_clip_rectangles_request_t) -> ^rectangle_t ---
+poly_line_points :: proc(R : ^poly_line_request_t) -> ^point_t ---
+poly_rectangle_rectangles :: proc(R : ^poly_rectangle_request_t) -> ^rectangle_t ---
+poly_arc_arcs_iterator :: proc(R : ^poly_arc_request_t) -> arc_iterator_t ---
+fill_poly_sizeof :: proc(_buffer : rawptr, points_len : u32) -> _c.int ---
+/**
+ *
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ *
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
+fill_poly_checked :: proc(c : ^connection_t, drawable : drawable_t, gc : gcontext_t, shape : u8, coordinate_mode : u8, points_len : u32, points : ^point_t) -> void_cookie_t ---
 /**
  * @brief Fills rectangles
  *
@@ -7386,11 +7386,11 @@ fill_poly_checked :: proc(c : ^connection_t, drawable : drawable_t, gc : gcontex
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-fill_poly :: proc(c : ^connection_t, drawable : drawable_t, gc : gcontext_t, shape : u8, coordinate_mode : u8, points_len : u32, points : ^point_t) -> void_cookie_t ---;
-fill_poly_points_length :: proc(R : ^fill_poly_request_t) -> _c.int ---;
-fill_poly_points_iterator :: proc(R : ^fill_poly_request_t) -> point_iterator_t ---;
-poly_fill_rectangle_sizeof :: proc(_buffer : rawptr, rectangles_len : u32) -> _c.int ---;
-list_fonts_with_info_properties :: proc(R : ^list_fonts_with_info_reply_t) -> ^fontprop_t ---;
+fill_poly :: proc(c : ^connection_t, drawable : drawable_t, gc : gcontext_t, shape : u8, coordinate_mode : u8, points_len : u32, points : ^point_t) -> void_cookie_t ---
+fill_poly_points_length :: proc(R : ^fill_poly_request_t) -> _c.int ---
+fill_poly_points_iterator :: proc(R : ^fill_poly_request_t) -> point_iterator_t ---
+poly_fill_rectangle_sizeof :: proc(_buffer : rawptr, rectangles_len : u32) -> _c.int ---
+list_fonts_with_info_properties :: proc(R : ^list_fonts_with_info_reply_t) -> ^fontprop_t ---
 /**
  * Return the reply
  * @param c      The connection
@@ -7405,7 +7405,7 @@ list_fonts_with_info_properties :: proc(R : ^list_fonts_with_info_reply_t) -> ^f
  *
  * The returned value must be freed by the caller using free().
  */
-get_font_path_reply :: proc(c : ^connection_t, cookie : get_font_path_cookie_t, e : ^^generic_error_t) -> ^get_font_path_reply_t ---;
+get_font_path_reply :: proc(c : ^connection_t, cookie : get_font_path_cookie_t, e : ^^generic_error_t) -> ^get_font_path_reply_t ---
 /**
  * @brief Fills rectangles
  *
@@ -7431,8 +7431,8 @@ get_font_path_reply :: proc(c : ^connection_t, cookie : get_font_path_cookie_t, 
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-poly_fill_rectangle_checked :: proc(c : ^connection_t, drawable : drawable_t, gc : gcontext_t, rectangles_len : u32, rectangles : ^rectangle_t) -> void_cookie_t ---;
-poly_arc_arcs :: proc(R : ^poly_arc_request_t) -> ^arc_t ---;
+poly_fill_rectangle_checked :: proc(c : ^connection_t, drawable : drawable_t, gc : gcontext_t, rectangles_len : u32, rectangles : ^rectangle_t) -> void_cookie_t ---
+poly_arc_arcs :: proc(R : ^poly_arc_request_t) -> ^arc_t ---
 /**
  * @brief Fills rectangles
  *
@@ -7455,11 +7455,11 @@ poly_arc_arcs :: proc(R : ^poly_arc_request_t) -> ^arc_t ---;
  * intersect, the intersecting pixels are drawn multiple times.
  *
  */
-poly_fill_rectangle :: proc(c : ^connection_t, drawable : drawable_t, gc : gcontext_t, rectangles_len : u32, rectangles : ^rectangle_t) -> void_cookie_t ---;
-poly_fill_rectangle_rectangles_length :: proc(R : ^poly_fill_rectangle_request_t) -> _c.int ---;
-poly_fill_rectangle_rectangles_iterator :: proc(R : ^poly_fill_rectangle_request_t) -> rectangle_iterator_t ---;
-poly_fill_rectangle_rectangles :: proc(R : ^poly_fill_rectangle_request_t) -> ^rectangle_t ---;
-poly_fill_arc_sizeof :: proc(_buffer : rawptr, arcs_len : u32) -> _c.int ---;
+poly_fill_rectangle :: proc(c : ^connection_t, drawable : drawable_t, gc : gcontext_t, rectangles_len : u32, rectangles : ^rectangle_t) -> void_cookie_t ---
+poly_fill_rectangle_rectangles_length :: proc(R : ^poly_fill_rectangle_request_t) -> _c.int ---
+poly_fill_rectangle_rectangles_iterator :: proc(R : ^poly_fill_rectangle_request_t) -> rectangle_iterator_t ---
+poly_fill_rectangle_rectangles :: proc(R : ^poly_fill_rectangle_request_t) -> ^rectangle_t ---
+poly_fill_arc_sizeof :: proc(_buffer : rawptr, arcs_len : u32) -> _c.int ---
 /**
  *
  * @param c The connection
@@ -7471,7 +7471,7 @@ poly_fill_arc_sizeof :: proc(_buffer : rawptr, arcs_len : u32) -> _c.int ---;
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-poly_fill_arc_checked :: proc(c : ^connection_t, drawable : drawable_t, gc : gcontext_t, arcs_len : u32, arcs : ^arc_t) -> void_cookie_t ---;
+poly_fill_arc_checked :: proc(c : ^connection_t, drawable : drawable_t, gc : gcontext_t, arcs_len : u32, arcs : ^arc_t) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -7480,10 +7480,10 @@ poly_fill_arc_checked :: proc(c : ^connection_t, drawable : drawable_t, gc : gco
  * Delivers a request to the X server.
  *
  */
-poly_fill_arc :: proc(c : ^connection_t, drawable : drawable_t, gc : gcontext_t, arcs_len : u32, arcs : ^arc_t) -> void_cookie_t ---;
-poly_fill_arc_arcs_length :: proc(R : ^poly_fill_arc_request_t) -> _c.int ---;
-poly_fill_arc_arcs_iterator :: proc(R : ^poly_fill_arc_request_t) -> arc_iterator_t ---;
-put_image_sizeof :: proc(_buffer : rawptr, data_len : u32) -> _c.int ---;
+poly_fill_arc :: proc(c : ^connection_t, drawable : drawable_t, gc : gcontext_t, arcs_len : u32, arcs : ^arc_t) -> void_cookie_t ---
+poly_fill_arc_arcs_length :: proc(R : ^poly_fill_arc_request_t) -> _c.int ---
+poly_fill_arc_arcs_iterator :: proc(R : ^poly_fill_arc_request_t) -> arc_iterator_t ---
+put_image_sizeof :: proc(_buffer : rawptr, data_len : u32) -> _c.int ---
 /**
  *
  * @param c The connection
@@ -7495,7 +7495,7 @@ put_image_sizeof :: proc(_buffer : rawptr, data_len : u32) -> _c.int ---;
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-put_image_checked :: proc(c : ^connection_t, format : u8, drawable : drawable_t, gc : gcontext_t, width : u16, height : u16, dst_x : i16, dst_y : i16, left_pad : u8, depth : u8, data_len : u32, data : ^u8) -> void_cookie_t ---;
+put_image_checked :: proc(c : ^connection_t, format : u8, drawable : drawable_t, gc : gcontext_t, width : u16, height : u16, dst_x : i16, dst_y : i16, left_pad : u8, depth : u8, data_len : u32, data : ^u8) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -7504,10 +7504,10 @@ put_image_checked :: proc(c : ^connection_t, format : u8, drawable : drawable_t,
  * Delivers a request to the X server.
  *
  */
-put_image :: proc(c : ^connection_t, format : u8, drawable : drawable_t, gc : gcontext_t, width : u16, height : u16, dst_x : i16, dst_y : i16, left_pad : u8, depth : u8, data_len : u32, data : ^u8) -> void_cookie_t ---;
-put_image_data_length :: proc(R : ^put_image_request_t) -> _c.int ---;
-put_image_data_end :: proc(R : ^put_image_request_t) -> generic_iterator_t ---;
-get_image_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
+put_image :: proc(c : ^connection_t, format : u8, drawable : drawable_t, gc : gcontext_t, width : u16, height : u16, dst_x : i16, dst_y : i16, left_pad : u8, depth : u8, data_len : u32, data : ^u8) -> void_cookie_t ---
+put_image_data_length :: proc(R : ^put_image_request_t) -> _c.int ---
+put_image_data_end :: proc(R : ^put_image_request_t) -> generic_iterator_t ---
+get_image_sizeof :: proc(_buffer : rawptr) -> _c.int ---
 /**
  *
  * @param c The connection
@@ -7516,7 +7516,7 @@ get_image_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
  * Delivers a request to the X server.
  *
  */
-get_image :: proc(c : ^connection_t, format : u8, drawable : drawable_t, x : i16, y : i16, width : u16, height : u16, plane_mask : u32) -> get_image_cookie_t ---;
+get_image :: proc(c : ^connection_t, format : u8, drawable : drawable_t, x : i16, y : i16, width : u16, height : u16, plane_mask : u32) -> get_image_cookie_t ---
 /**
  *
  * @param c The connection
@@ -7528,16 +7528,16 @@ get_image :: proc(c : ^connection_t, format : u8, drawable : drawable_t, x : i16
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-get_image_unchecked :: proc(c : ^connection_t, format : u8, drawable : drawable_t, x : i16, y : i16, width : u16, height : u16, plane_mask : u32) -> get_image_cookie_t ---;
-poly_segment_segments :: proc(R : ^poly_segment_request_t) -> ^segment_t ---;
-poly_fill_arc_arcs :: proc(R : ^poly_fill_arc_request_t) -> ^arc_t ---;
-put_image_data :: proc(R : ^put_image_request_t) -> ^u8 ---;
-get_image_data :: proc(R : ^get_image_reply_t) -> ^u8 ---;
-get_image_data_length :: proc(R : ^get_image_reply_t) -> _c.int ---;
-get_image_data_end :: proc(R : ^get_image_reply_t) -> generic_iterator_t ---;
-poly_text_8_items_length :: proc(R : ^poly_text_8_request_t) -> _c.int ---;
-fill_poly_points :: proc(R : ^fill_poly_request_t) -> ^point_t ---;
-poly_text_8_sizeof :: proc(_buffer : rawptr, items_len : u32) -> _c.int ---;
+get_image_unchecked :: proc(c : ^connection_t, format : u8, drawable : drawable_t, x : i16, y : i16, width : u16, height : u16, plane_mask : u32) -> get_image_cookie_t ---
+poly_segment_segments :: proc(R : ^poly_segment_request_t) -> ^segment_t ---
+poly_fill_arc_arcs :: proc(R : ^poly_fill_arc_request_t) -> ^arc_t ---
+put_image_data :: proc(R : ^put_image_request_t) -> ^u8 ---
+get_image_data :: proc(R : ^get_image_reply_t) -> ^u8 ---
+get_image_data_length :: proc(R : ^get_image_reply_t) -> _c.int ---
+get_image_data_end :: proc(R : ^get_image_reply_t) -> generic_iterator_t ---
+poly_text_8_items_length :: proc(R : ^poly_text_8_request_t) -> _c.int ---
+fill_poly_points :: proc(R : ^fill_poly_request_t) -> ^point_t ---
+poly_text_8_sizeof :: proc(_buffer : rawptr, items_len : u32) -> _c.int ---
 /**
  *
  * @param c The connection
@@ -7549,7 +7549,7 @@ poly_text_8_sizeof :: proc(_buffer : rawptr, items_len : u32) -> _c.int ---;
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-poly_text_8_checked :: proc(c : ^connection_t, drawable : drawable_t, gc : gcontext_t, x : i16, y : i16, items_len : u32, items : ^u8) -> void_cookie_t ---;
+poly_text_8_checked :: proc(c : ^connection_t, drawable : drawable_t, gc : gcontext_t, x : i16, y : i16, items_len : u32, items : ^u8) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -7558,9 +7558,9 @@ poly_text_8_checked :: proc(c : ^connection_t, drawable : drawable_t, gc : gcont
  * Delivers a request to the X server.
  *
  */
-poly_text_8 :: proc(c : ^connection_t, drawable : drawable_t, gc : gcontext_t, x : i16, y : i16, items_len : u32, items : ^u8) -> void_cookie_t ---;
-poly_text_8_items_end :: proc(R : ^poly_text_8_request_t) -> generic_iterator_t ---;
-poly_text_8_items :: proc(R : ^poly_text_8_request_t) -> ^u8 ---;
+poly_text_8 :: proc(c : ^connection_t, drawable : drawable_t, gc : gcontext_t, x : i16, y : i16, items_len : u32, items : ^u8) -> void_cookie_t ---
+poly_text_8_items_end :: proc(R : ^poly_text_8_request_t) -> generic_iterator_t ---
+poly_text_8_items :: proc(R : ^poly_text_8_request_t) -> ^u8 ---
 /**
  * Return the reply
  * @param c      The connection
@@ -7575,7 +7575,7 @@ poly_text_8_items :: proc(R : ^poly_text_8_request_t) -> ^u8 ---;
  *
  * The returned value must be freed by the caller using free().
  */
-get_image_reply :: proc(c : ^connection_t, cookie : get_image_cookie_t, e : ^^generic_error_t) -> ^get_image_reply_t ---;
+get_image_reply :: proc(c : ^connection_t, cookie : get_image_cookie_t, e : ^^generic_error_t) -> ^get_image_reply_t ---
 /**
  * Return the reply
  * @param c      The connection
@@ -7590,7 +7590,7 @@ get_image_reply :: proc(c : ^connection_t, cookie : get_image_cookie_t, e : ^^ge
  *
  * The returned value must be freed by the caller using free().
  */
-list_fonts_with_info_reply :: proc(c : ^connection_t, cookie : list_fonts_with_info_cookie_t, e : ^^generic_error_t) -> ^list_fonts_with_info_reply_t ---;
+list_fonts_with_info_reply :: proc(c : ^connection_t, cookie : list_fonts_with_info_cookie_t, e : ^^generic_error_t) -> ^list_fonts_with_info_reply_t ---
 /**
  *
  * @param c The connection
@@ -7602,8 +7602,8 @@ list_fonts_with_info_reply :: proc(c : ^connection_t, cookie : list_fonts_with_i
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-copy_plane_checked :: proc(c : ^connection_t, src_drawable : drawable_t, dst_drawable : drawable_t, gc : gcontext_t, src_x : i16, src_y : i16, dst_x : i16, dst_y : i16, width : u16, height : u16, bit_plane : u32) -> void_cookie_t ---;
-poly_text_16_sizeof :: proc(_buffer : rawptr, items_len : u32) -> _c.int ---;
+copy_plane_checked :: proc(c : ^connection_t, src_drawable : drawable_t, dst_drawable : drawable_t, gc : gcontext_t, src_x : i16, src_y : i16, dst_x : i16, dst_y : i16, width : u16, height : u16, bit_plane : u32) -> void_cookie_t ---
+poly_text_16_sizeof :: proc(_buffer : rawptr, items_len : u32) -> _c.int ---
 /**
  *
  * @param c The connection
@@ -7615,7 +7615,7 @@ poly_text_16_sizeof :: proc(_buffer : rawptr, items_len : u32) -> _c.int ---;
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-poly_text_16_checked :: proc(c : ^connection_t, drawable : drawable_t, gc : gcontext_t, x : i16, y : i16, items_len : u32, items : ^u8) -> void_cookie_t ---;
+poly_text_16_checked :: proc(c : ^connection_t, drawable : drawable_t, gc : gcontext_t, x : i16, y : i16, items_len : u32, items : ^u8) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -7624,11 +7624,11 @@ poly_text_16_checked :: proc(c : ^connection_t, drawable : drawable_t, gc : gcon
  * Delivers a request to the X server.
  *
  */
-poly_text_16 :: proc(c : ^connection_t, drawable : drawable_t, gc : gcontext_t, x : i16, y : i16, items_len : u32, items : ^u8) -> void_cookie_t ---;
-poly_text_16_items :: proc(R : ^poly_text_16_request_t) -> ^u8 ---;
-poly_text_16_items_length :: proc(R : ^poly_text_16_request_t) -> _c.int ---;
-poly_text_16_items_end :: proc(R : ^poly_text_16_request_t) -> generic_iterator_t ---;
-image_text_8_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
+poly_text_16 :: proc(c : ^connection_t, drawable : drawable_t, gc : gcontext_t, x : i16, y : i16, items_len : u32, items : ^u8) -> void_cookie_t ---
+poly_text_16_items :: proc(R : ^poly_text_16_request_t) -> ^u8 ---
+poly_text_16_items_length :: proc(R : ^poly_text_16_request_t) -> _c.int ---
+poly_text_16_items_end :: proc(R : ^poly_text_16_request_t) -> generic_iterator_t ---
+image_text_8_sizeof :: proc(_buffer : rawptr) -> _c.int ---
 /**
  * @brief Draws text
  *
@@ -7659,7 +7659,7 @@ image_text_8_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-image_text_8_checked :: proc(c : ^connection_t, string_len : u8, drawable : drawable_t, gc : gcontext_t, x : i16, y : i16, string : cstring) -> void_cookie_t ---;
+image_text_8_checked :: proc(c : ^connection_t, string_len : u8, drawable : drawable_t, gc : gcontext_t, x : i16, y : i16, string : cstring) -> void_cookie_t ---
 /**
  * @brief Draws text
  *
@@ -7687,10 +7687,10 @@ image_text_8_checked :: proc(c : ^connection_t, string_len : u8, drawable : draw
  * client-side rendering using Xft.
  *
  */
-image_text_8 :: proc(c : ^connection_t, string_len : u8, drawable : drawable_t, gc : gcontext_t, x : i16, y : i16, string : cstring) -> void_cookie_t ---;
-image_text_8_string_length :: proc(R : ^image_text_8_request_t) -> _c.int ---;
-image_text_8_string_end :: proc(R : ^image_text_8_request_t) -> generic_iterator_t ---;
-image_text_16_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
+image_text_8 :: proc(c : ^connection_t, string_len : u8, drawable : drawable_t, gc : gcontext_t, x : i16, y : i16, string : cstring) -> void_cookie_t ---
+image_text_8_string_length :: proc(R : ^image_text_8_request_t) -> _c.int ---
+image_text_8_string_end :: proc(R : ^image_text_8_request_t) -> generic_iterator_t ---
+image_text_16_sizeof :: proc(_buffer : rawptr) -> _c.int ---
 /**
  * @brief Draws text
  *
@@ -7722,8 +7722,8 @@ image_text_16_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-image_text_16_checked :: proc(c : ^connection_t, string_len : u8, drawable : drawable_t, gc : gcontext_t, x : i16, y : i16, string : ^char2b_t) -> void_cookie_t ---;
-image_text_8_string :: proc(R : ^image_text_8_request_t) -> cstring ---;
+image_text_16_checked :: proc(c : ^connection_t, string_len : u8, drawable : drawable_t, gc : gcontext_t, x : i16, y : i16, string : ^char2b_t) -> void_cookie_t ---
+image_text_8_string :: proc(R : ^image_text_8_request_t) -> cstring ---
 /**
  * @brief Draws text
  *
@@ -7752,9 +7752,9 @@ image_text_8_string :: proc(R : ^image_text_8_request_t) -> cstring ---;
  * client-side rendering using Xft.
  *
  */
-image_text_16 :: proc(c : ^connection_t, string_len : u8, drawable : drawable_t, gc : gcontext_t, x : i16, y : i16, string : ^char2b_t) -> void_cookie_t ---;
-image_text_16_string_length :: proc(R : ^image_text_16_request_t) -> _c.int ---;
-image_text_16_string_iterator :: proc(R : ^image_text_16_request_t) -> char2b_iterator_t ---;
+image_text_16 :: proc(c : ^connection_t, string_len : u8, drawable : drawable_t, gc : gcontext_t, x : i16, y : i16, string : ^char2b_t) -> void_cookie_t ---
+image_text_16_string_length :: proc(R : ^image_text_16_request_t) -> _c.int ---
+image_text_16_string_iterator :: proc(R : ^image_text_16_request_t) -> char2b_iterator_t ---
 /**
  *
  * @param c The connection
@@ -7766,7 +7766,7 @@ image_text_16_string_iterator :: proc(R : ^image_text_16_request_t) -> char2b_it
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-create_colormap_checked :: proc(c : ^connection_t, alloc : u8, mid : colormap_t, window : window_t, visual : visualid_t) -> void_cookie_t ---;
+create_colormap_checked :: proc(c : ^connection_t, alloc : u8, mid : colormap_t, window : window_t, visual : visualid_t) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -7775,28 +7775,7 @@ create_colormap_checked :: proc(c : ^connection_t, alloc : u8, mid : colormap_t,
  * Delivers a request to the X server.
  *
  */
-create_colormap :: proc(c : ^connection_t, alloc : u8, mid : colormap_t, window : window_t, visual : visualid_t) -> void_cookie_t ---;
-/**
- *
- * @param c The connection
- * @return A cookie
- *
- * Delivers a request to the X server.
- *
- * This form can be used only if the request will not cause
- * a reply to be generated. Any returned error will be
- * saved for handling by xcb_request_check().
- */
-free_colormap_checked :: proc(c : ^connection_t, cmap : colormap_t) -> void_cookie_t ---;
-/**
- *
- * @param c The connection
- * @return A cookie
- *
- * Delivers a request to the X server.
- *
- */
-free_colormap :: proc(c : ^connection_t, cmap : colormap_t) -> void_cookie_t ---;
+create_colormap :: proc(c : ^connection_t, alloc : u8, mid : colormap_t, window : window_t, visual : visualid_t) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -7808,7 +7787,7 @@ free_colormap :: proc(c : ^connection_t, cmap : colormap_t) -> void_cookie_t ---
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-copy_colormap_and_free_checked :: proc(c : ^connection_t, mid : colormap_t, src_cmap : colormap_t) -> void_cookie_t ---;
+free_colormap_checked :: proc(c : ^connection_t, cmap : colormap_t) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -7817,28 +7796,7 @@ copy_colormap_and_free_checked :: proc(c : ^connection_t, mid : colormap_t, src_
  * Delivers a request to the X server.
  *
  */
-copy_colormap_and_free :: proc(c : ^connection_t, mid : colormap_t, src_cmap : colormap_t) -> void_cookie_t ---;
-/**
- *
- * @param c The connection
- * @return A cookie
- *
- * Delivers a request to the X server.
- *
- * This form can be used only if the request will not cause
- * a reply to be generated. Any returned error will be
- * saved for handling by xcb_request_check().
- */
-install_colormap_checked :: proc(c : ^connection_t, cmap : colormap_t) -> void_cookie_t ---;
-/**
- *
- * @param c The connection
- * @return A cookie
- *
- * Delivers a request to the X server.
- *
- */
-install_colormap :: proc(c : ^connection_t, cmap : colormap_t) -> void_cookie_t ---;
+free_colormap :: proc(c : ^connection_t, cmap : colormap_t) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -7850,7 +7808,7 @@ install_colormap :: proc(c : ^connection_t, cmap : colormap_t) -> void_cookie_t 
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-uninstall_colormap_checked :: proc(c : ^connection_t, cmap : colormap_t) -> void_cookie_t ---;
+copy_colormap_and_free_checked :: proc(c : ^connection_t, mid : colormap_t, src_cmap : colormap_t) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -7859,8 +7817,19 @@ uninstall_colormap_checked :: proc(c : ^connection_t, cmap : colormap_t) -> void
  * Delivers a request to the X server.
  *
  */
-uninstall_colormap :: proc(c : ^connection_t, cmap : colormap_t) -> void_cookie_t ---;
-list_installed_colormaps_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
+copy_colormap_and_free :: proc(c : ^connection_t, mid : colormap_t, src_cmap : colormap_t) -> void_cookie_t ---
+/**
+ *
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ *
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
+install_colormap_checked :: proc(c : ^connection_t, cmap : colormap_t) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -7869,8 +7838,39 @@ list_installed_colormaps_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
  * Delivers a request to the X server.
  *
  */
-list_installed_colormaps :: proc(c : ^connection_t, window : window_t) -> list_installed_colormaps_cookie_t ---;
-image_text_16_string :: proc(R : ^image_text_16_request_t) -> ^char2b_t ---;
+install_colormap :: proc(c : ^connection_t, cmap : colormap_t) -> void_cookie_t ---
+/**
+ *
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ *
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
+uninstall_colormap_checked :: proc(c : ^connection_t, cmap : colormap_t) -> void_cookie_t ---
+/**
+ *
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ *
+ */
+uninstall_colormap :: proc(c : ^connection_t, cmap : colormap_t) -> void_cookie_t ---
+list_installed_colormaps_sizeof :: proc(_buffer : rawptr) -> _c.int ---
+/**
+ *
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ *
+ */
+list_installed_colormaps :: proc(c : ^connection_t, window : window_t) -> list_installed_colormaps_cookie_t ---
+image_text_16_string :: proc(R : ^image_text_16_request_t) -> ^char2b_t ---
 /**
  *
  * @param c The connection
@@ -7882,10 +7882,10 @@ image_text_16_string :: proc(R : ^image_text_16_request_t) -> ^char2b_t ---;
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-list_installed_colormaps_unchecked :: proc(c : ^connection_t, window : window_t) -> list_installed_colormaps_cookie_t ---;
-list_installed_colormaps_cmaps :: proc(R : ^list_installed_colormaps_reply_t) -> ^colormap_t ---;
-list_installed_colormaps_cmaps_length :: proc(R : ^list_installed_colormaps_reply_t) -> _c.int ---;
-list_installed_colormaps_cmaps_end :: proc(R : ^list_installed_colormaps_reply_t) -> generic_iterator_t ---;
+list_installed_colormaps_unchecked :: proc(c : ^connection_t, window : window_t) -> list_installed_colormaps_cookie_t ---
+list_installed_colormaps_cmaps :: proc(R : ^list_installed_colormaps_reply_t) -> ^colormap_t ---
+list_installed_colormaps_cmaps_length :: proc(R : ^list_installed_colormaps_reply_t) -> _c.int ---
+list_installed_colormaps_cmaps_end :: proc(R : ^list_installed_colormaps_reply_t) -> generic_iterator_t ---
 /**
  * @brief Allocate a color
  *
@@ -7903,7 +7903,7 @@ list_installed_colormaps_cmaps_end :: proc(R : ^list_installed_colormaps_reply_t
  * RGB value to the RGB value you are specifying.
  *
  */
-alloc_color :: proc(c : ^connection_t, cmap : colormap_t, red : u16, green : u16, blue : u16) -> alloc_color_cookie_t ---;
+alloc_color :: proc(c : ^connection_t, cmap : colormap_t, red : u16, green : u16, blue : u16) -> alloc_color_cookie_t ---
 /**
  * @brief Allocate a color
  *
@@ -7924,8 +7924,8 @@ alloc_color :: proc(c : ^connection_t, cmap : colormap_t, red : u16, green : u16
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-alloc_color_unchecked :: proc(c : ^connection_t, cmap : colormap_t, red : u16, green : u16, blue : u16) -> alloc_color_cookie_t ---;
-alloc_named_color_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
+alloc_color_unchecked :: proc(c : ^connection_t, cmap : colormap_t, red : u16, green : u16, blue : u16) -> alloc_color_cookie_t ---
+alloc_named_color_sizeof :: proc(_buffer : rawptr) -> _c.int ---
 /**
  *
  * @param c The connection
@@ -7934,29 +7934,7 @@ alloc_named_color_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
  * Delivers a request to the X server.
  *
  */
-alloc_named_color :: proc(c : ^connection_t, cmap : colormap_t, name_len : u16, name : cstring) -> alloc_named_color_cookie_t ---;
-/**
- *
- * @param c The connection
- * @return A cookie
- *
- * Delivers a request to the X server.
- *
- * This form can be used only if the request will cause
- * a reply to be generated. Any returned error will be
- * placed in the event queue.
- */
-alloc_named_color_unchecked :: proc(c : ^connection_t, cmap : colormap_t, name_len : u16, name : cstring) -> alloc_named_color_cookie_t ---;
-alloc_color_cells_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
-/**
- *
- * @param c The connection
- * @return A cookie
- *
- * Delivers a request to the X server.
- *
- */
-alloc_color_cells :: proc(c : ^connection_t, contiguous : u8, cmap : colormap_t, colors : u16, planes : u16) -> alloc_color_cells_cookie_t ---;
+alloc_named_color :: proc(c : ^connection_t, cmap : colormap_t, name_len : u16, name : cstring) -> alloc_named_color_cookie_t ---
 /**
  *
  * @param c The connection
@@ -7968,12 +7946,8 @@ alloc_color_cells :: proc(c : ^connection_t, contiguous : u8, cmap : colormap_t,
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-alloc_color_cells_unchecked :: proc(c : ^connection_t, contiguous : u8, cmap : colormap_t, colors : u16, planes : u16) -> alloc_color_cells_cookie_t ---;
-alloc_color_cells_pixels_length :: proc(R : ^alloc_color_cells_reply_t) -> _c.int ---;
-alloc_color_cells_pixels_end :: proc(R : ^alloc_color_cells_reply_t) -> generic_iterator_t ---;
-alloc_color_cells_masks_length :: proc(R : ^alloc_color_cells_reply_t) -> _c.int ---;
-alloc_color_cells_masks_end :: proc(R : ^alloc_color_cells_reply_t) -> generic_iterator_t ---;
-alloc_color_planes_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
+alloc_named_color_unchecked :: proc(c : ^connection_t, cmap : colormap_t, name_len : u16, name : cstring) -> alloc_named_color_cookie_t ---
+alloc_color_cells_sizeof :: proc(_buffer : rawptr) -> _c.int ---
 /**
  *
  * @param c The connection
@@ -7982,7 +7956,7 @@ alloc_color_planes_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
  * Delivers a request to the X server.
  *
  */
-alloc_color_planes :: proc(c : ^connection_t, contiguous : u8, cmap : colormap_t, colors : u16, reds : u16, greens : u16, blues : u16) -> alloc_color_planes_cookie_t ---;
+alloc_color_cells :: proc(c : ^connection_t, contiguous : u8, cmap : colormap_t, colors : u16, planes : u16) -> alloc_color_cells_cookie_t ---
 /**
  *
  * @param c The connection
@@ -7994,10 +7968,36 @@ alloc_color_planes :: proc(c : ^connection_t, contiguous : u8, cmap : colormap_t
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-alloc_color_planes_unchecked :: proc(c : ^connection_t, contiguous : u8, cmap : colormap_t, colors : u16, reds : u16, greens : u16, blues : u16) -> alloc_color_planes_cookie_t ---;
-alloc_color_planes_pixels_length :: proc(R : ^alloc_color_planes_reply_t) -> _c.int ---;
-alloc_color_planes_pixels_end :: proc(R : ^alloc_color_planes_reply_t) -> generic_iterator_t ---;
-free_colors_sizeof :: proc(_buffer : rawptr, pixels_len : u32) -> _c.int ---;
+alloc_color_cells_unchecked :: proc(c : ^connection_t, contiguous : u8, cmap : colormap_t, colors : u16, planes : u16) -> alloc_color_cells_cookie_t ---
+alloc_color_cells_pixels_length :: proc(R : ^alloc_color_cells_reply_t) -> _c.int ---
+alloc_color_cells_pixels_end :: proc(R : ^alloc_color_cells_reply_t) -> generic_iterator_t ---
+alloc_color_cells_masks_length :: proc(R : ^alloc_color_cells_reply_t) -> _c.int ---
+alloc_color_cells_masks_end :: proc(R : ^alloc_color_cells_reply_t) -> generic_iterator_t ---
+alloc_color_planes_sizeof :: proc(_buffer : rawptr) -> _c.int ---
+/**
+ *
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ *
+ */
+alloc_color_planes :: proc(c : ^connection_t, contiguous : u8, cmap : colormap_t, colors : u16, reds : u16, greens : u16, blues : u16) -> alloc_color_planes_cookie_t ---
+/**
+ *
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ *
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
+alloc_color_planes_unchecked :: proc(c : ^connection_t, contiguous : u8, cmap : colormap_t, colors : u16, reds : u16, greens : u16, blues : u16) -> alloc_color_planes_cookie_t ---
+alloc_color_planes_pixels_length :: proc(R : ^alloc_color_planes_reply_t) -> _c.int ---
+alloc_color_planes_pixels_end :: proc(R : ^alloc_color_planes_reply_t) -> generic_iterator_t ---
+free_colors_sizeof :: proc(_buffer : rawptr, pixels_len : u32) -> _c.int ---
 /**
  *
  * @param c The connection
@@ -8009,7 +8009,7 @@ free_colors_sizeof :: proc(_buffer : rawptr, pixels_len : u32) -> _c.int ---;
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-free_colors_checked :: proc(c : ^connection_t, cmap : colormap_t, plane_mask : u32, pixels_len : u32, pixels : ^u32) -> void_cookie_t ---;
+free_colors_checked :: proc(c : ^connection_t, cmap : colormap_t, plane_mask : u32, pixels_len : u32, pixels : ^u32) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -8018,9 +8018,9 @@ free_colors_checked :: proc(c : ^connection_t, cmap : colormap_t, plane_mask : u
  * Delivers a request to the X server.
  *
  */
-free_colors :: proc(c : ^connection_t, cmap : colormap_t, plane_mask : u32, pixels_len : u32, pixels : ^u32) -> void_cookie_t ---;
-free_colors_pixels_length :: proc(R : ^free_colors_request_t) -> _c.int ---;
-free_colors_pixels_end :: proc(R : ^free_colors_request_t) -> generic_iterator_t ---;
+free_colors :: proc(c : ^connection_t, cmap : colormap_t, plane_mask : u32, pixels_len : u32, pixels : ^u32) -> void_cookie_t ---
+free_colors_pixels_length :: proc(R : ^free_colors_request_t) -> _c.int ---
+free_colors_pixels_end :: proc(R : ^free_colors_request_t) -> generic_iterator_t ---
 /**
  * Get the next element of the iterator
  * @param i Pointer to a xcb_coloritem_iterator_t
@@ -8029,10 +8029,10 @@ free_colors_pixels_end :: proc(R : ^free_colors_request_t) -> generic_iterator_t
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(xcb_coloritem_t)
  */
-coloritem_next :: proc(i : ^coloritem_iterator_t) ---;
-alloc_color_cells_pixels :: proc(R : ^alloc_color_cells_reply_t) -> ^u32 ---;
-alloc_color_planes_pixels :: proc(R : ^alloc_color_planes_reply_t) -> ^u32 ---;
-free_colors_pixels :: proc(R : ^free_colors_request_t) -> ^u32 ---;
+coloritem_next :: proc(i : ^coloritem_iterator_t) ---
+alloc_color_cells_pixels :: proc(R : ^alloc_color_cells_reply_t) -> ^u32 ---
+alloc_color_planes_pixels :: proc(R : ^alloc_color_planes_reply_t) -> ^u32 ---
+free_colors_pixels :: proc(R : ^free_colors_request_t) -> ^u32 ---
 /**
  * Return the reply
  * @param c      The connection
@@ -8047,7 +8047,7 @@ free_colors_pixels :: proc(R : ^free_colors_request_t) -> ^u32 ---;
  *
  * The returned value must be freed by the caller using free().
  */
-alloc_color_reply :: proc(c : ^connection_t, cookie : alloc_color_cookie_t, e : ^^generic_error_t) -> ^alloc_color_reply_t ---;
+alloc_color_reply :: proc(c : ^connection_t, cookie : alloc_color_cookie_t, e : ^^generic_error_t) -> ^alloc_color_reply_t ---
 /**
  * Return the reply
  * @param c      The connection
@@ -8062,7 +8062,7 @@ alloc_color_reply :: proc(c : ^connection_t, cookie : alloc_color_cookie_t, e : 
  *
  * The returned value must be freed by the caller using free().
  */
-alloc_named_color_reply :: proc(c : ^connection_t, cookie : alloc_named_color_cookie_t, e : ^^generic_error_t) -> ^alloc_named_color_reply_t ---;
+alloc_named_color_reply :: proc(c : ^connection_t, cookie : alloc_named_color_cookie_t, e : ^^generic_error_t) -> ^alloc_named_color_reply_t ---
 /**
  * Return the reply
  * @param c      The connection
@@ -8077,7 +8077,7 @@ alloc_named_color_reply :: proc(c : ^connection_t, cookie : alloc_named_color_co
  *
  * The returned value must be freed by the caller using free().
  */
-alloc_color_cells_reply :: proc(c : ^connection_t, cookie : alloc_color_cells_cookie_t, e : ^^generic_error_t) -> ^alloc_color_cells_reply_t ---;
+alloc_color_cells_reply :: proc(c : ^connection_t, cookie : alloc_color_cells_cookie_t, e : ^^generic_error_t) -> ^alloc_color_cells_reply_t ---
 /**
  * Return the reply
  * @param c      The connection
@@ -8092,7 +8092,7 @@ alloc_color_cells_reply :: proc(c : ^connection_t, cookie : alloc_color_cells_co
  *
  * The returned value must be freed by the caller using free().
  */
-alloc_color_planes_reply :: proc(c : ^connection_t, cookie : alloc_color_planes_cookie_t, e : ^^generic_error_t) -> ^alloc_color_planes_reply_t ---;
+alloc_color_planes_reply :: proc(c : ^connection_t, cookie : alloc_color_planes_cookie_t, e : ^^generic_error_t) -> ^alloc_color_planes_reply_t ---
 /**
  * Return the iterator pointing to the last element
  * @param i An xcb_coloritem_iterator_t
@@ -8102,7 +8102,7 @@ alloc_color_planes_reply :: proc(c : ^connection_t, cookie : alloc_color_planes_
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-coloritem_end :: proc(i : coloritem_iterator_t) -> generic_iterator_t ---;
+coloritem_end :: proc(i : coloritem_iterator_t) -> generic_iterator_t ---
 /**
  * Return the reply
  * @param c      The connection
@@ -8117,8 +8117,8 @@ coloritem_end :: proc(i : coloritem_iterator_t) -> generic_iterator_t ---;
  *
  * The returned value must be freed by the caller using free().
  */
-list_installed_colormaps_reply :: proc(c : ^connection_t, cookie : list_installed_colormaps_cookie_t, e : ^^generic_error_t) -> ^list_installed_colormaps_reply_t ---;
-store_colors_sizeof :: proc(_buffer : rawptr, items_len : u32) -> _c.int ---;
+list_installed_colormaps_reply :: proc(c : ^connection_t, cookie : list_installed_colormaps_cookie_t, e : ^^generic_error_t) -> ^list_installed_colormaps_reply_t ---
+store_colors_sizeof :: proc(_buffer : rawptr, items_len : u32) -> _c.int ---
 /**
  *
  * @param c The connection
@@ -8130,7 +8130,7 @@ store_colors_sizeof :: proc(_buffer : rawptr, items_len : u32) -> _c.int ---;
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-store_colors_checked :: proc(c : ^connection_t, cmap : colormap_t, items_len : u32, items : ^coloritem_t) -> void_cookie_t ---;
+store_colors_checked :: proc(c : ^connection_t, cmap : colormap_t, items_len : u32, items : ^coloritem_t) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -8139,12 +8139,12 @@ store_colors_checked :: proc(c : ^connection_t, cmap : colormap_t, items_len : u
  * Delivers a request to the X server.
  *
  */
-store_colors :: proc(c : ^connection_t, cmap : colormap_t, items_len : u32, items : ^coloritem_t) -> void_cookie_t ---;
-store_colors_items_length :: proc(R : ^store_colors_request_t) -> _c.int ---;
-store_colors_items :: proc(R : ^store_colors_request_t) -> ^coloritem_t ---;
-store_colors_items_iterator :: proc(R : ^store_colors_request_t) -> coloritem_iterator_t ---;
-alloc_color_cells_masks :: proc(R : ^alloc_color_cells_reply_t) -> ^u32 ---;
-store_named_color_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
+store_colors :: proc(c : ^connection_t, cmap : colormap_t, items_len : u32, items : ^coloritem_t) -> void_cookie_t ---
+store_colors_items_length :: proc(R : ^store_colors_request_t) -> _c.int ---
+store_colors_items :: proc(R : ^store_colors_request_t) -> ^coloritem_t ---
+store_colors_items_iterator :: proc(R : ^store_colors_request_t) -> coloritem_iterator_t ---
+alloc_color_cells_masks :: proc(R : ^alloc_color_cells_reply_t) -> ^u32 ---
+store_named_color_sizeof :: proc(_buffer : rawptr) -> _c.int ---
 /**
  *
  * @param c The connection
@@ -8156,7 +8156,7 @@ store_named_color_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-store_named_color_checked :: proc(c : ^connection_t, flags : u8, cmap : colormap_t, pixel : u32, name_len : u16, name : cstring) -> void_cookie_t ---;
+store_named_color_checked :: proc(c : ^connection_t, flags : u8, cmap : colormap_t, pixel : u32, name_len : u16, name : cstring) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -8165,9 +8165,9 @@ store_named_color_checked :: proc(c : ^connection_t, flags : u8, cmap : colormap
  * Delivers a request to the X server.
  *
  */
-store_named_color :: proc(c : ^connection_t, flags : u8, cmap : colormap_t, pixel : u32, name_len : u16, name : cstring) -> void_cookie_t ---;
-store_named_color_name_length :: proc(R : ^store_named_color_request_t) -> _c.int ---;
-store_named_color_name_end :: proc(R : ^store_named_color_request_t) -> generic_iterator_t ---;
+store_named_color :: proc(c : ^connection_t, flags : u8, cmap : colormap_t, pixel : u32, name_len : u16, name : cstring) -> void_cookie_t ---
+store_named_color_name_length :: proc(R : ^store_named_color_request_t) -> _c.int ---
+store_named_color_name_end :: proc(R : ^store_named_color_request_t) -> generic_iterator_t ---
 /**
  * Get the next element of the iterator
  * @param i Pointer to a xcb_rgb_iterator_t
@@ -8176,7 +8176,7 @@ store_named_color_name_end :: proc(R : ^store_named_color_request_t) -> generic_
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(xcb_rgb_t)
  */
-rgb_next :: proc(i : ^rgb_iterator_t) ---;
+rgb_next :: proc(i : ^rgb_iterator_t) ---
 /**
  * Return the iterator pointing to the last element
  * @param i An xcb_rgb_iterator_t
@@ -8186,8 +8186,8 @@ rgb_next :: proc(i : ^rgb_iterator_t) ---;
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-rgb_end :: proc(i : rgb_iterator_t) -> generic_iterator_t ---;
-query_colors_sizeof :: proc(_buffer : rawptr, pixels_len : u32) -> _c.int ---;
+rgb_end :: proc(i : rgb_iterator_t) -> generic_iterator_t ---
+query_colors_sizeof :: proc(_buffer : rawptr, pixels_len : u32) -> _c.int ---
 /**
  *
  * @param c The connection
@@ -8196,32 +8196,7 @@ query_colors_sizeof :: proc(_buffer : rawptr, pixels_len : u32) -> _c.int ---;
  * Delivers a request to the X server.
  *
  */
-query_colors :: proc(c : ^connection_t, cmap : colormap_t, pixels_len : u32, pixels : ^u32) -> query_colors_cookie_t ---;
-/**
- *
- * @param c The connection
- * @return A cookie
- *
- * Delivers a request to the X server.
- *
- * This form can be used only if the request will cause
- * a reply to be generated. Any returned error will be
- * placed in the event queue.
- */
-query_colors_unchecked :: proc(c : ^connection_t, cmap : colormap_t, pixels_len : u32, pixels : ^u32) -> query_colors_cookie_t ---;
-query_colors_colors_length :: proc(R : ^query_colors_reply_t) -> _c.int ---;
-query_colors_colors_iterator :: proc(R : ^query_colors_reply_t) -> rgb_iterator_t ---;
-store_named_color_name :: proc(R : ^store_named_color_request_t) -> cstring ---;
-lookup_color_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
-/**
- *
- * @param c The connection
- * @return A cookie
- *
- * Delivers a request to the X server.
- *
- */
-lookup_color :: proc(c : ^connection_t, cmap : colormap_t, name_len : u16, name : cstring) -> lookup_color_cookie_t ---;
+query_colors :: proc(c : ^connection_t, cmap : colormap_t, pixels_len : u32, pixels : ^u32) -> query_colors_cookie_t ---
 /**
  *
  * @param c The connection
@@ -8233,7 +8208,32 @@ lookup_color :: proc(c : ^connection_t, cmap : colormap_t, name_len : u16, name 
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-lookup_color_unchecked :: proc(c : ^connection_t, cmap : colormap_t, name_len : u16, name : cstring) -> lookup_color_cookie_t ---;
+query_colors_unchecked :: proc(c : ^connection_t, cmap : colormap_t, pixels_len : u32, pixels : ^u32) -> query_colors_cookie_t ---
+query_colors_colors_length :: proc(R : ^query_colors_reply_t) -> _c.int ---
+query_colors_colors_iterator :: proc(R : ^query_colors_reply_t) -> rgb_iterator_t ---
+store_named_color_name :: proc(R : ^store_named_color_request_t) -> cstring ---
+lookup_color_sizeof :: proc(_buffer : rawptr) -> _c.int ---
+/**
+ *
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ *
+ */
+lookup_color :: proc(c : ^connection_t, cmap : colormap_t, name_len : u16, name : cstring) -> lookup_color_cookie_t ---
+/**
+ *
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ *
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
+lookup_color_unchecked :: proc(c : ^connection_t, cmap : colormap_t, name_len : u16, name : cstring) -> lookup_color_cookie_t ---
 /**
  *
  * @param c The connection
@@ -8245,8 +8245,8 @@ lookup_color_unchecked :: proc(c : ^connection_t, cmap : colormap_t, name_len : 
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-create_cursor_checked :: proc(c : ^connection_t, cid : cursor_t, source : pixmap_t, mask : pixmap_t, fore_red : u16, fore_green : u16, fore_blue : u16, back_red : u16, back_green : u16, back_blue : u16, x : u16, y : u16) -> void_cookie_t ---;
-query_colors_colors :: proc(R : ^query_colors_reply_t) -> ^rgb_t ---;
+create_cursor_checked :: proc(c : ^connection_t, cid : cursor_t, source : pixmap_t, mask : pixmap_t, fore_red : u16, fore_green : u16, fore_blue : u16, back_red : u16, back_green : u16, back_blue : u16, x : u16, y : u16) -> void_cookie_t ---
+query_colors_colors :: proc(R : ^query_colors_reply_t) -> ^rgb_t ---
 /**
  * Return the reply
  * @param c      The connection
@@ -8261,7 +8261,7 @@ query_colors_colors :: proc(R : ^query_colors_reply_t) -> ^rgb_t ---;
  *
  * The returned value must be freed by the caller using free().
  */
-query_colors_reply :: proc(c : ^connection_t, cookie : query_colors_cookie_t, e : ^^generic_error_t) -> ^query_colors_reply_t ---;
+query_colors_reply :: proc(c : ^connection_t, cookie : query_colors_cookie_t, e : ^^generic_error_t) -> ^query_colors_reply_t ---
 /**
  * Return the reply
  * @param c      The connection
@@ -8276,7 +8276,7 @@ query_colors_reply :: proc(c : ^connection_t, cookie : query_colors_cookie_t, e 
  *
  * The returned value must be freed by the caller using free().
  */
-lookup_color_reply :: proc(c : ^connection_t, cookie : lookup_color_cookie_t, e : ^^generic_error_t) -> ^lookup_color_reply_t ---;
+lookup_color_reply :: proc(c : ^connection_t, cookie : lookup_color_cookie_t, e : ^^generic_error_t) -> ^lookup_color_reply_t ---
 /**
  *
  * @param c The connection
@@ -8285,7 +8285,7 @@ lookup_color_reply :: proc(c : ^connection_t, cookie : lookup_color_cookie_t, e 
  * Delivers a request to the X server.
  *
  */
-create_cursor :: proc(c : ^connection_t, cid : cursor_t, source : pixmap_t, mask : pixmap_t, fore_red : u16, fore_green : u16, fore_blue : u16, back_red : u16, back_green : u16, back_blue : u16, x : u16, y : u16) -> void_cookie_t ---;
+create_cursor :: proc(c : ^connection_t, cid : cursor_t, source : pixmap_t, mask : pixmap_t, fore_red : u16, fore_green : u16, fore_blue : u16, back_red : u16, back_green : u16, back_blue : u16, x : u16, y : u16) -> void_cookie_t ---
 /**
  * @brief Deletes a cursor
  *
@@ -8297,7 +8297,7 @@ create_cursor :: proc(c : ^connection_t, cid : cursor_t, source : pixmap_t, mask
  * cursor. The cursor is freed when no other resource references it.
  *
  */
-free_cursor :: proc(c : ^connection_t, cursor : cursor_t) -> void_cookie_t ---;
+free_cursor :: proc(c : ^connection_t, cursor : cursor_t) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -8306,7 +8306,7 @@ free_cursor :: proc(c : ^connection_t, cursor : cursor_t) -> void_cookie_t ---;
  * Delivers a request to the X server.
  *
  */
-recolor_cursor :: proc(c : ^connection_t, cursor : cursor_t, fore_red : u16, fore_green : u16, fore_blue : u16, back_red : u16, back_green : u16, back_blue : u16) -> void_cookie_t ---;
+recolor_cursor :: proc(c : ^connection_t, cursor : cursor_t, fore_red : u16, fore_green : u16, fore_blue : u16, back_red : u16, back_green : u16, back_blue : u16) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -8315,7 +8315,7 @@ recolor_cursor :: proc(c : ^connection_t, cursor : cursor_t, fore_red : u16, for
  * Delivers a request to the X server.
  *
  */
-query_best_size :: proc(c : ^connection_t, _class : u8, drawable : drawable_t, width : u16, height : u16) -> query_best_size_cookie_t ---;
+query_best_size :: proc(c : ^connection_t, _class : u8, drawable : drawable_t, width : u16, height : u16) -> query_best_size_cookie_t ---
 /**
  *
  * @param c The connection
@@ -8327,8 +8327,8 @@ query_best_size :: proc(c : ^connection_t, _class : u8, drawable : drawable_t, w
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-query_best_size_unchecked :: proc(c : ^connection_t, _class : u8, drawable : drawable_t, width : u16, height : u16) -> query_best_size_cookie_t ---;
-change_keyboard_mapping_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
+query_best_size_unchecked :: proc(c : ^connection_t, _class : u8, drawable : drawable_t, width : u16, height : u16) -> query_best_size_cookie_t ---
+change_keyboard_mapping_sizeof :: proc(_buffer : rawptr) -> _c.int ---
 /**
  * @brief create cursor
  *
@@ -8362,7 +8362,7 @@ change_keyboard_mapping_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-create_glyph_cursor_checked :: proc(c : ^connection_t, cid : cursor_t, source_font : font_t, mask_font : font_t, source_char : u16, mask_char : u16, fore_red : u16, fore_green : u16, fore_blue : u16, back_red : u16, back_green : u16, back_blue : u16) -> void_cookie_t ---;
+create_glyph_cursor_checked :: proc(c : ^connection_t, cid : cursor_t, source_font : font_t, mask_font : font_t, source_char : u16, mask_char : u16, fore_red : u16, fore_green : u16, fore_blue : u16, back_red : u16, back_green : u16, back_blue : u16) -> void_cookie_t ---
 /**
  * @brief create cursor
  *
@@ -8393,7 +8393,7 @@ create_glyph_cursor_checked :: proc(c : ^connection_t, cid : cursor_t, source_fo
  * \a back_blue).
  *
  */
-create_glyph_cursor :: proc(c : ^connection_t, cid : cursor_t, source_font : font_t, mask_font : font_t, source_char : u16, mask_char : u16, fore_red : u16, fore_green : u16, fore_blue : u16, back_red : u16, back_green : u16, back_blue : u16) -> void_cookie_t ---;
+create_glyph_cursor :: proc(c : ^connection_t, cid : cursor_t, source_font : font_t, mask_font : font_t, source_char : u16, mask_char : u16, fore_red : u16, fore_green : u16, fore_blue : u16, back_red : u16, back_green : u16, back_blue : u16) -> void_cookie_t ---
 /**
  * @brief Deletes a cursor
  *
@@ -8408,7 +8408,7 @@ create_glyph_cursor :: proc(c : ^connection_t, cid : cursor_t, source_font : fon
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-free_cursor_checked :: proc(c : ^connection_t, cursor : cursor_t) -> void_cookie_t ---;
+free_cursor_checked :: proc(c : ^connection_t, cursor : cursor_t) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -8420,8 +8420,8 @@ free_cursor_checked :: proc(c : ^connection_t, cursor : cursor_t) -> void_cookie
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-recolor_cursor_checked :: proc(c : ^connection_t, cursor : cursor_t, fore_red : u16, fore_green : u16, fore_blue : u16, back_red : u16, back_green : u16, back_blue : u16) -> void_cookie_t ---;
-query_extension_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
+recolor_cursor_checked :: proc(c : ^connection_t, cursor : cursor_t, fore_red : u16, fore_green : u16, fore_blue : u16, back_red : u16, back_green : u16, back_blue : u16) -> void_cookie_t ---
+query_extension_sizeof :: proc(_buffer : rawptr) -> _c.int ---
 /**
  * @brief check if extension is present
  *
@@ -8442,7 +8442,7 @@ query_extension_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
  * `xcb_get_extension_data` function instead.
  *
  */
-query_extension :: proc(c : ^connection_t, name_len : u16, name : cstring) -> query_extension_cookie_t ---;
+query_extension :: proc(c : ^connection_t, name_len : u16, name : cstring) -> query_extension_cookie_t ---
 /**
  * @brief check if extension is present
  *
@@ -8466,7 +8466,7 @@ query_extension :: proc(c : ^connection_t, name_len : u16, name : cstring) -> qu
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-query_extension_unchecked :: proc(c : ^connection_t, name_len : u16, name : cstring) -> query_extension_cookie_t ---;
+query_extension_unchecked :: proc(c : ^connection_t, name_len : u16, name : cstring) -> query_extension_cookie_t ---
 /**
  * Return the reply
  * @param c      The connection
@@ -8481,8 +8481,8 @@ query_extension_unchecked :: proc(c : ^connection_t, name_len : u16, name : cstr
  *
  * The returned value must be freed by the caller using free().
  */
-query_best_size_reply :: proc(c : ^connection_t, cookie : query_best_size_cookie_t, e : ^^generic_error_t) -> ^query_best_size_reply_t ---;
-list_extensions_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
+query_best_size_reply :: proc(c : ^connection_t, cookie : query_best_size_cookie_t, e : ^^generic_error_t) -> ^query_best_size_reply_t ---
+list_extensions_sizeof :: proc(_buffer : rawptr) -> _c.int ---
 /**
  *
  * @param c The connection
@@ -8491,7 +8491,7 @@ list_extensions_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
  * Delivers a request to the X server.
  *
  */
-list_extensions :: proc(c : ^connection_t) -> list_extensions_cookie_t ---;
+list_extensions :: proc(c : ^connection_t) -> list_extensions_cookie_t ---
 /**
  *
  * @param c The connection
@@ -8503,9 +8503,9 @@ list_extensions :: proc(c : ^connection_t) -> list_extensions_cookie_t ---;
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-list_extensions_unchecked :: proc(c : ^connection_t) -> list_extensions_cookie_t ---;
-list_extensions_names_length :: proc(R : ^list_extensions_reply_t) -> _c.int ---;
-list_extensions_names_iterator :: proc(R : ^list_extensions_reply_t) -> str_iterator_t ---;
+list_extensions_unchecked :: proc(c : ^connection_t) -> list_extensions_cookie_t ---
+list_extensions_names_length :: proc(R : ^list_extensions_reply_t) -> _c.int ---
+list_extensions_names_iterator :: proc(R : ^list_extensions_reply_t) -> str_iterator_t ---
 /**
  *
  * @param c The connection
@@ -8517,7 +8517,7 @@ list_extensions_names_iterator :: proc(R : ^list_extensions_reply_t) -> str_iter
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-change_keyboard_mapping_checked :: proc(c : ^connection_t, keycode_count : u8, first_keycode : keycode_t, keysyms_per_keycode : u8, keysyms : ^keysym_t) -> void_cookie_t ---;
+change_keyboard_mapping_checked :: proc(c : ^connection_t, keycode_count : u8, first_keycode : keycode_t, keysyms_per_keycode : u8, keysyms : ^keysym_t) -> void_cookie_t ---
 /**
  * Return the reply
  * @param c      The connection
@@ -8532,7 +8532,7 @@ change_keyboard_mapping_checked :: proc(c : ^connection_t, keycode_count : u8, f
  *
  * The returned value must be freed by the caller using free().
  */
-query_extension_reply :: proc(c : ^connection_t, cookie : query_extension_cookie_t, e : ^^generic_error_t) -> ^query_extension_reply_t ---;
+query_extension_reply :: proc(c : ^connection_t, cookie : query_extension_cookie_t, e : ^^generic_error_t) -> ^query_extension_reply_t ---
 /**
  *
  * @param c The connection
@@ -8541,10 +8541,10 @@ query_extension_reply :: proc(c : ^connection_t, cookie : query_extension_cookie
  * Delivers a request to the X server.
  *
  */
-change_keyboard_mapping :: proc(c : ^connection_t, keycode_count : u8, first_keycode : keycode_t, keysyms_per_keycode : u8, keysyms : ^keysym_t) -> void_cookie_t ---;
-change_keyboard_mapping_keysyms_length :: proc(R : ^change_keyboard_mapping_request_t) -> _c.int ---;
-change_keyboard_mapping_keysyms_end :: proc(R : ^change_keyboard_mapping_request_t) -> generic_iterator_t ---;
-get_keyboard_mapping_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
+change_keyboard_mapping :: proc(c : ^connection_t, keycode_count : u8, first_keycode : keycode_t, keysyms_per_keycode : u8, keysyms : ^keysym_t) -> void_cookie_t ---
+change_keyboard_mapping_keysyms_length :: proc(R : ^change_keyboard_mapping_request_t) -> _c.int ---
+change_keyboard_mapping_keysyms_end :: proc(R : ^change_keyboard_mapping_request_t) -> generic_iterator_t ---
+get_keyboard_mapping_sizeof :: proc(_buffer : rawptr) -> _c.int ---
 /**
  *
  * @param c The connection
@@ -8556,11 +8556,11 @@ get_keyboard_mapping_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-get_keyboard_mapping_unchecked :: proc(c : ^connection_t, first_keycode : keycode_t, count : u8) -> get_keyboard_mapping_cookie_t ---;
-get_keyboard_mapping_keysyms_length :: proc(R : ^get_keyboard_mapping_reply_t) -> _c.int ---;
-get_keyboard_mapping_keysyms_end :: proc(R : ^get_keyboard_mapping_reply_t) -> generic_iterator_t ---;
-change_keyboard_mapping_keysyms :: proc(R : ^change_keyboard_mapping_request_t) -> ^keysym_t ---;
-get_keyboard_mapping_keysyms :: proc(R : ^get_keyboard_mapping_reply_t) -> ^keysym_t ---;
+get_keyboard_mapping_unchecked :: proc(c : ^connection_t, first_keycode : keycode_t, count : u8) -> get_keyboard_mapping_cookie_t ---
+get_keyboard_mapping_keysyms_length :: proc(R : ^get_keyboard_mapping_reply_t) -> _c.int ---
+get_keyboard_mapping_keysyms_end :: proc(R : ^get_keyboard_mapping_reply_t) -> generic_iterator_t ---
+change_keyboard_mapping_keysyms :: proc(R : ^change_keyboard_mapping_request_t) -> ^keysym_t ---
+get_keyboard_mapping_keysyms :: proc(R : ^get_keyboard_mapping_reply_t) -> ^keysym_t ---
 /**
  * Return the reply
  * @param c      The connection
@@ -8575,7 +8575,7 @@ get_keyboard_mapping_keysyms :: proc(R : ^get_keyboard_mapping_reply_t) -> ^keys
  *
  * The returned value must be freed by the caller using free().
  */
-list_extensions_reply :: proc(c : ^connection_t, cookie : list_extensions_cookie_t, e : ^^generic_error_t) -> ^list_extensions_reply_t ---;
+list_extensions_reply :: proc(c : ^connection_t, cookie : list_extensions_cookie_t, e : ^^generic_error_t) -> ^list_extensions_reply_t ---
 /**
  *
  * @param c The connection
@@ -8584,7 +8584,7 @@ list_extensions_reply :: proc(c : ^connection_t, cookie : list_extensions_cookie
  * Delivers a request to the X server.
  *
  */
-get_keyboard_mapping :: proc(c : ^connection_t, first_keycode : keycode_t, count : u8) -> get_keyboard_mapping_cookie_t ---;
+get_keyboard_mapping :: proc(c : ^connection_t, first_keycode : keycode_t, count : u8) -> get_keyboard_mapping_cookie_t ---
 /**
  * Return the reply
  * @param c      The connection
@@ -8599,11 +8599,11 @@ get_keyboard_mapping :: proc(c : ^connection_t, first_keycode : keycode_t, count
  *
  * The returned value must be freed by the caller using free().
  */
-get_keyboard_mapping_reply :: proc(c : ^connection_t, cookie : get_keyboard_mapping_cookie_t, e : ^^generic_error_t) -> ^get_keyboard_mapping_reply_t ---;
-change_keyboard_control_value_list_serialize :: proc(_buffer : ^rawptr, value_mask : u32, _aux : ^change_keyboard_control_value_list_t) -> _c.int ---;
-change_keyboard_control_value_list_unpack :: proc(_buffer : rawptr, value_mask : u32, _aux : ^change_keyboard_control_value_list_t) -> _c.int ---;
-change_keyboard_control_value_list_sizeof :: proc(_buffer : rawptr, value_mask : u32) -> _c.int ---;
-change_keyboard_control_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
+get_keyboard_mapping_reply :: proc(c : ^connection_t, cookie : get_keyboard_mapping_cookie_t, e : ^^generic_error_t) -> ^get_keyboard_mapping_reply_t ---
+change_keyboard_control_value_list_serialize :: proc(_buffer : ^rawptr, value_mask : u32, _aux : ^change_keyboard_control_value_list_t) -> _c.int ---
+change_keyboard_control_value_list_unpack :: proc(_buffer : rawptr, value_mask : u32, _aux : ^change_keyboard_control_value_list_t) -> _c.int ---
+change_keyboard_control_value_list_sizeof :: proc(_buffer : rawptr, value_mask : u32) -> _c.int ---
+change_keyboard_control_sizeof :: proc(_buffer : rawptr) -> _c.int ---
 /**
  *
  * @param c The connection
@@ -8615,7 +8615,7 @@ change_keyboard_control_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-change_keyboard_control_checked :: proc(c : ^connection_t, value_mask : u32, value_list : rawptr) -> void_cookie_t ---;
+change_keyboard_control_checked :: proc(c : ^connection_t, value_mask : u32, value_list : rawptr) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -8624,7 +8624,7 @@ change_keyboard_control_checked :: proc(c : ^connection_t, value_mask : u32, val
  * Delivers a request to the X server.
  *
  */
-change_keyboard_control :: proc(c : ^connection_t, value_mask : u32, value_list : rawptr) -> void_cookie_t ---;
+change_keyboard_control :: proc(c : ^connection_t, value_mask : u32, value_list : rawptr) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -8636,7 +8636,7 @@ change_keyboard_control :: proc(c : ^connection_t, value_mask : u32, value_list 
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-change_keyboard_control_aux_checked :: proc(c : ^connection_t, value_mask : u32, value_list : ^change_keyboard_control_value_list_t) -> void_cookie_t ---;
+change_keyboard_control_aux_checked :: proc(c : ^connection_t, value_mask : u32, value_list : ^change_keyboard_control_value_list_t) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -8645,7 +8645,7 @@ change_keyboard_control_aux_checked :: proc(c : ^connection_t, value_mask : u32,
  * Delivers a request to the X server.
  *
  */
-change_keyboard_control_aux :: proc(c : ^connection_t, value_mask : u32, value_list : ^change_keyboard_control_value_list_t) -> void_cookie_t ---;
+change_keyboard_control_aux :: proc(c : ^connection_t, value_mask : u32, value_list : ^change_keyboard_control_value_list_t) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -8654,7 +8654,7 @@ change_keyboard_control_aux :: proc(c : ^connection_t, value_mask : u32, value_l
  * Delivers a request to the X server.
  *
  */
-get_keyboard_control :: proc(c : ^connection_t) -> get_keyboard_control_cookie_t ---;
+get_keyboard_control :: proc(c : ^connection_t) -> get_keyboard_control_cookie_t ---
 /**
  *
  * @param c The connection
@@ -8666,7 +8666,7 @@ get_keyboard_control :: proc(c : ^connection_t) -> get_keyboard_control_cookie_t
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-get_keyboard_control_unchecked :: proc(c : ^connection_t) -> get_keyboard_control_cookie_t ---;
+get_keyboard_control_unchecked :: proc(c : ^connection_t) -> get_keyboard_control_cookie_t ---
 /**
  *
  * @param c The connection
@@ -8678,7 +8678,7 @@ get_keyboard_control_unchecked :: proc(c : ^connection_t) -> get_keyboard_contro
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-bell_checked :: proc(c : ^connection_t, percent : i8) -> void_cookie_t ---;
+bell_checked :: proc(c : ^connection_t, percent : i8) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -8687,7 +8687,7 @@ bell_checked :: proc(c : ^connection_t, percent : i8) -> void_cookie_t ---;
  * Delivers a request to the X server.
  *
  */
-bell :: proc(c : ^connection_t, percent : i8) -> void_cookie_t ---;
+bell :: proc(c : ^connection_t, percent : i8) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -8699,7 +8699,7 @@ bell :: proc(c : ^connection_t, percent : i8) -> void_cookie_t ---;
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-change_pointer_control_checked :: proc(c : ^connection_t, acceleration_numerator : i16, acceleration_denominator : i16, threshold : i16, do_acceleration : u8, do_threshold : u8) -> void_cookie_t ---;
+change_pointer_control_checked :: proc(c : ^connection_t, acceleration_numerator : i16, acceleration_denominator : i16, threshold : i16, do_acceleration : u8, do_threshold : u8) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -8708,8 +8708,8 @@ change_pointer_control_checked :: proc(c : ^connection_t, acceleration_numerator
  * Delivers a request to the X server.
  *
  */
-change_pointer_control :: proc(c : ^connection_t, acceleration_numerator : i16, acceleration_denominator : i16, threshold : i16, do_acceleration : u8, do_threshold : u8) -> void_cookie_t ---;
-change_keyboard_control_value_list :: proc(R : ^change_keyboard_control_request_t) -> rawptr ---;
+change_pointer_control :: proc(c : ^connection_t, acceleration_numerator : i16, acceleration_denominator : i16, threshold : i16, do_acceleration : u8, do_threshold : u8) -> void_cookie_t ---
+change_keyboard_control_value_list :: proc(R : ^change_keyboard_control_request_t) -> rawptr ---
 /**
  * Return the reply
  * @param c      The connection
@@ -8724,7 +8724,7 @@ change_keyboard_control_value_list :: proc(R : ^change_keyboard_control_request_
  *
  * The returned value must be freed by the caller using free().
  */
-get_keyboard_control_reply :: proc(c : ^connection_t, cookie : get_keyboard_control_cookie_t, e : ^^generic_error_t) -> ^get_keyboard_control_reply_t ---;
+get_keyboard_control_reply :: proc(c : ^connection_t, cookie : get_keyboard_control_cookie_t, e : ^^generic_error_t) -> ^get_keyboard_control_reply_t ---
 /**
  *
  * @param c The connection
@@ -8733,7 +8733,7 @@ get_keyboard_control_reply :: proc(c : ^connection_t, cookie : get_keyboard_cont
  * Delivers a request to the X server.
  *
  */
-get_pointer_control :: proc(c : ^connection_t) -> get_pointer_control_cookie_t ---;
+get_pointer_control :: proc(c : ^connection_t) -> get_pointer_control_cookie_t ---
 /**
  *
  * @param c The connection
@@ -8745,7 +8745,7 @@ get_pointer_control :: proc(c : ^connection_t) -> get_pointer_control_cookie_t -
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-get_pointer_control_unchecked :: proc(c : ^connection_t) -> get_pointer_control_cookie_t ---;
+get_pointer_control_unchecked :: proc(c : ^connection_t) -> get_pointer_control_cookie_t ---
 /**
  * Return the reply
  * @param c      The connection
@@ -8760,7 +8760,7 @@ get_pointer_control_unchecked :: proc(c : ^connection_t) -> get_pointer_control_
  *
  * The returned value must be freed by the caller using free().
  */
-get_pointer_control_reply :: proc(c : ^connection_t, cookie : get_pointer_control_cookie_t, e : ^^generic_error_t) -> ^get_pointer_control_reply_t ---;
+get_pointer_control_reply :: proc(c : ^connection_t, cookie : get_pointer_control_cookie_t, e : ^^generic_error_t) -> ^get_pointer_control_reply_t ---
 /**
  *
  * @param c The connection
@@ -8772,7 +8772,7 @@ get_pointer_control_reply :: proc(c : ^connection_t, cookie : get_pointer_contro
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-set_screen_saver_checked :: proc(c : ^connection_t, timeout : i16, interval : i16, prefer_blanking : u8, allow_exposures : u8) -> void_cookie_t ---;
+set_screen_saver_checked :: proc(c : ^connection_t, timeout : i16, interval : i16, prefer_blanking : u8, allow_exposures : u8) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -8781,7 +8781,7 @@ set_screen_saver_checked :: proc(c : ^connection_t, timeout : i16, interval : i1
  * Delivers a request to the X server.
  *
  */
-set_screen_saver :: proc(c : ^connection_t, timeout : i16, interval : i16, prefer_blanking : u8, allow_exposures : u8) -> void_cookie_t ---;
+set_screen_saver :: proc(c : ^connection_t, timeout : i16, interval : i16, prefer_blanking : u8, allow_exposures : u8) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -8790,7 +8790,7 @@ set_screen_saver :: proc(c : ^connection_t, timeout : i16, interval : i16, prefe
  * Delivers a request to the X server.
  *
  */
-get_screen_saver :: proc(c : ^connection_t) -> get_screen_saver_cookie_t ---;
+get_screen_saver :: proc(c : ^connection_t) -> get_screen_saver_cookie_t ---
 /**
  *
  * @param c The connection
@@ -8802,7 +8802,7 @@ get_screen_saver :: proc(c : ^connection_t) -> get_screen_saver_cookie_t ---;
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-get_screen_saver_unchecked :: proc(c : ^connection_t) -> get_screen_saver_cookie_t ---;
+get_screen_saver_unchecked :: proc(c : ^connection_t) -> get_screen_saver_cookie_t ---
 /**
  * Return the reply
  * @param c      The connection
@@ -8817,8 +8817,8 @@ get_screen_saver_unchecked :: proc(c : ^connection_t) -> get_screen_saver_cookie
  *
  * The returned value must be freed by the caller using free().
  */
-get_screen_saver_reply :: proc(c : ^connection_t, cookie : get_screen_saver_cookie_t, e : ^^generic_error_t) -> ^get_screen_saver_reply_t ---;
-change_hosts_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
+get_screen_saver_reply :: proc(c : ^connection_t, cookie : get_screen_saver_cookie_t, e : ^^generic_error_t) -> ^get_screen_saver_reply_t ---
+change_hosts_sizeof :: proc(_buffer : rawptr) -> _c.int ---
 /**
  *
  * @param c The connection
@@ -8830,7 +8830,7 @@ change_hosts_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-change_hosts_checked :: proc(c : ^connection_t, mode : u8, family : u8, address_len : u16, address : ^u8) -> void_cookie_t ---;
+change_hosts_checked :: proc(c : ^connection_t, mode : u8, family : u8, address_len : u16, address : ^u8) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -8839,14 +8839,14 @@ change_hosts_checked :: proc(c : ^connection_t, mode : u8, family : u8, address_
  * Delivers a request to the X server.
  *
  */
-change_hosts :: proc(c : ^connection_t, mode : u8, family : u8, address_len : u16, address : ^u8) -> void_cookie_t ---;
-change_hosts_address_length :: proc(R : ^change_hosts_request_t) -> _c.int ---;
-change_hosts_address_end :: proc(R : ^change_hosts_request_t) -> generic_iterator_t ---;
-host_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
-change_hosts_address :: proc(R : ^change_hosts_request_t) -> ^u8 ---;
-host_address :: proc(R : ^host_t) -> ^u8 ---;
-host_address_length :: proc(R : ^host_t) -> _c.int ---;
-host_address_end :: proc(R : ^host_t) -> generic_iterator_t ---;
+change_hosts :: proc(c : ^connection_t, mode : u8, family : u8, address_len : u16, address : ^u8) -> void_cookie_t ---
+change_hosts_address_length :: proc(R : ^change_hosts_request_t) -> _c.int ---
+change_hosts_address_end :: proc(R : ^change_hosts_request_t) -> generic_iterator_t ---
+host_sizeof :: proc(_buffer : rawptr) -> _c.int ---
+change_hosts_address :: proc(R : ^change_hosts_request_t) -> ^u8 ---
+host_address :: proc(R : ^host_t) -> ^u8 ---
+host_address_length :: proc(R : ^host_t) -> _c.int ---
+host_address_end :: proc(R : ^host_t) -> generic_iterator_t ---
 /**
  * Get the next element of the iterator
  * @param i Pointer to a xcb_host_iterator_t
@@ -8855,8 +8855,8 @@ host_address_end :: proc(R : ^host_t) -> generic_iterator_t ---;
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(host_t)
  */
-host_next :: proc(i : ^host_iterator_t) ---;
-list_hosts_hosts_iterator :: proc(R : ^list_hosts_reply_t) -> host_iterator_t ---;
+host_next :: proc(i : ^host_iterator_t) ---
+list_hosts_hosts_iterator :: proc(R : ^list_hosts_reply_t) -> host_iterator_t ---
 /**
  *
  * @param c The connection
@@ -8868,7 +8868,7 @@ list_hosts_hosts_iterator :: proc(R : ^list_hosts_reply_t) -> host_iterator_t --
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-no_operation_checked :: proc(c : ^connection_t) -> void_cookie_t ---;
+no_operation_checked :: proc(c : ^connection_t) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -8877,7 +8877,7 @@ no_operation_checked :: proc(c : ^connection_t) -> void_cookie_t ---;
  * Delivers a request to the X server.
  *
  */
-no_operation :: proc(c : ^connection_t) -> void_cookie_t ---;
+no_operation :: proc(c : ^connection_t) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -8886,31 +8886,10 @@ no_operation :: proc(c : ^connection_t) -> void_cookie_t ---;
  * Delivers a request to the X server.
  *
  */
-list_hosts :: proc(c : ^connection_t) -> list_hosts_cookie_t ---;
-get_modifier_mapping_keycodes_end :: proc(R : ^get_modifier_mapping_reply_t) -> generic_iterator_t ---;
-get_pointer_mapping_map_end :: proc(R : ^get_pointer_mapping_reply_t) -> generic_iterator_t ---;
-list_hosts_hosts_length :: proc(R : ^list_hosts_reply_t) -> _c.int ---;
-/**
- *
- * @param c The connection
- * @return A cookie
- *
- * Delivers a request to the X server.
- *
- * This form can be used only if the request will not cause
- * a reply to be generated. Any returned error will be
- * saved for handling by xcb_request_check().
- */
-set_access_control_checked :: proc(c : ^connection_t, mode : u8) -> void_cookie_t ---;
-/**
- *
- * @param c The connection
- * @return A cookie
- *
- * Delivers a request to the X server.
- *
- */
-set_access_control :: proc(c : ^connection_t, mode : u8) -> void_cookie_t ---;
+list_hosts :: proc(c : ^connection_t) -> list_hosts_cookie_t ---
+get_modifier_mapping_keycodes_end :: proc(R : ^get_modifier_mapping_reply_t) -> generic_iterator_t ---
+get_pointer_mapping_map_end :: proc(R : ^get_pointer_mapping_reply_t) -> generic_iterator_t ---
+list_hosts_hosts_length :: proc(R : ^list_hosts_reply_t) -> _c.int ---
 /**
  *
  * @param c The connection
@@ -8922,7 +8901,7 @@ set_access_control :: proc(c : ^connection_t, mode : u8) -> void_cookie_t ---;
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-set_close_down_mode_checked :: proc(c : ^connection_t, mode : u8) -> void_cookie_t ---;
+set_access_control_checked :: proc(c : ^connection_t, mode : u8) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -8931,7 +8910,28 @@ set_close_down_mode_checked :: proc(c : ^connection_t, mode : u8) -> void_cookie
  * Delivers a request to the X server.
  *
  */
-set_close_down_mode :: proc(c : ^connection_t, mode : u8) -> void_cookie_t ---;
+set_access_control :: proc(c : ^connection_t, mode : u8) -> void_cookie_t ---
+/**
+ *
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ *
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
+set_close_down_mode_checked :: proc(c : ^connection_t, mode : u8) -> void_cookie_t ---
+/**
+ *
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ *
+ */
+set_close_down_mode :: proc(c : ^connection_t, mode : u8) -> void_cookie_t ---
 /**
  * @brief kills a client
  *
@@ -8949,7 +8949,7 @@ set_close_down_mode :: proc(c : ^connection_t, mode : u8) -> void_cookie_t ---;
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-kill_client_checked :: proc(c : ^connection_t, resource : u32) -> void_cookie_t ---;
+kill_client_checked :: proc(c : ^connection_t, resource : u32) -> void_cookie_t ---
 /**
  * @brief kills a client
  *
@@ -8964,7 +8964,7 @@ kill_client_checked :: proc(c : ^connection_t, resource : u32) -> void_cookie_t 
  * Forces a close down of the client that created the specified \a resource.
  *
  */
-kill_client :: proc(c : ^connection_t, resource : u32) -> void_cookie_t ---;
+kill_client :: proc(c : ^connection_t, resource : u32) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -8976,7 +8976,7 @@ kill_client :: proc(c : ^connection_t, resource : u32) -> void_cookie_t ---;
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-rotate_properties_checked :: proc(c : ^connection_t, window : window_t, atoms_len : u16, delta : i16, atoms : ^atom_t) -> void_cookie_t ---;
+rotate_properties_checked :: proc(c : ^connection_t, window : window_t, atoms_len : u16, delta : i16, atoms : ^atom_t) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -8985,8 +8985,8 @@ rotate_properties_checked :: proc(c : ^connection_t, window : window_t, atoms_le
  * Delivers a request to the X server.
  *
  */
-rotate_properties :: proc(c : ^connection_t, window : window_t, atoms_len : u16, delta : i16, atoms : ^atom_t) -> void_cookie_t ---;
-rotate_properties_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
+rotate_properties :: proc(c : ^connection_t, window : window_t, atoms_len : u16, delta : i16, atoms : ^atom_t) -> void_cookie_t ---
+rotate_properties_sizeof :: proc(_buffer : rawptr) -> _c.int ---
 /**
  * Return the iterator pointing to the last element
  * @param i An xcb_host_iterator_t
@@ -8996,8 +8996,8 @@ rotate_properties_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-host_end :: proc(i : host_iterator_t) -> generic_iterator_t ---;
-list_hosts_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
+host_end :: proc(i : host_iterator_t) -> generic_iterator_t ---
+list_hosts_sizeof :: proc(_buffer : rawptr) -> _c.int ---
 /**
  *
  * @param c The connection
@@ -9009,9 +9009,9 @@ list_hosts_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-list_hosts_unchecked :: proc(c : ^connection_t) -> list_hosts_cookie_t ---;
-rotate_properties_atoms_length :: proc(R : ^rotate_properties_request_t) -> _c.int ---;
-rotate_properties_atoms_end :: proc(R : ^rotate_properties_request_t) -> generic_iterator_t ---;
+list_hosts_unchecked :: proc(c : ^connection_t) -> list_hosts_cookie_t ---
+rotate_properties_atoms_length :: proc(R : ^rotate_properties_request_t) -> _c.int ---
+rotate_properties_atoms_end :: proc(R : ^rotate_properties_request_t) -> generic_iterator_t ---
 /**
  *
  * @param c The connection
@@ -9023,7 +9023,7 @@ rotate_properties_atoms_end :: proc(R : ^rotate_properties_request_t) -> generic
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-force_screen_saver_checked :: proc(c : ^connection_t, mode : u8) -> void_cookie_t ---;
+force_screen_saver_checked :: proc(c : ^connection_t, mode : u8) -> void_cookie_t ---
 /**
  *
  * @param c The connection
@@ -9032,8 +9032,8 @@ force_screen_saver_checked :: proc(c : ^connection_t, mode : u8) -> void_cookie_
  * Delivers a request to the X server.
  *
  */
-force_screen_saver :: proc(c : ^connection_t, mode : u8) -> void_cookie_t ---;
-set_pointer_mapping_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
+force_screen_saver :: proc(c : ^connection_t, mode : u8) -> void_cookie_t ---
+set_pointer_mapping_sizeof :: proc(_buffer : rawptr) -> _c.int ---
 /**
  *
  * @param c The connection
@@ -9042,29 +9042,7 @@ set_pointer_mapping_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
  * Delivers a request to the X server.
  *
  */
-set_pointer_mapping :: proc(c : ^connection_t, map_len : u8, map_ : ^u8) -> set_pointer_mapping_cookie_t ---;
-/**
- *
- * @param c The connection
- * @return A cookie
- *
- * Delivers a request to the X server.
- *
- * This form can be used only if the request will cause
- * a reply to be generated. Any returned error will be
- * placed in the event queue.
- */
-set_pointer_mapping_unchecked :: proc(c : ^connection_t, map_len : u8, map_ : ^u8) -> set_pointer_mapping_cookie_t ---;
-get_pointer_mapping_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
-/**
- *
- * @param c The connection
- * @return A cookie
- *
- * Delivers a request to the X server.
- *
- */
-get_pointer_mapping :: proc(c : ^connection_t) -> get_pointer_mapping_cookie_t ---;
+set_pointer_mapping :: proc(c : ^connection_t, map_len : u8, map_ : ^u8) -> set_pointer_mapping_cookie_t ---
 /**
  *
  * @param c The connection
@@ -9076,9 +9054,8 @@ get_pointer_mapping :: proc(c : ^connection_t) -> get_pointer_mapping_cookie_t -
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-get_pointer_mapping_unchecked :: proc(c : ^connection_t) -> get_pointer_mapping_cookie_t ---;
-get_pointer_mapping_map_length :: proc(R : ^get_pointer_mapping_reply_t) -> _c.int ---;
-set_modifier_mapping_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
+set_pointer_mapping_unchecked :: proc(c : ^connection_t, map_len : u8, map_ : ^u8) -> set_pointer_mapping_cookie_t ---
+get_pointer_mapping_sizeof :: proc(_buffer : rawptr) -> _c.int ---
 /**
  *
  * @param c The connection
@@ -9087,7 +9064,7 @@ set_modifier_mapping_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
  * Delivers a request to the X server.
  *
  */
-set_modifier_mapping :: proc(c : ^connection_t, keycodes_per_modifier : u8, keycodes : ^keycode_t) -> set_modifier_mapping_cookie_t ---;
+get_pointer_mapping :: proc(c : ^connection_t) -> get_pointer_mapping_cookie_t ---
 /**
  *
  * @param c The connection
@@ -9099,7 +9076,30 @@ set_modifier_mapping :: proc(c : ^connection_t, keycodes_per_modifier : u8, keyc
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-set_modifier_mapping_unchecked :: proc(c : ^connection_t, keycodes_per_modifier : u8, keycodes : ^keycode_t) -> set_modifier_mapping_cookie_t ---;
+get_pointer_mapping_unchecked :: proc(c : ^connection_t) -> get_pointer_mapping_cookie_t ---
+get_pointer_mapping_map_length :: proc(R : ^get_pointer_mapping_reply_t) -> _c.int ---
+set_modifier_mapping_sizeof :: proc(_buffer : rawptr) -> _c.int ---
+/**
+ *
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ *
+ */
+set_modifier_mapping :: proc(c : ^connection_t, keycodes_per_modifier : u8, keycodes : ^keycode_t) -> set_modifier_mapping_cookie_t ---
+/**
+ *
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ *
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
+set_modifier_mapping_unchecked :: proc(c : ^connection_t, keycodes_per_modifier : u8, keycodes : ^keycode_t) -> set_modifier_mapping_cookie_t ---
 /**
  * Return the reply
  * @param c      The connection
@@ -9114,8 +9114,8 @@ set_modifier_mapping_unchecked :: proc(c : ^connection_t, keycodes_per_modifier 
  *
  * The returned value must be freed by the caller using free().
  */
-set_modifier_mapping_reply :: proc(c : ^connection_t, cookie : set_modifier_mapping_cookie_t, e : ^^generic_error_t) -> ^set_modifier_mapping_reply_t ---;
-get_modifier_mapping_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
+set_modifier_mapping_reply :: proc(c : ^connection_t, cookie : set_modifier_mapping_cookie_t, e : ^^generic_error_t) -> ^set_modifier_mapping_reply_t ---
+get_modifier_mapping_sizeof :: proc(_buffer : rawptr) -> _c.int ---
 /**
  *
  * @param c The connection
@@ -9124,7 +9124,7 @@ get_modifier_mapping_sizeof :: proc(_buffer : rawptr) -> _c.int ---;
  * Delivers a request to the X server.
  *
  */
-get_modifier_mapping :: proc(c : ^connection_t) -> get_modifier_mapping_cookie_t ---;
+get_modifier_mapping :: proc(c : ^connection_t) -> get_modifier_mapping_cookie_t ---
 /**
  *
  * @param c The connection
@@ -9136,10 +9136,10 @@ get_modifier_mapping :: proc(c : ^connection_t) -> get_modifier_mapping_cookie_t
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-get_modifier_mapping_unchecked :: proc(c : ^connection_t) -> get_modifier_mapping_cookie_t ---;
-get_modifier_mapping_keycodes_length :: proc(R : ^get_modifier_mapping_reply_t) -> _c.int ---;
-get_pointer_mapping_map :: proc(R : ^get_pointer_mapping_reply_t) -> ^u8 ---;
-get_modifier_mapping_keycodes :: proc(R : ^get_modifier_mapping_reply_t) -> ^keycode_t ---;
+get_modifier_mapping_unchecked :: proc(c : ^connection_t) -> get_modifier_mapping_cookie_t ---
+get_modifier_mapping_keycodes_length :: proc(R : ^get_modifier_mapping_reply_t) -> _c.int ---
+get_pointer_mapping_map :: proc(R : ^get_pointer_mapping_reply_t) -> ^u8 ---
+get_modifier_mapping_keycodes :: proc(R : ^get_modifier_mapping_reply_t) -> ^keycode_t ---
 /**
  * Return the reply
  * @param c      The connection
@@ -9154,8 +9154,8 @@ get_modifier_mapping_keycodes :: proc(R : ^get_modifier_mapping_reply_t) -> ^key
  *
  * The returned value must be freed by the caller using free().
  */
-list_hosts_reply :: proc(c : ^connection_t, cookie : list_hosts_cookie_t, e : ^^generic_error_t) -> ^list_hosts_reply_t ---;
-rotate_properties_atoms :: proc(R : ^rotate_properties_request_t) -> ^atom_t ---;
+list_hosts_reply :: proc(c : ^connection_t, cookie : list_hosts_cookie_t, e : ^^generic_error_t) -> ^list_hosts_reply_t ---
+rotate_properties_atoms :: proc(R : ^rotate_properties_request_t) -> ^atom_t ---
 /**
  * Return the reply
  * @param c      The connection
@@ -9170,7 +9170,7 @@ rotate_properties_atoms :: proc(R : ^rotate_properties_request_t) -> ^atom_t ---
  *
  * The returned value must be freed by the caller using free().
  */
-set_pointer_mapping_reply :: proc(c : ^connection_t, cookie : set_pointer_mapping_cookie_t, e : ^^generic_error_t) -> ^set_pointer_mapping_reply_t ---;
+set_pointer_mapping_reply :: proc(c : ^connection_t, cookie : set_pointer_mapping_cookie_t, e : ^^generic_error_t) -> ^set_pointer_mapping_reply_t ---
 /**
  * Return the reply
  * @param c      The connection
@@ -9185,7 +9185,7 @@ set_pointer_mapping_reply :: proc(c : ^connection_t, cookie : set_pointer_mappin
  *
  * The returned value must be freed by the caller using free().
  */
-get_pointer_mapping_reply :: proc(c : ^connection_t, cookie : get_pointer_mapping_cookie_t, e : ^^generic_error_t) -> ^get_pointer_mapping_reply_t ---;
+get_pointer_mapping_reply :: proc(c : ^connection_t, cookie : get_pointer_mapping_cookie_t, e : ^^generic_error_t) -> ^get_pointer_mapping_reply_t ---
 /**
  * Return the reply
  * @param c      The connection
@@ -9200,5 +9200,5 @@ get_pointer_mapping_reply :: proc(c : ^connection_t, cookie : get_pointer_mappin
  *
  * The returned value must be freed by the caller using free().
  */
-get_modifier_mapping_reply :: proc(c : ^connection_t, cookie : get_modifier_mapping_cookie_t, e : ^^generic_error_t) -> ^get_modifier_mapping_reply_t ---;
+get_modifier_mapping_reply :: proc(c : ^connection_t, cookie : get_modifier_mapping_cookie_t, e : ^^generic_error_t) -> ^get_modifier_mapping_reply_t ---
 }

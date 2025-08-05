@@ -1,7 +1,5 @@
 package xcb
 
-import _c "core:c"
-
 /**
  * Create a low-order bitmask.
  * @param n Mask size.
@@ -67,7 +65,7 @@ roundup_2 :: proc(base: u32, pad: u32) -> u32 {
  * @ingroup xcb__bitops
  */
 rounddown_2 :: proc(base: u32, pad: u32) -> u32 {
-    return base & -pad;
+    return base & -pad
 }
 
 /**

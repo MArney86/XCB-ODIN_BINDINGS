@@ -183,7 +183,7 @@ foreign libxcb_shm {
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(xcb_shm_seg_t)
  */
-shm_seg_next :: proc(i: ^shm_seg_iterator_t) ---;
+shm_seg_next :: proc(i: ^shm_seg_iterator_t) ---
 /**
  * Return the iterator pointing to the last element
  * @param i An xcb_shm_seg_iterator_t
@@ -193,7 +193,7 @@ shm_seg_next :: proc(i: ^shm_seg_iterator_t) ---;
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-shm_seg_end :: proc(i: shm_seg_iterator_t) -> generic_iterator_t ---;
+shm_seg_end :: proc(i: shm_seg_iterator_t) -> generic_iterator_t ---
 /**
  * @brief Query the version of the MIT-SHM extension.
  *
@@ -220,7 +220,7 @@ shm_query_version :: proc(c: ^connection_t) -> shm_query_version_cookie_t ---
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-shm_query_version_unchecked :: proc(c: ^connection_t) -> shm_query_version_cookie_t ---;
+shm_query_version_unchecked :: proc(c: ^connection_t) -> shm_query_version_cookie_t ---
 /**
  * Return the reply
  * @param c      The connection

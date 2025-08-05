@@ -38,7 +38,7 @@ import _c "core:c"
  * interface.  Routines for getting and putting image pixels
  * are provided: both a generic form that works with
  * arbitrary images, and fastpath forms for some common
- * cases.  Conversion routines are provided for X images;
+ * cases.  Conversion routines are provided for X images
  * these routines have been fairly well optimized for the
  * common cases, and should run fast even on older hardware.
  * A routine analogous to Xlib's XCreate*FromBitmapData() is
