@@ -46,10 +46,11 @@ import _c "core:c"
  */
 cursor_context_t :: struct {}
 
-foreign import libxcb "system:libxcb.so"
+foreign import libxcb_cursor "system:libxcb-cursor.so"
 
 @(link_prefix="xcb_")
-foreign libxcb {
+@(default_calling_convention="c")
+foreign libxcb_cursor {
 /**
  * Create a new @ref xcb_cursor_context_t.
  *
@@ -64,7 +65,7 @@ foreign libxcb {
  *
  * @ingroup xcb_cursor_context_t
  */
-cursor_context_new :: proc(conn: ^connection_t, screen: ^screen_t, ctx: ^^xcb_cursor_context_t) -> _c.int ---;
+cursor_context_new :: proc(conn: ^connection_t, screen: ^screen_t, ctx: ^^cursor_context_t) -> _c.int ---;
 
 /**
  * Loads the specified cursor, either from the cursor theme or by falling back

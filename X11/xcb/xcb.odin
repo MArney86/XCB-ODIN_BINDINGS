@@ -106,6 +106,7 @@ foreign import libxcb "system:libxcb.so"
 
 /* Procedures */
 @(link_prefix="xcb_")
+@(default_calling_convention="c")
 foreign libxcb {
 /**
  * @brief Forces any buffered output to be written to the server.

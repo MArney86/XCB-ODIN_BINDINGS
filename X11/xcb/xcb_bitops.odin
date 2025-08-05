@@ -1,5 +1,7 @@
 package xcb
 
+import _c "core:c"
+
 /**
  * Create a low-order bitmask.
  * @param n Mask size.
@@ -118,7 +120,7 @@ rounddown :: proc(base: u32, pad: u32) -> u32 {
  * Reverses the bottom @p n bits of @p x.
  * @ingroup xcb__bitops
  */
-xcb_bit_reverse :: proc(x: u32, n: u8) -> u32 {
+bit_reverse :: proc(x: u32, n: u8) -> u32 {
     m1: u32 = 0x00ff00ff;
     m2: u32 = 0x0f0f0f0f;
     m3: u32 = 0x33333333;
@@ -148,9 +150,9 @@ host_byte_order :: proc() -> image_order_t {
     
     switch first_byte^ {
     case 0x01:
-        return XCB_IMAGE_ORDER_MSB_FIRST
+        return image_order_t.IMAGE_ORDER_MSB_FIRST
     case 0x04:
-        return XCB_IMAGE_ORDER_LSB_FIRST
+        return image_order_t.IMAGE_ORDER_LSB_FIRST
     }
     panic("Unknown byte order")
 }

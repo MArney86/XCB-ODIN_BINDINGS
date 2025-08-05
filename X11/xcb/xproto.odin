@@ -3580,6 +3580,7 @@ foreign import libxcb "system:libxcb.so"
 
 /* Procedures */
 @(link_prefix="xcb_")
+@(default_calling_convention="c")
 foreign libxcb {
   /**
  * Get the next element of the iterator
