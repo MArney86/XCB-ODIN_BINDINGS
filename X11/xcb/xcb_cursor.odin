@@ -3,7 +3,7 @@ package xcb
 import _c "core:c"
 
 /**
- * @defgroup xcb__cursor_context_t XCB Cursor Functions
+ * @defgroup cursor_context_t XCB Cursor Functions
  *
  * These functions are the equivalent of libXcursor, but re-implemented for
  * XCB. They respect the user’s configured cursor theme when loading cursors,
@@ -13,38 +13,38 @@ import _c "core:c"
  * cursor to "watch":
  * @code
  * int screennr;
- * xcb_connection_t *conn = xcb_connect(NULL, &screennr);
- * if (conn == NULL || xcb_connection_has_error(conn))
+ * connection_t *conn = connect(NULL, &screennr);
+ * if (conn == NULL || connection_has_error(conn))
  *     err(EXIT_FAILURE, "Could not connect to X11");
  *
- * xcb_screen_t *screen = xcb_aux_get_screen(conn, screennr);
- * xcb_cursor_context_t *ctx;
- * if (xcb_cursor_context_new(conn, screen, &ctx) < 0)
+ * screen_t *screen = xcb_aux_get_screen(conn, screennr);
+ * cursor_context_t *ctx;
+ * if (cursor_context_new(conn, screen, &ctx) < 0)
  *     err(EXIT_FAILURE, "Could not initialize xcb-cursor");
  *
- * xcb_cursor_t cid = xcb_cursor_load_cursor(ctx, "watch");
+ * cursor_t cid = cursor_load_cursor(ctx, "watch");
  *
- * xcb_screen_t *screen = xcb_setup_roots_iterator(xcb_get_setup(conn)).data;
- * xcb_change_window_attributes(conn, screen->root, XCB_CW_CURSOR, (uint32_t[]){ cid });
- * xcb_free_cursor(conn, cid);
- * xcb_flush(conn);
+ * screen_t *screen = setup_roots_iterator(get_setup(conn)).data;
+ * change_window_attributes(conn, screen->root, CW_CURSOR, (uint32_t[]){ cid });
+ * free_cursor(conn, cid);
+ * flush(conn);
  *
- * xcb_cursor_context_free(ctx);
- * xcb_disconnect(conn);
+ * cursor_context_free(ctx);
+ * disconnect(conn);
  * @endcode
  *
  * @{
  */
 
  /**
- * @struct xcb_cursor_context_t
+ * @struct cursor_context_t
  * Describes a context for using this library.
  *
- * Create a context with @ref xcb_cursor_context_new (), then load one or more
- * cursors with @ref xcb_cursor_load_cursor () and destroy the context with @ref
- * xcb_cursor_context_free ().
+ * Create a context with @ref cursor_context_new (), then load one or more
+ * cursors with @ref cursor_load_cursor () and destroy the context with @ref
+ * cursor_context_free ().
  */
-xcb_cursor_context_t :: struct {}
+cursor_context_t :: struct {}
 
 foreign import libxcb "system:libxcb.so"
 
@@ -77,7 +77,7 @@ cursor_context_new :: proc(conn: ^connection_t, screen: ^screen_t, ctx: ^^xcb_cu
  * created cursor.
  *
  */
-xcb_cursor_load_cursor :: proc (ctx: ^cursor_context_t, name: ^_c.char) -> cursor_t ---
+cursor_load_cursor :: proc (ctx: ^cursor_context_t, name: ^_c.char) -> cursor_t ---;
 
 /**
  * Frees the @ref xcb_cursor_context_t.
@@ -85,6 +85,7 @@ xcb_cursor_load_cursor :: proc (ctx: ^cursor_context_t, name: ^_c.char) -> curso
  * @param ctx The context to free.
  *
  */
-xcb_cursor_context_free :: proc (ctx: ^cursor_context_t)
+
+ cursor_context_free :: proc (ctx: ^cursor_context_t) ---;
 
 }
