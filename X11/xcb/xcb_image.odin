@@ -1,5 +1,7 @@
 package xcb
 
+import _c "core:c"
+
 /**
  * @defgroup xcb__image_t XCB Image Functions
  * 
@@ -171,7 +173,7 @@ image_annotate :: proc(image: ^image_t) ---
  * The image must be destroyed with xcb_image_destroy().
  * @ingroup xcb__image_t
  */
-image_create :: proc(width: u16, height: u16, format: image_format_t, xpad: u8, depth: u8, bpp: u8, unit: u8, byte_order: image_order_t, bit_order: image_order_t, base: ^void, bytes: u32, data: ^u8) -> ^image_t ---
+image_create :: proc(width: u16, height: u16, format: image_format_t, xpad: u8, depth: u8, bpp: u8, unit: u8, byte_order: image_order_t, bit_order: image_order_t, base: rawptr, bytes: u32, data: ^u8) -> ^image_t ---
 /**
  * Create a new image in connection-native format.
  * @param c The connection.
@@ -199,7 +201,7 @@ image_create :: proc(width: u16, height: u16, format: image_format_t, xpad: u8, 
  * @ingroup xcb__image_t
  */
 
-image_create_native :: proc(c: ^xcb_connection_t, width: u16, height: u16, format: image_format_t, depth: u8, base: ^void, bytes: u32, data: ^u8) -> ^image_t ---
+image_create_native :: proc(c: ^connection_t, width: u16, height: u16, format: image_format_t, depth: u8, base: rawptr, bytes: u32, data: ^u8) -> ^image_t ---
 /**
  * Destroy an image.
  * @param image The image to be destroyed.
@@ -304,7 +306,7 @@ image_native :: proc(c: ^connection_t, image: ^image_t, convert: _c.int) -> ^ima
  * the plane-mask for xy-pixmap images.
  * @ingroup xcb__image_t
  */
-image_put_pixel :: proc(image: ^image_t, x: u32, y: u32, pixel: u32) -> void ---
+image_put_pixel :: proc(image: ^image_t, x: u32, y: u32, pixel: u32) ---
 /**
  * Get a pixel from an image.
  * @param image The image.
