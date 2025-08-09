@@ -1247,13 +1247,13 @@ randr_notify_event_t :: struct {
 
 // Foreign import for RandR extension
 when ODIN_OS == .Linux {
-    foreign import libxcb_randr "system:xcb-randr.so"
+    foreign import libxcb_randr "system:libxcb-randr.so"
 } else when ODIN_OS == .FreeBSD || ODIN_OS == .OpenBSD || ODIN_OS == .NetBSD {
-    foreign import libxcb_randr "system:xcb-randr.so"
+    foreign import libxcb_randr "system:libxcb-randr.so"
 } else when ODIN_OS == .Darwin {
-    foreign import libxcb_randr "system:xcb-randr.so"
+    foreign import libxcb_randr "system:libxcb-randr.so"
 } else {
-    foreign import libxcb_randr "system:xcb-randr.lib"
+    foreign import libxcb_randr "system:libxcb-randr.lib"
 }
 
 @(link_prefix="xcb_")
