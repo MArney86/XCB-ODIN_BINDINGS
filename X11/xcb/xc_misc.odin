@@ -3,13 +3,13 @@ package xcb
 import _c "core:c"
 
 // XC-MISC extension constants
-XCB_XCMISC_MAJOR_VERSION :: 1
-XCB_XCMISC_MINOR_VERSION :: 1
+XCMISC_MAJOR_VERSION :: 1
+XCMISC_MINOR_VERSION :: 1
 
 // Opcodes
-XCB_XC_MISC_GET_VERSION :: 0
-XCB_XC_MISC_GET_XID_RANGE :: 1
-XCB_XC_MISC_GET_XID_LIST :: 2
+XC_MISC_GET_VERSION :: 0
+XC_MISC_GET_XID_RANGE :: 1
+XC_MISC_GET_XID_LIST :: 2
 
 // Cookie types
 xc_misc_get_version_cookie_t :: struct {

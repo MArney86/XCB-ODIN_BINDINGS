@@ -206,11 +206,11 @@ ewmh_get_workarea_reply_t :: struct {
 ewmh_client_source_type_t :: enum {
   /** No source at all (for clients supporting an older version of
       EWMH specification) */
-  XCB_EWMH_CLIENT_SOURCE_TYPE_NONE,
+  EWMH_CLIENT_SOURCE_TYPE_NONE,
   /** Normal application */
-  XCB_EWMH_CLIENT_SOURCE_TYPE_NORMAL,
+  EWMH_CLIENT_SOURCE_TYPE_NORMAL,
   /** Pagers and other clients that represent direct user actions */
-  XCB_EWMH_CLIENT_SOURCE_TYPE_OTHER,
+  EWMH_CLIENT_SOURCE_TYPE_OTHER,
 }
 
 /**
@@ -218,9 +218,9 @@ ewmh_client_source_type_t :: enum {
  */
 ewmh_desktop_layout_orientation_t :: enum {
   /** Horizontal orientation (desktops laid out in rows) */
-  XCB_EWMH_WM_ORIENTATION_HORZ,
+  EWMH_WM_ORIENTATION_HORZ,
   /** Vertical orientation (desktops laid out in columns) */
-  XCB_EWMH_WM_ORIENTATION_VERT,
+  EWMH_WM_ORIENTATION_VERT,
 }
 
 /**
@@ -228,13 +228,13 @@ ewmh_desktop_layout_orientation_t :: enum {
  */
 ewmh_desktop_layout_starting_corner_t :: enum {
   /** Starting corner on the top left */
-  XCB_EWMH_WM_TOPLEFT,
+  EWMH_WM_TOPLEFT,
   /** Starting corner on the top right */
-  XCB_EWMH_WM_TOPRIGHT,
+  EWMH_WM_TOPRIGHT,
   /** Starting corner on the bottom right */
-  XCB_EWMH_WM_BOTTOMRIGHT,
+  EWMH_WM_BOTTOMRIGHT,
   /** Starting corner on the bottom left */
-  XCB_EWMH_WM_BOTTOMLEFT,
+  EWMH_WM_BOTTOMLEFT,
 }
 
 /**
@@ -259,13 +259,13 @@ ewmh_get_desktop_layout_reply_t :: struct {
  */
 ewmh_moveresize_window_opt_flags_t :: enum {
   /** The window x coordinate */
-  XCB_EWMH_MOVERESIZE_WINDOW_X = (1 << 8),
+  EWMH_MOVERESIZE_WINDOW_X = (1 << 8),
   /** The window y coordinate */
-  XCB_EWMH_MOVERESIZE_WINDOW_Y = (1 << 9),
+  EWMH_MOVERESIZE_WINDOW_Y = (1 << 9),
   /** The window width */
-  XCB_EWMH_MOVERESIZE_WINDOW_WIDTH = (1 << 10),
+  EWMH_MOVERESIZE_WINDOW_WIDTH = (1 << 10),
   /** The window height */
-  XCB_EWMH_MOVERESIZE_WINDOW_HEIGHT = (1 << 11),
+  EWMH_MOVERESIZE_WINDOW_HEIGHT = (1 << 11),
 }
 
 /**
@@ -273,29 +273,29 @@ ewmh_moveresize_window_opt_flags_t :: enum {
  */
 ewmh_moveresize_direction_t :: enum {
   /** Resizing applied on the top left edge */
-  XCB_EWMH_WM_MOVERESIZE_SIZE_TOPLEFT,
+  EWMH_WM_MOVERESIZE_SIZE_TOPLEFT,
   /** Resizing applied on the top edge */
-  XCB_EWMH_WM_MOVERESIZE_SIZE_TOP,
+  EWMH_WM_MOVERESIZE_SIZE_TOP,
   /** Resizing applied on the top right edge */
-  XCB_EWMH_WM_MOVERESIZE_SIZE_TOPRIGHT,
+  EWMH_WM_MOVERESIZE_SIZE_TOPRIGHT,
   /** Resizing applied on the right edge */
-  XCB_EWMH_WM_MOVERESIZE_SIZE_RIGHT,
+  EWMH_WM_MOVERESIZE_SIZE_RIGHT,
   /** Resizing applied on the bottom right edge */
-  XCB_EWMH_WM_MOVERESIZE_SIZE_BOTTOMRIGHT,
+  EWMH_WM_MOVERESIZE_SIZE_BOTTOMRIGHT,
   /** Resizing applied on the bottom edge */
-  XCB_EWMH_WM_MOVERESIZE_SIZE_BOTTOM,
+  EWMH_WM_MOVERESIZE_SIZE_BOTTOM,
   /** Resizing applied on the bottom left edge */
-  XCB_EWMH_WM_MOVERESIZE_SIZE_BOTTOMLEFT,
+  EWMH_WM_MOVERESIZE_SIZE_BOTTOMLEFT,
   /** Resizing applied on the left edge */
-  XCB_EWMH_WM_MOVERESIZE_SIZE_LEFT,
+  EWMH_WM_MOVERESIZE_SIZE_LEFT,
   /* Movement only */
-  XCB_EWMH_WM_MOVERESIZE_MOVE,
+  EWMH_WM_MOVERESIZE_MOVE,
   /* Size via keyboard */
-  XCB_EWMH_WM_MOVERESIZE_SIZE_KEYBOARD,
+  EWMH_WM_MOVERESIZE_SIZE_KEYBOARD,
   /* Move via keyboard */
-  XCB_EWMH_WM_MOVERESIZE_MOVE_KEYBOARD,
+  EWMH_WM_MOVERESIZE_MOVE_KEYBOARD,
   /* Cancel operation */
-  XCB_EWMH_WM_MOVERESIZE_CANCEL,
+  EWMH_WM_MOVERESIZE_CANCEL,
 }
 
 /**
@@ -303,11 +303,11 @@ ewmh_moveresize_direction_t :: enum {
  */
 ewmh_wm_state_action_t :: enum {
   /* Remove/unset property */
-  XCB_EWMH_WM_STATE_REMOVE,
+  EWMH_WM_STATE_REMOVE,
   /* Add/set property */
-  XCB_EWMH_WM_STATE_ADD,
+  EWMH_WM_STATE_ADD,
   /* Toggle property  */
-  XCB_EWMH_WM_STATE_TOGGLE,
+  EWMH_WM_STATE_TOGGLE,
 }
 
 /**

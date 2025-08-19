@@ -2,13 +2,13 @@ package xcb
 
 import _c "core:c"
 
-XCB_BIGREQUESTS_MAJOR_VERSION :: 0
-XCB_BIGREQUESTS_MINOR_VERSION :: 0
+BIGREQUESTS_MAJOR_VERSION :: 0
+BIGREQUESTS_MINOR_VERSION :: 0
 
 @(link_name="xcb_big_requests_id")
 big_requests_id: extension_t
 
-XCB_BIG_REQUESTS_ENABLE :: 0
+BIG_REQUESTS_ENABLE :: 0
 
 big_requests_enable_cookie_t :: struct {
     sequence: _c.uint,

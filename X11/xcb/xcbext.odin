@@ -13,10 +13,10 @@ protocol_request_t :: struct {
 }
 
 send_request_flags_t :: enum _c.int {
-    XCB_REQUEST_CHECKED = 1 << 0,
-    XCB_REQUEST_RAW = 1 << 1,
-    XCB_REQUEST_DISCARD_REPLY = 1 << 2,
-    XCB_REQUEST_REPLY_FDS = 1 << 3,
+    REQUEST_CHECKED = 1 << 0,
+    REQUEST_RAW = 1 << 1,
+    REQUEST_DISCARD_REPLY = 1 << 2,
+    REQUEST_REPLY_FDS = 1 << 3,
 }
 
 // Foreign function declarations

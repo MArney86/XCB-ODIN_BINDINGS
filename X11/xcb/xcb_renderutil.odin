@@ -3,27 +3,27 @@ package xcb
 import _c "core:c"
 
 // XCB Picture Format flags - using constants instead of enum for bitflags
-XCB_PICT_FORMAT_ID         :: 1 << 0
-XCB_PICT_FORMAT_TYPE       :: 1 << 1
-XCB_PICT_FORMAT_DEPTH      :: 1 << 2
-XCB_PICT_FORMAT_RED        :: 1 << 3
-XCB_PICT_FORMAT_RED_MASK   :: 1 << 4
-XCB_PICT_FORMAT_GREEN      :: 1 << 5
-XCB_PICT_FORMAT_GREEN_MASK :: 1 << 6
-XCB_PICT_FORMAT_BLUE       :: 1 << 7
-XCB_PICT_FORMAT_BLUE_MASK  :: 1 << 8
-XCB_PICT_FORMAT_ALPHA      :: 1 << 9
-XCB_PICT_FORMAT_ALPHA_MASK :: 1 << 10
-XCB_PICT_FORMAT_COLORMAP   :: 1 << 11
+PICT_FORMAT_ID         :: 1 << 0
+PICT_FORMAT_TYPE       :: 1 << 1
+PICT_FORMAT_DEPTH      :: 1 << 2
+PICT_FORMAT_RED        :: 1 << 3
+PICT_FORMAT_RED_MASK   :: 1 << 4
+PICT_FORMAT_GREEN      :: 1 << 5
+PICT_FORMAT_GREEN_MASK :: 1 << 6
+PICT_FORMAT_BLUE       :: 1 << 7
+PICT_FORMAT_BLUE_MASK  :: 1 << 8
+PICT_FORMAT_ALPHA      :: 1 << 9
+PICT_FORMAT_ALPHA_MASK :: 1 << 10
+PICT_FORMAT_COLORMAP   :: 1 << 11
 
 pict_format_t :: u32 // Type alias for the format flags
 
 pict_standard_t :: enum _c.int {
-	XCB_PICT_STANDARD_ARGB_32,
-	XCB_PICT_STANDARD_RGB_24,
-	XCB_PICT_STANDARD_A_8,
-	XCB_PICT_STANDARD_A_4,
-	XCB_PICT_STANDARD_A_1,
+	PICT_STANDARD_ARGB_32,
+	PICT_STANDARD_RGB_24,
+	PICT_STANDARD_A_8,
+	PICT_STANDARD_A_4,
+	PICT_STANDARD_A_1,
 }
 
 // Opaque struct for composite text stream
