@@ -60,6 +60,10 @@ Or if using a custom installation path:
 import xcb "path/to/xcb"
 ```
 
+### Notice
+
+some field names in structs and enums may be changed to remove conflict with reserved word differences between C and Odin.
+
 ## Version Information
 
 **Current Release:** Bindings based on XCB version 2.4-8build2
